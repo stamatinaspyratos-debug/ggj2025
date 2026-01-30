@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cubus2hnn6ped" path="res://code/player.gd" id="1_fvtld"]
 [ext_resource type="Texture2D" uid="uid://bti6yjg2notj4" path="res://assets/creature.png" id="2_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://k7a5itxficwy" path="res://assets/Walking.png" id="3_oh5ij"]
 [ext_resource type="Texture2D" uid="uid://bpvqpnmirsbm" path="res://assets/mask0.png" id="3_s4jxa"]
 [ext_resource type="Script" uid="uid://ck62gdmn3jbps" path="res://code/copy_parent.gd" id="4_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://lyovofj4id71" path="res://assets/icon.svg" id="5_s4jxa"]
@@ -14,6 +15,54 @@ region = Rect2(0, 0, 24, 24)
 atlas = ExtResource("2_ct4mp")
 region = Rect2(24, 0, 24, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh5ij"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(192, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fvbb"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(256, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml7e8"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(320, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34jf3"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(384, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7b46"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(448, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4wxg"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(512, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bup7g"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(576, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ja17"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(640, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4iqv"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(704, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42h83"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(0, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuf2t"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(64, 0, 64, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrjdb"]
+atlas = ExtResource("3_oh5ij")
+region = Rect2(128, 0, 64, 35)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_2fvbb"]
 animations = [{
 "frames": [{
@@ -24,8 +73,49 @@ animations = [{
 "texture": SubResource("AtlasTexture_g2vtq")
 }],
 "loop": true,
-"name": &"1",
+"name": &"Cat",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh5ij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fvbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml7e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34jf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7b46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4wxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bup7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ja17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4iqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42h83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuf2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrjdb")
+}],
+"loop": true,
+"name": &"Human",
+"speed": 9.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ihjo1"]
@@ -58,17 +148,19 @@ size = Vector3(2.8099365, 1, 2.6801758)
 
 [node name="Entity" type="CharacterBody3D" unique_id=1737357155]
 script = ExtResource("1_fvtld")
+sprite = "Human"
 
 [node name="SpriteBase" type="AnimatedSprite3D" parent="." unique_id=286295862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 pixel_size = 0.05
 billboard = 2
 shaded = true
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2fvbb")
-animation = &"1"
-frame = 1
-frame_progress = 0.40026954
+animation = &"Human"
+frame = 9
+frame_progress = 0.90326047
 
 [node name="SpriteMask" type="AnimatedSprite3D" parent="SpriteBase" unique_id=1901796756]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
@@ -78,7 +170,7 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_34jf3")
 animation = &"1"
 script = ExtResource("4_ct4mp")
-synced_properties = Array[String](["flip_h", "animation", "frame"])
+synced_properties = Array[String](["flip_h"])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2024580783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039230347, -0.06452, -0.029369354)

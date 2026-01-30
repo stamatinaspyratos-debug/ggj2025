@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doiur12bod1hw"
-path.s3tc="res://.godot/imported/Walking.png-8ba9c2ce1d78f63e7f0040fa35142d88.s3tc.ctex"
+uid="uid://k7a5itxficwy"
+path.s3tc="res://.godot/imported/Walking.png-1be44bc5efd9cea002fe7009355c2c5b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Animations/Walking.png"
-dest_files=["res://.godot/imported/Walking.png-8ba9c2ce1d78f63e7f0040fa35142d88.s3tc.ctex"]
+source_file="res://assets/Walking.png"
+dest_files=["res://.godot/imported/Walking.png-1be44bc5efd9cea002fe7009355c2c5b.s3tc.ctex"]
 
 [params]
 

@@ -9,6 +9,12 @@ const JUMP_VELOCITY = 8
 var direction: Vector3
 var masked:= false
 var can_jump:= false
+@export var sprite:= "Cat"
+
+var sprite_offset: Dictionary = {
+	"Cat": Vector3(0,0,0),
+	"Human": Vector3(0,0.4,0),
+}
 @export var patrol:= false
 @export_enum("Idle", "Walk", "Stop") var state = "Idle"
 @export var path: Path3D
@@ -65,10 +71,13 @@ func control_jump():
 		velocity.y = JUMP_VELOCITY
 
 func animate():
+	sprite_mask.visible = masked
+	sprite_base.animation = sprite
+	sprite_base.position = sprite_offset.get(sprite)
 	match state:
 		"Walk":
 			sprite_base.play()
-			$SpriteBase.flip_h = direction.x < 0
+			sprite_base.flip_h = direction.x < 0
 		"Idle":
 			sprite_base.stop()
 			sprite_base.frame = 0
