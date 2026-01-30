@@ -19,14 +19,6 @@ func init() -> void:
 	# αρχικός στόχος: ο Player
 	target = player as Node3D
 
-	# όταν κρύβεται ο Player -> γωνία κάμερας (μόνο mode, όχι target)
-	if player.has_signal("hidden_changed"):
-		player.connect("hidden_changed", Callable(self, "_on_hidden_changed"))
-
-	# όταν αλλάζει ποιος ελέγχεται -> αλλάζει target
-	if player.has_signal("control_target_changed"):
-		player.connect("control_target_changed", Callable(self, "_on_control_target_changed"))
-
 func _on_hidden_changed(v: bool) -> void:
 	Game.hidden = v
 
