@@ -73,6 +73,8 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_34jf3")
 animation = &"1"
 autoplay = "1"
+frame = 1
+frame_progress = 0.5360786
 script = ExtResource("4_ct4mp")
 synced_properties = Array[String](["flip_h", "animation", "frame"])
 

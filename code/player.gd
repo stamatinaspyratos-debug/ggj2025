@@ -8,6 +8,7 @@ const JUMP_VELOCITY = 4.5
 var direction: Vector3
 var state = IDLE
 enum {IDLE, WALK, STOP}
+@export_enum("Normal", "Fly") var moveset = "Normal"
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -15,11 +16,10 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -41,10 +41,6 @@ func animate():
 		WALK:
 			sprite_base.play()
 			$SpriteBase.flip_h = direction.x < 0
-			if direction.z >= 0:
-				sprite_mask.position.z = abs(sprite_mask.position.z)
-			elif direction.z < 0:
-				sprite_mask.position.z = -abs(sprite_mask.position.z)
 		IDLE:
 			sprite_base.stop()
 			sprite_base.frame = 0

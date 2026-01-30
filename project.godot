@@ -13,7 +13,12 @@ config_version=5
 config/name="GGJ2026"
 run/main_scene="uid://0imqwns5jagj"
 config/features=PackedStringArray("4.6", "Mobile")
+run/max_fps=60
 config/icon="uid://lyovofj4id71"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [physics]
 
