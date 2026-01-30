@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_bspfs"]
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/player.tscn" id="2_arvm7"]
 [ext_resource type="PackedScene" uid="uid://xrjkajq1eqi6" path="res://assets/Backgrund_house1.glb" id="3_arvm7"]
+[ext_resource type="PackedScene" uid="uid://4gag1k0qgodw" path="res://scene/hide_spot.tscn" id="4_gs8dr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(25, 0.455, 25)
@@ -15,6 +16,12 @@ ambient_light_color = Color(0.88742435, 0.87268245, 0.8849515, 1)
 
 [sub_resource type="Theme" id="Theme_bspfs"]
 Button/font_sizes/font_size = 42
+
+[sub_resource type="InputEventAction" id="InputEventAction_gs8dr"]
+action = &"ui_accept"
+
+[sub_resource type="Shortcut" id="Shortcut_w3jsn"]
+events = [SubResource("InputEventAction_gs8dr")]
 
 [node name="Outside" type="Node3D" unique_id=33148205]
 script = ExtResource("1_bspfs")
@@ -50,12 +57,22 @@ offset_top = 359.0
 offset_right = 262.0
 offset_bottom = 425.0
 theme = SubResource("Theme_bspfs")
+shortcut = SubResource("Shortcut_w3jsn")
 text = "Start"
 
 [node name="Backgrund_house1" parent="." unique_id=1319112423 instance=ExtResource("3_arvm7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.07595432, 3.6261253, -3.0137315)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1364433887]
+[node name="Backgrund_house1" parent="Backgrund_house1" unique_id=26096428 instance=ExtResource("3_arvm7")]
+transform = Transform3D(0.9999639, 0, -0.008499601, 0, 1, 0, 0.008499601, 0, 0.9999639, -1.2015328, -0.59636116, 5.475169)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1055741867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8454466, -0.1362623, -0.2584753)
+
+[node name="HideSpot" parent="CSGBox3D" unique_id=1746481073 instance=ExtResource("4_gs8dr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5153115, -0.512832, -0.46858168)
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1364433887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1247473, 1.5034323, 7.8440447)
 
 [connection signal="pressed" from="TitleScreen/Button" to="." method="title_dismiss"]
