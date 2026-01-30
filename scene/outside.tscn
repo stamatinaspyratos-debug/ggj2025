@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_bspfs"]
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/player.tscn" id="2_arvm7"]
+[ext_resource type="PackedScene" uid="uid://xrjkajq1eqi6" path="res://assets/Backgrund_house1.glb" id="3_arvm7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(25, 0.455, 25)
@@ -21,7 +22,7 @@ player_scene = ExtResource("2_arvm7")
 in_title = true
 
 [node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3204099, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85835534, 0)
 use_collision = true
 mesh = SubResource("BoxMesh_ekwa0")
 
@@ -32,14 +33,6 @@ environment = SubResource("Environment_w6mri")
 transform = Transform3D(0.8704466, 0.09441025, -0.48312464, 0.30995506, 0.6573392, 0.68690103, 0.38242725, -0.7476577, 0.54291576, 0.34567875, 15.468761, -0.68418026)
 shadow_enabled = true
 shadow_blur = 0.5
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=718119152]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08300781, 0.31249332, -1.1943581)
-size = Vector3(7.3632813, 3.1635742, 1)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1337962626]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1109982, 0.31288362, 0.2910745)
-size = Vector3(1.2758789, 3.1635742, 2.6605835)
 
 [node name="TitleScreen" type="CanvasLayer" parent="." unique_id=587445091]
 
@@ -59,7 +52,10 @@ offset_bottom = 425.0
 theme = SubResource("Theme_bspfs")
 text = "Start"
 
-[node name="Camera3D" type="Camera3D" parent="TitleScreen" unique_id=1498984743]
+[node name="Backgrund_house1" parent="." unique_id=1319112423 instance=ExtResource("3_arvm7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.07595432, 3.6261253, -3.0137315)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1364433887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1247473, 1.5034323, 7.8440447)
 
 [connection signal="pressed" from="TitleScreen/Button" to="." method="title_dismiss"]

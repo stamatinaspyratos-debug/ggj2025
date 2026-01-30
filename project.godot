@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
 config/icon="uid://lyovofj4id71"
 
+[autoload]
+
+Game="*uid://cnu1o5a34deak"
+
 [display]
 
 window/stretch/mode="viewport"

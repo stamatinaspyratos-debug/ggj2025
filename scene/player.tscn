@@ -63,7 +63,6 @@ alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2fvbb")
 animation = &"1"
-autoplay = "1"
 
 [node name="SpriteMask" type="AnimatedSprite3D" parent="SpriteBase" unique_id=1901796756]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
@@ -72,7 +71,6 @@ billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_34jf3")
 animation = &"1"
-autoplay = "1"
 frame = 1
 frame_progress = 0.5360786
 script = ExtResource("4_ct4mp")
@@ -81,6 +79,3 @@ synced_properties = Array[String](["flip_h", "animation", "frame"])
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2024580783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051727295, -0.06452, -0.023864746)
 shape = SubResource("BoxShape3D_fvtld")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=2074833409]
-transform = Transform3D(1, 0, 0, 0, 0.99134433, 0.13128754, 0, -0.13128754, 0.99134433, 0, 1.3256854, 3.2307234)
