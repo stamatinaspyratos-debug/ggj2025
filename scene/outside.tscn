@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0imqwns5jagj"]
 
 [ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_bspfs"]
-[ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/player.tscn" id="2_arvm7"]
+[ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_arvm7"]
 [ext_resource type="PackedScene" uid="uid://xrjkajq1eqi6" path="res://assets/Backgrund_house1.glb" id="3_arvm7"]
 [ext_resource type="PackedScene" uid="uid://4gag1k0qgodw" path="res://scene/hide_spot.tscn" id="4_gs8dr"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_w3jsn"]

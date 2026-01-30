@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://0hvhunsovnt5"]
 
-[ext_resource type="Script" uid="uid://cubus2hnn6ped" path="res://code/player.gd" id="1_fvtld"]
+[ext_resource type="Script" uid="uid://cubus2hnn6ped" path="res://code/entity.gd" id="1_fvtld"]
 [ext_resource type="Texture2D" uid="uid://bti6yjg2notj4" path="res://assets/creature.png" id="2_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://k7a5itxficwy" path="res://assets/Walking.png" id="3_oh5ij"]
 [ext_resource type="Texture2D" uid="uid://bpvqpnmirsbm" path="res://assets/mask0.png" id="3_s4jxa"]
 [ext_resource type="Script" uid="uid://ck62gdmn3jbps" path="res://code/copy_parent.gd" id="4_ct4mp"]
-[ext_resource type="Texture2D" uid="uid://lyovofj4id71" path="res://assets/icon.svg" id="5_s4jxa"]
+[ext_resource type="Texture2D" uid="uid://nrm5c5i38cpa" path="res://assets/mask_indicator.png" id="6_do3l0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hp4bs"]
 atlas = ExtResource("2_ct4mp")
@@ -118,22 +118,11 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ihjo1"]
-atlas = ExtResource("3_s4jxa")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dk1vr"]
-atlas = ExtResource("3_s4jxa")
-region = Rect2(24, 0, 24, 24)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_34jf3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ihjo1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dk1vr")
+"texture": ExtResource("3_s4jxa")
 }],
 "loop": true,
 "name": &"1",
@@ -145,6 +134,43 @@ size = Vector3(0.7328186, 0.77371216, 0.1875534)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ct4mp"]
 size = Vector3(2.8099365, 1, 2.6801758)
+
+[sub_resource type="Animation" id="Animation_22bi2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Prompt:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_do3l0"]
+resource_name = "mask_indicator"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Prompt:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.36602116, 1.9318739, 0.8122519),
+"update": 0,
+"values": [Vector2(0, 100), Vector2(0, 0), Vector2(0, 100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_22bi2"]
+_data = {
+&"RESET": SubResource("Animation_22bi2"),
+&"mask_indicator": SubResource("Animation_do3l0")
+}
 
 [node name="Entity" type="CharacterBody3D" unique_id=1737357155]
 script = ExtResource("1_fvtld")
@@ -158,12 +184,10 @@ shaded = true
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2fvbb")
-animation = &"Human"
-frame = 9
-frame_progress = 0.90326047
+animation = &"Cat"
 
 [node name="SpriteMask" type="AnimatedSprite3D" parent="SpriteBase" unique_id=1901796756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2789332, 0.1271253, 0.15173793)
 pixel_size = 0.05
 billboard = 2
 texture_filter = 0
@@ -185,9 +209,14 @@ shape = SubResource("BoxShape3D_ct4mp")
 [node name="Prompt" type="Sprite3D" parent="." unique_id=1790289804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12528324, 0.8922935, -0.017171144)
 visible = false
-pixel_size = 0.003
+pixel_size = 0.002
 billboard = 2
-texture = ExtResource("5_s4jxa")
+texture = ExtResource("6_do3l0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2109228369]
+libraries/ = SubResource("AnimationLibrary_22bi2")
+autoplay = &"mask_indicator"
+playback_auto_capture_transition_type = 4
 
 [connection signal="body_entered" from="AmbushArea" to="." method="_on_ambush_area_body_entered"]
 [connection signal="body_exited" from="AmbushArea" to="." method="_on_ambush_area_body_exited"]

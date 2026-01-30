@@ -13,7 +13,11 @@ var can_jump:= false
 
 var sprite_offset: Dictionary = {
 	"Cat": Vector3(0,0,0),
-	"Human": Vector3(0,0.4,0),
+	"Human": Vector3(0.3,0.4,0),
+}
+var mask_offset: Dictionary = {
+	"Cat": Vector3(0.28,0.13,0),
+	"Human": Vector3(0,0.6,0),
 }
 @export var patrol:= false
 @export_enum("Idle", "Walk", "Stop") var state = "Idle"
@@ -36,9 +40,11 @@ func _physics_process(delta: float) -> void:
 		if not Game.Player == self:
 			Game.Player.masked = false
 			Game.Player = self
+			Game.Player.direction = Vector3.ZERO
 			state = "Idle"
 			Game.Camera.target = self
 			prompt.hide()
+			direction = Vector3.ZERO
 		if state != "Stop":
 			control_walk()
 			if can_jump:
@@ -73,6 +79,10 @@ func control_jump():
 func animate():
 	sprite_mask.visible = masked
 	sprite_base.animation = sprite
+	sprite_mask.position = mask_offset.get(sprite)
+	if sprite_mask.flip_h:
+		sprite_mask.position.x *= -1 
+	sprite_mask.position.z = 0.1 
 	sprite_base.position = sprite_offset.get(sprite)
 	match state:
 		"Walk":
@@ -93,6 +103,7 @@ func patrol_process():
 func _on_ambush_area_body_entered(body: Node3D) -> void:
 	if not masked and body == Game.Player:
 		prompt.show()
+		prompt.position = mask_offset.get(sprite) + Vector3(0,1,0)
 
 func _on_ambush_area_body_exited(body: Node3D) -> void:
 	if body == Game.Player:
