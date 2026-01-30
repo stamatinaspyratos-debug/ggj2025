@@ -24,6 +24,14 @@ action = &"ui_accept"
 [sub_resource type="Shortcut" id="Shortcut_w3jsn"]
 events = [SubResource("InputEventAction_gs8dr")]
 
+[sub_resource type="Curve3D" id="Curve3D_w3jsn"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.053306103, -0.24640405, -0.19535351, 0, 0, 0, 0, 0, 0, 1.9731333, -0.013759255, -0.085861444, 0, 0, 0, 0, 0, 0, 2.7055867, -0.4601859, 0.25430202, 0, 0, 0, 0, 0, 0, -1.816719, -0.47970682, -0.12335658, 0, 0, 0, 0, 0, 0, -0.881865, -0.3658706, -1.7204123),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="Outside" type="Node3D" unique_id=33148205]
 script = ExtResource("1_bspfs")
 player_scene = ExtResource("2_arvm7")
@@ -65,16 +73,27 @@ text = "Start"
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.07595432, 3.6261253, -3.0137315)
 
 [node name="Backgrund_house1" parent="Backgrund_house1" unique_id=26096428 instance=ExtResource("3_arvm7")]
-transform = Transform3D(0.9999639, 0, -0.008499601, 0, 1, 0, 0.008499601, 0, 0.9999639, -1.2015328, -0.59636116, 5.475169)
+transform = Transform3D(0.9999639, 0, -0.008499601, 0, 1, 0, 0.008499601, 0, 0.9999639, -1.2015324, -0.59636116, 5.679114)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1055741867]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8454466, -0.1362623, -0.2584753)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8454466, -0.1362623, -0.072695255)
+use_collision = true
 
 [node name="HideSpot" parent="CSGBox3D" unique_id=1746481073 instance=ExtResource("4_gs8dr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5153115, -0.512832, -0.46858168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9736831, -0.512832, -0.49329948)
+collision_priority = 1.025
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1364433887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1247473, 1.5034323, 7.8440447)
+projection = 1
+current = true
+size = 4.5
 script = ExtResource("5_w3jsn")
+
+[node name="Entity" parent="." unique_id=1737357155 instance=ExtResource("2_arvm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)
+
+[node name="Path3D" type="Path3D" parent="Entity" unique_id=253810792]
+curve = SubResource("Curve3D_w3jsn")
 
 [connection signal="pressed" from="TitleScreen/Button" to="." method="title_dismiss"]

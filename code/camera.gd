@@ -4,7 +4,7 @@ extends Node3D
 @export var follow_smooth := 12.0
 
 # κοντά + side view
-@export var normal_offset := Vector3(0.0, 1.5, 2.2)
+@export var normal_offset := Vector3(0.0, 1.8, 2.4)
 # angle όταν hidden (από “άλλη” πλευρά: X αρνητικό)
 @export var hide_offset := Vector3(-1.2, 1.6, 2.0)
 
@@ -12,6 +12,7 @@ extends Node3D
 
 var player: Node
 var target: Node3D
+var active: bool = false
 
 func init() -> void:
 	player = Game.Player
@@ -26,7 +27,7 @@ func _on_control_target_changed(t: Node3D) -> void:
 	target = t
 
 func _process(delta: float) -> void:
-	if target == null:
+	if target == null or not active:
 		return
 
 	# Αν ο Player είναι hidden, παίρνουμε angle (ακόμα κι αν οδηγείς NPC)
