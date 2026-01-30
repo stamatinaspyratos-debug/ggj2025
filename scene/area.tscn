@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://0imqwns5jagj"]
+
+[ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_w6mri"]
+[ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/player.tscn" id="2_gwvtk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
+size = Vector3(25, 0.455, 25)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w6mri"]
+bottom_radius = 1.471
+height = 2.971
+
+[sub_resource type="Environment" id="Environment_w6mri"]
+background_mode = 1
+background_color = Color(0.36932606, 0.35426348, 0.40127409, 1)
+background_energy_multiplier = 2.0
+ambient_light_color = Color(0.88742435, 0.87268245, 0.8849515, 1)
+
+[node name="Area" type="Node3D" unique_id=33148205]
+script = ExtResource("1_w6mri")
+player_scene = ExtResource("2_gwvtk")
+
+[node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3204099, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_ekwa0")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=155265995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.170672, 0.24010253, 3.6103935)
+use_collision = true
+mesh = SubResource("CylinderMesh_w6mri")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1495249303]
+environment = SubResource("Environment_w6mri")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1904993359]
+transform = Transform3D(0.8704466, 0.09441025, -0.48312464, 0.30995506, 0.6573392, 0.68690103, 0.38242725, -0.7476577, 0.54291576, 0.34567875, 15.468761, -0.68418026)
+shadow_enabled = true
+shadow_blur = 0.5
