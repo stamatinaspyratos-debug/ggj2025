@@ -99,6 +99,8 @@ transform = Transform3D(0.22127837, -0.11445003, -0.9684713, -1.1175869e-08, 0.9
 
 [node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)
+SPEED = 4.0
+can_jump = true
 sprite = "Cat"
 patrol = true
 path = NodePath("../Path3D")

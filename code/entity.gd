@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
 
-const SPEED = 3.0
-const JUMP_VELOCITY = 8
+@export var SPEED = 3.0
+@export var JUMP_VELOCITY = 8
 @onready var sprite_mask: AnimatedSprite3D = $SpriteBase/SpriteMask
 @onready var sprite_base: AnimatedSprite3D = $SpriteBase
 @onready var prompt:= $Prompt
 var direction: Vector3
 var masked:= false
-var can_jump:= false
+@export var can_jump:= false
 @export var sprite:= "Cat"
 
 var sprite_offset: Dictionary = {
@@ -39,8 +39,9 @@ func _physics_process(delta: float) -> void:
 	if masked:
 		if not Game.Player == self:
 			Game.Player.masked = false
-			Game.Player = self
 			Game.Player.direction = Vector3.ZERO
+			Game.Player.state = "Idle"
+			Game.Player = self
 			state = "Idle"
 			Game.Camera.target = self
 			prompt.hide()
