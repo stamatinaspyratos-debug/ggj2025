@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/player.tscn" id="2_arvm7"]
 [ext_resource type="PackedScene" uid="uid://xrjkajq1eqi6" path="res://assets/Backgrund_house1.glb" id="3_arvm7"]
 [ext_resource type="PackedScene" uid="uid://4gag1k0qgodw" path="res://scene/hide_spot.tscn" id="4_gs8dr"]
+[ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_w3jsn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(25, 0.455, 25)
@@ -74,5 +75,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5153115, -0.512832, -0.468
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1364433887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1247473, 1.5034323, 7.8440447)
+script = ExtResource("5_w3jsn")
 
 [connection signal="pressed" from="TitleScreen/Button" to="." method="title_dismiss"]
