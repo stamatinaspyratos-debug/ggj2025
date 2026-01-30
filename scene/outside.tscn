@@ -90,13 +90,16 @@ current = true
 size = 10.0
 script = ExtResource("5_w3jsn")
 
-[node name="Entity" parent="." unique_id=1737357155 instance=ExtResource("2_arvm7")]
+[node name="Path3D" type="Path3D" parent="." unique_id=253810792]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)
-
-[node name="Path3D" type="Path3D" parent="Entity" unique_id=253810792]
 curve = SubResource("Curve3D_w3jsn")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Entity/Path3D" unique_id=471239151]
-transform = Transform3D(0.22127837, -0.1144501, -0.9684713, -1.1175869e-08, 0.9930888, -0.11735942, 0.97521055, 0.025969103, 0.21974921, 0.053306103, -0.24640405, -0.19535351)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=471239151]
+transform = Transform3D(0.22127837, -0.114450045, -0.9684713, -1.1175869e-08, 0.9930883, -0.11735942, 0.97521055, 0.02596909, 0.21974921, 0.053306103, -0.24640405, -0.19535351)
+
+[node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path") instance=ExtResource("2_arvm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)
+patrol = true
+path = NodePath("../Path3D")
 
 [connection signal="pressed" from="TitleScreen/Button" to="." method="title_dismiss"]

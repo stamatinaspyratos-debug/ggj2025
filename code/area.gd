@@ -29,6 +29,7 @@ func title_dismiss():
 func add_player():
 	var player = player_scene.instantiate()
 	add_child(player)
+	if in_title: Game.Player.state = "Stop"
 	player.name = "Player"
 	player.masked = true
 	Game.Camera.init()
