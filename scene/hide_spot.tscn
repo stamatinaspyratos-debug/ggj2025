@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://bogfw7tiorcev" path="res://code/hide_spot.gd" id="1_m238d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_61kb7"]
-size = Vector3(2.019043, 1, 1)
+size = Vector3(1.155632, 0.54455566, 0.61816406)
 
 [node name="HideSpot" type="Area3D" unique_id=1746481073]
 script = ExtResource("1_m238d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1332018941]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.50283146, 0.5164859, 0.99727774)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.3119135, 0.28876376, 0.56557226)
 shape = SubResource("BoxShape3D_61kb7")
+debug_color = Color(0.8352941, 0.043137256, 0.8, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

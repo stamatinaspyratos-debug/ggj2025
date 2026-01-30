@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://t7m6r8a3aq1l"]
+
+[ext_resource type="PackedScene" uid="uid://4gag1k0qgodw" path="res://scene/hide_spot.tscn" id="1_bx54w"]
+[ext_resource type="PackedScene" uid="uid://dqbolvsnrmqqd" path="res://assets/BOXwTexturefinalo.glb" id="2_v2san"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bx54w"]
+size = Vector3(1.1450195, 1.1674805, 1.1665039)
+
+[node name="CSGBox3D" type="StaticBody3D" unique_id=1406562557]
+
+[node name="HideSpot" parent="." unique_id=1746481073 instance=ExtResource("1_bx54w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9736831, -0.5714905, -0.5915216)
+collision_priority = 1.025
+
+[node name="BOXwTexturefinalo" parent="." unique_id=500424069 instance=ExtResource("2_v2san")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.2960162, -3.2657819, -14.498947)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=924644410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038330078, -0.051513672, -0.0041503906)
+shape = SubResource("BoxShape3D_bx54w")

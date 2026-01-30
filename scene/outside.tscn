@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_bspfs"]
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_arvm7"]
 [ext_resource type="PackedScene" uid="uid://xrjkajq1eqi6" path="res://assets/Backgrund_house1.glb" id="3_arvm7"]
-[ext_resource type="PackedScene" uid="uid://4gag1k0qgodw" path="res://scene/hide_spot.tscn" id="4_gs8dr"]
+[ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="4_asp05"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_w3jsn"]
+[ext_resource type="PackedScene" uid="uid://ch0yaeg6qmnfl" path="res://assets/Backgrund_house2.glb" id="7_dfs0n"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
-size = Vector3(25, 0.455, 25)
+size = Vector3(25, 0.455, 13.61)
 
 [sub_resource type="Environment" id="Environment_w6mri"]
 background_mode = 1
@@ -32,13 +33,21 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve3D" id="Curve3D_dfs0n"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8.685983, -0.31927156, 0.97473425, 0, 0, 0, 0, 0, 0, -4.2577744, -0.4109273, 1.0484036, 0, 0, 0, 0, 0, 0, -3.8201017, -0.40034753, -0.8383615, 0, 0, 0, 0, 0, 0, 1.2213469, -0.60044265, 2.381006, 0, 0, 0, 0, 0, 0, -10.804917, 0.37987196, 2.3964322),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="Outside" type="Node3D" unique_id=33148205]
 script = ExtResource("1_bspfs")
 player_scene = ExtResource("2_arvm7")
 in_title = true
 
 [node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85835534, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85835534, -3.8008528)
 use_collision = true
 mesh = SubResource("BoxMesh_ekwa0")
 
@@ -72,16 +81,8 @@ text = "Start"
 [node name="Backgrund_house1" parent="." unique_id=1319112423 instance=ExtResource("3_arvm7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.07595432, 3.6261253, -3.0137315)
 
-[node name="Backgrund_house1" parent="Backgrund_house1" unique_id=26096428 instance=ExtResource("3_arvm7")]
-transform = Transform3D(0.9999639, 0, -0.008499601, 0, 1, 0, 0.008499601, 0, 0.9999639, -1.2015324, -0.59636116, 5.679114)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1055741867]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8454466, -0.1362623, -0.072695255)
-use_collision = true
-
-[node name="HideSpot" parent="CSGBox3D" unique_id=1746481073 instance=ExtResource("4_gs8dr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9736831, -0.512832, -0.49329948)
-collision_priority = 1.025
+[node name="CSGBox3D" parent="." unique_id=1725162128 instance=ExtResource("4_asp05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24774, -0.1362623, -0.072695255)
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1364433887]
 transform = Transform3D(1, 0, 0, 0, 0.99167794, 0.1287437, 0, -0.1287437, 0.99167794, -3.1247473, 4.530218, 7.8440447)
@@ -97,12 +98,27 @@ curve = SubResource("Curve3D_w3jsn")
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=471239151]
 transform = Transform3D(0.22127837, -0.11445003, -0.9684713, -1.1175869e-08, 0.9930882, -0.11735942, 0.97521055, 0.025969088, 0.21974921, 0.053306103, -0.24640405, -0.19535351)
 
+[node name="Path3D2" type="Path3D" parent="." unique_id=1997705880]
+transform = Transform3D(0.99953574, -0.021444758, 0.021644363, 0.021321645, 0.99975526, 0.005903136, -0.021765651, -0.0054389173, 0.9997483, 10.222002, -0.030855298, -0.29460573)
+curve = SubResource("Curve3D_dfs0n")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
+transform = Transform3D(-0.01663389, 0.020687811, -0.9996362, -9.3131103e-10, 0.99977696, 0.020690624, 0.99984914, 0.00034417163, -0.016630348, -8.685983, -0.31927156, 0.97473425)
+
 [node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)
-SPEED = 4.0
 can_jump = true
 sprite = "Cat"
 patrol = true
 path = NodePath("../Path3D")
+
+[node name="Guard" parent="." unique_id=547366311 node_paths=PackedStringArray("path") instance=ExtResource("2_arvm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.130682, -0.36932385, -0.14123726)
+can_catch_player = true
+patrol = true
+path = NodePath("../Path3D2")
+
+[node name="Backgrund_house2" parent="." unique_id=301160887 instance=ExtResource("7_dfs0n")]
+transform = Transform3D(0.029334823, 0, -0.99956965, 0, 1, 0, 0.99956965, 0, 0.029334823, 3.014259, 4.4197006, -5.242292)
 
 [connection signal="pressed" from="TitleScreen/Button" to="." method="title_dismiss"]

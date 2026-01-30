@@ -133,7 +133,10 @@ animations = [{
 size = Vector3(0.7328186, 0.77371216, 0.1875534)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ct4mp"]
-size = Vector3(2.8099365, 1, 2.6801758)
+size = Vector3(3.457563, 1, 5.5357265)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_do3l0"]
+size = Vector3(4.799286, 1.418457, 1.7984009)
 
 [sub_resource type="Animation" id="Animation_22bi2"]
 length = 0.001
@@ -204,8 +207,16 @@ shape = SubResource("BoxShape3D_fvtld")
 [node name="AmbushArea" type="Area3D" parent="." unique_id=1551020699]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AmbushArea" unique_id=1477769350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044946104, 0.014882684, -0.025229216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119984, 0.014882684, -0.07911658)
 shape = SubResource("BoxShape3D_ct4mp")
+
+[node name="DetectArea" type="Area3D" parent="." unique_id=1428388634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4639621, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea" unique_id=1610235816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9628725, 0.2241112, 0.017874599)
+shape = SubResource("BoxShape3D_do3l0")
+debug_color = Color(0, 0.6, 0.21960784, 0.41960785)
 
 [node name="Prompt" type="Sprite3D" parent="." unique_id=1790289804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12528324, 0.8922935, -0.017171144)
@@ -221,3 +232,4 @@ playback_auto_capture_transition_type = 4
 
 [connection signal="body_entered" from="AmbushArea" to="." method="_on_ambush_area_body_entered"]
 [connection signal="body_exited" from="AmbushArea" to="." method="_on_ambush_area_body_exited"]
+[connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]

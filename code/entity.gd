@@ -1,13 +1,15 @@
 extends CharacterBody3D
 
 
-@export var SPEED = 3.0
+@export var SPEED:= 3.0
 @export var JUMP_VELOCITY = 8
 @onready var sprite_mask: AnimatedSprite3D = $SpriteBase/SpriteMask
 @onready var sprite_base: AnimatedSprite3D = $SpriteBase
+@onready var detect_area: Area3D = $DetectArea
 @onready var prompt:= $Prompt
 var direction: Vector3
 var masked:= false
+@export var can_catch_player:= false
 @export var can_jump:= false
 @export var sprite:= "Cat"
 
@@ -38,9 +40,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	if masked:
 		if not Game.Player == self:
-			Game.Player.masked = false
-			Game.Player.direction = Vector3.ZERO
-			Game.Player.state = "Idle"
+			Game.Player.unmask()
 			Game.Player = self
 			state = "Idle"
 			Game.Camera.target = self
@@ -81,15 +81,18 @@ func animate():
 	sprite_mask.visible = masked
 	sprite_base.animation = sprite
 	sprite_mask.position = mask_offset.get(sprite)
-	if sprite_mask.flip_h:
+	if sprite_base.flip_h:
 		sprite_mask.position.x *= -1 
+		detect_area.position.x = -abs(detect_area.position.x)
+	else:
+		detect_area.position.x = abs(detect_area.position.x)
 	sprite_mask.position.z = 0.1 
 	sprite_base.position = sprite_offset.get(sprite)
 	match state:
 		"Walk":
 			sprite_base.play()
 			sprite_base.flip_h = direction.x < 0
-		"Idle":
+		"Idle", "Stop":
 			sprite_base.stop()
 			sprite_base.frame = 0
 
@@ -97,9 +100,9 @@ func limit_position():
 	position.z = clamp(position.z, -1, 3)
 
 func patrol_process():
-	if is_instance_valid(path_follow):
+	if is_instance_valid(path_follow) and not state == "Stop":
 		direction = to_local(path_follow.global_position)
-		path_follow.progress += 0.1
+		path_follow.progress += 0.01 * SPEED
 
 func _on_ambush_area_body_entered(body: Node3D) -> void:
 	if not masked and body == Game.Player:
@@ -109,3 +112,15 @@ func _on_ambush_area_body_entered(body: Node3D) -> void:
 func _on_ambush_area_body_exited(body: Node3D) -> void:
 	if body == Game.Player:
 		prompt.hide()
+
+func _on_detect_area_body_entered(body: Node3D) -> void:
+	if can_catch_player and not masked and body == Game.Player and not Game.hidden and not state == "Stop":
+		Game.game_over()
+
+func unmask():
+	masked = false
+	direction = Vector3.ZERO
+	state = "Stop"
+	await get_tree().create_timer(3).timeout
+	state = "Idle"
+	
