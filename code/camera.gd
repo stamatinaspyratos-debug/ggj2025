@@ -10,15 +10,13 @@ extends Node3D
 
 @export var look_at_offset := Vector3(0.0, 1.2, 0.0)
 
-var player: Node
 var target: Node3D
 var active: bool = false
 
 func init() -> void:
-	player = Game.Player
 
-	# αρχικός στόχος: ο Player
-	target = player as Node3D
+	# αρχικός στόχος: ο Game.Player
+	target = Game.Player as Node3D
 
 func _on_hidden_changed(v: bool) -> void:
 	Game.hidden = v
@@ -30,9 +28,9 @@ func _process(delta: float) -> void:
 	if target == null or not active:
 		return
 
-	# Αν ο Player είναι hidden, παίρνουμε angle (ακόμα κι αν οδηγείς NPC)
-	# Αν θες το angle να ισχύει ΜΟΝΟ όταν target==Player, πες μου.
-	var offset := hide_offset if (Game.hidden and target == player) else normal_offset
+	# Αν ο Game.Player είναι hidden, παίρνουμε angle (ακόμα κι αν οδηγείς NPC)
+	# Αν θες το angle να ισχύει ΜΟΝΟ όταν target==Game.Player, πες μου.
+	var offset := hide_offset if (Game.hidden and target == Game.Player) else normal_offset
 
 	var target_pos := target.global_position + offset
 	global_position = global_position.lerp(target_pos, 1.0 - exp(-follow_smooth * delta))

@@ -27,7 +27,7 @@ events = [SubResource("InputEventAction_gs8dr")]
 [sub_resource type="Curve3D" id="Curve3D_w3jsn"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.053306103, -0.24640405, -0.19535351, 0, 0, 0, 0, 0, 0, 1.9731333, -0.013759255, -0.085861444, 0, 0, 0, 0, 0, 0, 2.7055867, -0.4601859, 0.25430202, 0, 0, 0, 0, 0, 0, -1.816719, -0.47970682, -0.12335658, 0, 0, 0, 0, 0, 0, -0.881865, -0.3658706, -1.7204123),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.053306103, -0.24640405, -0.19535351, 0, 0, 0, 0, 0, 0, 1.9731333, -0.013759255, -0.6309686, 0, 0, 0, 0, 0, 0, 2.7055867, -0.4601859, 0.25430202, 0, 0, 0, 0, 0, 0, -1.816719, -0.47970682, -0.12335658, 0, 0, 0, 0, 0, 0, -0.881865, -0.3658706, -1.7204123),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -84,10 +84,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9736831, -0.512832, -0.493
 collision_priority = 1.025
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1364433887]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1247473, 1.5034323, 7.8440447)
+transform = Transform3D(1, 0, 0, 0, 0.99167794, 0.1287437, 0, -0.1287437, 0.99167794, -3.1247473, 4.530218, 7.8440447)
 projection = 1
 current = true
-size = 4.5
+size = 10.0
 script = ExtResource("5_w3jsn")
 
 [node name="Entity" parent="." unique_id=1737357155 instance=ExtResource("2_arvm7")]
@@ -95,5 +95,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.
 
 [node name="Path3D" type="Path3D" parent="Entity" unique_id=253810792]
 curve = SubResource("Curve3D_w3jsn")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Entity/Path3D" unique_id=471239151]
+transform = Transform3D(0.22127837, -0.1144501, -0.9684713, -1.1175869e-08, 0.9930888, -0.11735942, 0.97521055, 0.025969103, 0.21974921, 0.053306103, -0.24640405, -0.19535351)
 
 [connection signal="pressed" from="TitleScreen/Button" to="." method="title_dismiss"]

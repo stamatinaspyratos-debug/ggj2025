@@ -17,10 +17,11 @@ func _ready() -> void:
 
 func title_dismiss():
 	$TitleScreen.hide()
-	var t = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	var t = create_tween().set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	t.tween_property(
-		Game.Camera, "position", Game.Player.position + Vector3(0, 1, 3), 1
+		Game.Camera, "position", Vector3(Game.Player.position.x, 2, 3), 1
 	)
+	t.tween_property(Game.Camera, "size", 5, 1)
 	await t.finished
 	Game.Player.state = "Idle"
 	Game.Camera.active = true
@@ -28,5 +29,6 @@ func title_dismiss():
 func add_player():
 	var player = player_scene.instantiate()
 	add_child(player)
+	player.name = "Player"
 	player.masked = true
 	Game.Camera.init()
