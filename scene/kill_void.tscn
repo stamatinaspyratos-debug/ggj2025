@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://budhul7750421"]
+
+[ext_resource type="Script" uid="uid://bt8cx38jh7387" path="res://code/void.gd" id="1_qc53c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g6o6e"]
+size = Vector3(11.060669, 1, 11.317963)
+
+[node name="KillVoid" type="Area3D" unique_id=1140546885]
+script = ExtResource("1_qc53c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1918519443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6108999, 0, 0.82624817)
+shape = SubResource("BoxShape3D_g6o6e")
+debug_color = Color(0.84676725, 0, 0.3673457, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

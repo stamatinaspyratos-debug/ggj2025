@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://0hvhunsovnt5"]
 
 [ext_resource type="Script" uid="uid://cubus2hnn6ped" path="res://code/entity.gd" id="1_fvtld"]
+[ext_resource type="Texture2D" uid="uid://dktwk7bj57phm" path="res://assets/prod.png" id="2_22bi2"]
 [ext_resource type="Texture2D" uid="uid://bti6yjg2notj4" path="res://assets/creature.png" id="2_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://k7a5itxficwy" path="res://assets/Walking.png" id="3_oh5ij"]
 [ext_resource type="Texture2D" uid="uid://bpvqpnmirsbm" path="res://assets/mask0.png" id="3_s4jxa"]
 [ext_resource type="Script" uid="uid://ck62gdmn3jbps" path="res://code/copy_parent.gd" id="4_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://0oyo1x6op6de" path="res://assets/rat.png" id="5_ocx2q"]
 [ext_resource type="Texture2D" uid="uid://nrm5c5i38cpa" path="res://assets/mask_indicator.png" id="6_do3l0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hp4bs"]
@@ -63,6 +65,14 @@ region = Rect2(64, 0, 64, 35)
 atlas = ExtResource("3_oh5ij")
 region = Rect2(128, 0, 64, 35)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m15l1"]
+atlas = ExtResource("5_ocx2q")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybk2y"]
+atlas = ExtResource("5_ocx2q")
+region = Rect2(24, 0, 24, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_2fvbb"]
 animations = [{
 "frames": [{
@@ -116,6 +126,25 @@ animations = [{
 "loop": true,
 "name": &"Human",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_22bi2")
+}],
+"loop": true,
+"name": &"Protag",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m15l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybk2y")
+}],
+"loop": true,
+"name": &"Rat",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_34jf3"]
@@ -133,10 +162,11 @@ animations = [{
 size = Vector3(0.54668045, 0.77371216, 0.1875534)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ct4mp"]
-size = Vector3(3.457563, 1.0700684, 5.5357265)
+size = Vector3(3.457563, 2.548706, 5.5357265)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_do3l0"]
-size = Vector3(3.3458385, 1.418457, 1.7950592)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_do3l0"]
+radius = 1.5
+height = 3.4760265
 
 [sub_resource type="Animation" id="Animation_22bi2"]
 length = 0.001
@@ -182,16 +212,16 @@ can_jump = true
 sprite = "Human"
 
 [node name="SpriteBase" type="AnimatedSprite3D" parent="." unique_id=286295862]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 pixel_size = 0.05
 billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2fvbb")
-animation = &"Cat"
+animation = &"Rat"
+frame_progress = 0.68931186
 
 [node name="SpriteMask" type="AnimatedSprite3D" parent="SpriteBase" unique_id=1901796756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2789332, 0.1271253, 0.15173793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30675992, -0.28167224, 0.15821838)
 pixel_size = 0.05
 billboard = 2
 texture_filter = 0
@@ -208,16 +238,25 @@ shape = SubResource("BoxShape3D_fvtld")
 [node name="AmbushArea" type="Area3D" parent="." unique_id=1551020699]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AmbushArea" unique_id=1477769350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119984, -0.020151496, -0.07911658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119984, 0.71916735, -0.07911658)
 shape = SubResource("BoxShape3D_ct4mp")
 
 [node name="DetectArea" type="Area3D" parent="." unique_id=1428388634]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4639621, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2058618, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea" unique_id=1610235816]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23614883, 0.2241112, 0.00462234)
-shape = SubResource("BoxShape3D_do3l0")
+transform = Transform3D(-0.02565357, -0.9996709, 0, 0.9996709, -0.02565357, 0, 0, 0, 1, 1.5604093, 0.22472435, 0.00462234)
+shape = SubResource("CapsuleShape3D_do3l0")
 debug_color = Color(0, 0.6, 0.21960784, 0.41960785)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="DetectArea" unique_id=2060730346]
+transform = Transform3D(-5.9604638e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604638e-08, -0.3948205, 0, -0.229848)
+light_energy = 5.0
+light_size = 1.0
+spot_range = 4.5597334
+spot_attenuation = -2.0
+spot_angle = 23.820568
+spot_angle_attenuation = 0.5
 
 [node name="Prompt" type="Sprite3D" parent="." unique_id=1790289804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12528324, 0.8922935, -0.017171144)

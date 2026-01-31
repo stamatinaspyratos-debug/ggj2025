@@ -13,14 +13,21 @@ var masked:= false
 @export var can_catch_player:= false
 @export var can_jump:= false
 @export var sprite:= "Cat"
+@export var has_flashlight:= false
+@export var flying:= false
+@export var undetectable:= false
 
 var sprite_offset: Dictionary = {
 	"Cat": Vector3(0,0,0),
 	"Human": Vector3(0,0.4,0),
+	"Rat": Vector3(0,0,0),
+	"Protag": Vector3(0,2.68,0),
 }
 var mask_offset: Dictionary = {
 	"Cat": Vector3(0.28,0.13,0),
 	"Human": Vector3(0,0.6,0),
+	"Protag": Vector3(0,2.68,0),
+	"Rat": Vector3(0.3,-0.28,0.16)
 }
 @export var patrol:= false
 @export_enum("Idle", "Walk", "Stop") var state = "Idle"
@@ -29,6 +36,7 @@ var mask_offset: Dictionary = {
 func _ready() -> void:
 	Game.Player = self
 	$Prompt.hide()
+	$DetectArea/SpotLight3D.visible = has_flashlight
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -74,7 +82,7 @@ func control_walk():
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 func control_jump():
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or flying):
 		velocity.y = JUMP_VELOCITY
 
 func animate():
@@ -83,9 +91,9 @@ func animate():
 	sprite_mask.position = mask_offset.get(sprite)
 	if sprite_base.flip_h:
 		sprite_mask.position.x *= -1 
-		detect_area.position.x = -abs(detect_area.position.x)
+		detect_area.rotation_degrees.y = 180
 	else:
-		detect_area.position.x = abs(detect_area.position.x)
+		detect_area.rotation.y = 0
 	sprite_mask.position.z = 0.1 
 	sprite_base.position = sprite_offset.get(sprite)
 	match state:
@@ -98,6 +106,7 @@ func animate():
 
 func limit_position():
 	position.z = clamp(position.z, -1, 3)
+	if position.y < -20: Game.game_over_fall()
 
 func patrol_process():
 	if is_instance_valid(path_follow) and not state == "Stop":
@@ -118,13 +127,14 @@ func _on_ambush_area_body_exited(body: Node3D) -> void:
 		prompt.hide()
 
 func _on_detect_area_body_entered(body: Node3D) -> void:
-	if can_catch_player and not masked and body == Game.Player and not Game.hidden and not state == "Stop":
+	if can_catch_player and not masked and body == Game.Player and not Game.hidden and not state == "Stop" and not Game.Player.undetectable:
 		Game.Player.state = "Stop"
 		state = "Stop"
 		Game.Camera.active = false
 		velocity.y = JUMP_VELOCITY
-		var t = create_tween().set_ease(Tween.EASE_OUT)
+		var t = create_tween().set_ease(Tween.EASE_OUT).set_parallel().set_trans(Tween.TRANS_CUBIC)
 		t.tween_property(Game.Camera, "position:x", self.position.x, 0.3)
+		t.tween_property(Game.Camera, "position:y", self.position.y+2.5, 0.3)
 		await t.finished
 		await get_tree().create_timer(0.5).timeout
 		Game.game_over()
@@ -137,4 +147,6 @@ func unmask():
 	state = "Stop"
 	await get_tree().create_timer(3).timeout
 	state = "Idle"
+	if Game.Player in $AmbushArea.get_overlapping_bodies() and not masked:
+		prompt.show()
 	

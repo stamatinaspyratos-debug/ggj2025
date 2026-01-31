@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://t7m6r8a3aq1l"]
 
 [ext_resource type="PackedScene" uid="uid://4gag1k0qgodw" path="res://scene/hide_spot.tscn" id="1_bx54w"]
-[ext_resource type="PackedScene" uid="uid://dqbolvsnrmqqd" path="res://assets/BOXwTexturefinalo.glb" id="2_v2san"]
+[ext_resource type="PackedScene" uid="uid://bilgecq2r73g5" path="res://assets/box4UV.glb" id="2_bx54w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bx54w"]
 size = Vector3(1.1450195, 1.1674805, 1.1665039)
@@ -9,12 +9,12 @@ size = Vector3(1.1450195, 1.1674805, 1.1665039)
 [node name="HidingBox" type="StaticBody3D" unique_id=1406562557]
 
 [node name="HideSpot2" parent="." unique_id=2140753647 instance=ExtResource("1_bx54w")]
-transform = Transform3D(-0.9961947, 0, 0.08715564, 0, 1, 0, -0.08715564, 0, -0.9961947, -0.54424, -0.5714905, 0.5752357)
+transform = Transform3D(-0.999389, 0, -0.034951933, 0, 1, 0, 0.034951933, 0, -0.999389, -0.54424, -0.5714905, 0.5752357)
 collision_priority = 1.025
-
-[node name="BOXwTexturefinalo" parent="." unique_id=500424069 instance=ExtResource("2_v2san")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.2960162, -3.2657819, -14.498947)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=924644410]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038330078, -0.051513672, -0.0041503906)
 shape = SubResource("BoxShape3D_bx54w")
+
+[node name="box4UV" parent="." unique_id=346904855 instance=ExtResource("2_bx54w")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 6.206989, -0.43622053, 0.6718888)

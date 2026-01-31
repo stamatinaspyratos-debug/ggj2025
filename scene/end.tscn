@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bdmdllxy5vvhg"]
+
+[ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_6x2ct"]
+[ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_54bel"]
+[ext_resource type="Texture2D" uid="uid://dd6k1qiuxxopf" path="res://assets/jester.png" id="4_xdgq8"]
+[ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="4_y3mvi"]
+[ext_resource type="Script" uid="uid://ckpg3cmqi7cgt" path="res://code/ending.gd" id="5_osy0p"]
+
+[sub_resource type="Environment" id="Environment_xuqua"]
+background_mode = 1
+background_color = Color(0.0724, 0.068, 0.08, 1)
+background_energy_multiplier = 2.0
+ambient_light_color = Color(0.88742435, 0.87268245, 0.8849515, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xdgq8"]
+size = Vector3(0.6402588, 2.7026367, 4.5630493)
+
+[node name="Outside" type="Node3D" unique_id=33148205]
+script = ExtResource("1_6x2ct")
+player_scene = ExtResource("2_54bel")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=440110117]
+transform = Transform3D(1, 0, 0, 0, 0.99167794, 0.1287437, 0, -0.1287437, 0.99167794, -3.1247473, 4.530218, 7.8440447)
+projection = 1
+current = true
+size = 4.0
+near = 0.001
+script = ExtResource("4_y3mvi")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=797066803]
+environment = SubResource("Environment_xuqua")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1170403862]
+transform = Transform3D(0.97315913, -0.030850887, -0.22805591, 0.1600213, -0.62147844, 0.7669143, -0.16539182, -0.7828236, -0.59986067, 0.34567875, 15.468761, -0.68418026)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=460480689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87249756, -0.7698319, -2.2457733)
+use_collision = true
+size = Vector3(13.528687, 1, 10.1683655)
+
+[node name="Jester" type="Sprite3D" parent="." unique_id=1135645804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5464153, 0.771554, -1.302524)
+pixel_size = 0.03
+billboard = 2
+alpha_cut = 1
+texture_filter = 2
+texture = ExtResource("4_xdgq8")
+
+[node name="Ending" type="Area3D" parent="." unique_id=1481469688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6475701, 0, 0)
+script = ExtResource("5_osy0p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ending" unique_id=370471526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5196013, 0.85131836, 0.4998474)
+shape = SubResource("BoxShape3D_xdgq8")
+
+[connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]
