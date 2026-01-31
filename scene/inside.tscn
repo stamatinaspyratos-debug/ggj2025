@@ -3,16 +3,31 @@
 [ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_t43pv"]
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_vkt7c"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="3_deh8p"]
+[ext_resource type="Texture2D" uid="uid://ce8o26dkbmj1b" path="res://assets/BuildingWroof_pixel_art_large-7.png" id="3_okgyo"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="4_okgyo"]
 [ext_resource type="PackedScene" uid="uid://di4jqwhrcqvb2" path="res://scene/inside2.tscn" id="4_vkt7c"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_xntrl"]
 [ext_resource type="PackedScene" uid="uid://f5qvt27m1te0" path="res://scene/look_down.tscn" id="6_t43pv"]
+[ext_resource type="PackedScene" uid="uid://bjldxri1djnvc" path="res://assets/BuildingWroof.glb" id="7_mbh3d"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(13.145, 0.455, 13.61)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcm6u"]
+albedo_texture = ExtResource("3_okgyo")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_deh8p"]
-size = Vector3(18.22, 0.455, 13.61)
+size = Vector3(18.22, 0.455, 5.285)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okgyo"]
+albedo_texture = ExtResource("3_okgyo")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_o1hlp"]
+size = Vector3(18.22, 0.455, 5.285)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vkt7c"]
 size = Vector3(3.215, 0.215, 13.61)
@@ -73,69 +88,82 @@ script = ExtResource("1_t43pv")
 player_scene = ExtResource("2_vkt7c")
 
 [node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.893527, -0.85835534, -3.8008528)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.907895, -0.85835534, -3.8016315)
 use_collision = true
 mesh = SubResource("BoxMesh_ekwa0")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground2" type="CSGMesh3D" parent="Ground" unique_id=11448602]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.870798, -5.374193, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.870798, -5.374193, 5.294631)
 use_collision = true
 mesh = SubResource("BoxMesh_deh8p")
+material = SubResource("StandardMaterial3D_okgyo")
 
 [node name="Ground9" type="CSGMesh3D" parent="Ground" unique_id=1064494003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.991889, -11.045278, -0.09443283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.991889, -11.045278, 5.0360646)
 use_collision = true
-mesh = SubResource("BoxMesh_deh8p")
+mesh = SubResource("BoxMesh_o1hlp")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground10" type="CSGMesh3D" parent="Ground" unique_id=1381476087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.799854, -8.222245, -0.09443283)
 use_collision = true
 mesh = SubResource("BoxMesh_vkt7c")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground5" type="CSGMesh3D" parent="Ground" unique_id=543722974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6716881, -2.0057662, 0)
 use_collision = true
 mesh = SubResource("BoxMesh_xntrl")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground6" type="CSGMesh3D" parent="Ground" unique_id=268943970]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.021057, -2.0057662, -1.639431)
 use_collision = true
 mesh = SubResource("BoxMesh_xuqua")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground7" type="CSGMesh3D" parent="Ground" unique_id=642709608]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.92657, 0.16053349, -0.3487873)
 use_collision = true
 mesh = SubResource("BoxMesh_xuqua")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground8" type="CSGMesh3D" parent="Ground" unique_id=162607980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.122627, -5.022287, 0.6459627)
 use_collision = true
 mesh = SubResource("BoxMesh_t43pv")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground12" type="CSGMesh3D" parent="Ground" unique_id=302158386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9850645, -9.1856165, 0.9339752)
 use_collision = true
 mesh = SubResource("BoxMesh_mbh3d")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground13" type="CSGMesh3D" parent="Ground" unique_id=297162037]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7096386, -8.904513, 3.4445882)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7096386, -8.904513, 4.9082017)
 use_collision = true
 mesh = SubResource("BoxMesh_okgyo")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground11" type="CSGMesh3D" parent="Ground" unique_id=2016098699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.39107, -4.9859076, -2.5963507)
 use_collision = true
 mesh = SubResource("BoxMesh_t43pv")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground3" type="CSGMesh3D" parent="Ground" unique_id=381596816]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.849592, -0.014347017, 0)
 use_collision = true
 mesh = SubResource("BoxMesh_f4ovx")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="Ground4" type="CSGMesh3D" parent="Ground" unique_id=1119211587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.977393, -0.014347017, -3.1388097)
 use_collision = true
 mesh = SubResource("BoxMesh_doifd")
+material = SubResource("StandardMaterial3D_pcm6u")
 
 [node name="TransferPoint" parent="Ground" unique_id=2027706980 instance=ExtResource("3_deh8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.850922, -10.627959, 4.632693)
@@ -203,14 +231,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -5.815693, -0.29460
 curve = SubResource("Curve3D_doifd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1557084503]
-transform = Transform3D(0.9991657, 0.0017681087, 0.04076953, 0, 0.9990455, -0.04332818, -0.04080787, 0.043291494, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
+transform = Transform3D(0.9991657, 0.0017681085, 0.04076953, 0, 0.9990453, -0.04332818, -0.04080787, 0.043291487, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=1625026444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -11.753315, -0.29460573)
 curve = SubResource("Curve3D_deh8p")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=938748368]
-transform = Transform3D(0.77178067, 0.23108204, -0.5924096, -2.2351692e-08, 0.9316194, 0.36340454, 0.6358851, -0.2804667, 0.7190139, -0.55742645, 0.6977091, 1.675322)
+transform = Transform3D(0.77178067, 0.23108204, -0.5924095, -2.2351692e-08, 0.9316194, 0.36340448, 0.6358851, -0.2804667, 0.7190138, -0.55742645, 0.6977091, 1.675322)
+
+[node name="BuildingWroof" parent="Path3D2" unique_id=2039807325 instance=ExtResource("7_mbh3d")]
+transform = Transform3D(-0.0074873567, 0, -0.99997205, 0, 1, 0, 0.99997205, 0, -0.0074873567, 14.850937, 5.35098, -6.8389482)
 
 [node name="Path3D3" type="Path3D" parent="." unique_id=1885087776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.36824, -8.935984, 2.7952423)

@@ -132,8 +132,9 @@ func _on_detect_area_body_entered(body: Node3D) -> void:
 		state = "Stop"
 		Game.Camera.active = false
 		velocity.y = JUMP_VELOCITY
-		var t = create_tween().set_ease(Tween.EASE_OUT)
+		var t = create_tween().set_ease(Tween.EASE_OUT).set_parallel().set_trans(Tween.TRANS_CUBIC)
 		t.tween_property(Game.Camera, "position:x", self.position.x, 0.3)
+		t.tween_property(Game.Camera, "position:y", self.position.y+2.5, 0.3)
 		await t.finished
 		await get_tree().create_timer(0.5).timeout
 		Game.game_over()
@@ -146,4 +147,6 @@ func unmask():
 	state = "Stop"
 	await get_tree().create_timer(3).timeout
 	state = "Idle"
+	if Game.Player in $AmbushArea.get_overlapping_bodies() and not masked:
+		prompt.show()
 	
