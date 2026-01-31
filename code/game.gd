@@ -14,6 +14,12 @@ func game_over():
 	scene.queue_free()
 	get_tree().change_scene_to_packed.call_deferred(load(Area.scene_file_path))
 
+func game_over_fall():
+	Camera.active = false
+	elevator_effect()
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_packed.call_deferred(load(Area.scene_file_path))
+
 func mask_cutin():
 	var scene = preload("res://scene/mask_cutin.tscn").instantiate()
 	get_tree().root.add_child(scene)

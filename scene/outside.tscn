@@ -3,20 +3,51 @@
 [ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_bspfs"]
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_arvm7"]
 [ext_resource type="PackedScene" uid="uid://xrjkajq1eqi6" path="res://assets/Backgrund_house1.glb" id="3_arvm7"]
+[ext_resource type="Texture2D" uid="uid://nrm5c5i38cpa" path="res://assets/mask_indicator.png" id="3_ifsnx"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="4_asp05"]
+[ext_resource type="Texture2D" uid="uid://qecrx86lj5w0" path="res://assets/start.png" id="4_odj2w"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_w3jsn"]
 [ext_resource type="PackedScene" uid="uid://ch0yaeg6qmnfl" path="res://assets/Backgrund_house2.glb" id="7_dfs0n"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="7_r6x65"]
 [ext_resource type="PackedScene" uid="uid://ckl0samy38uj" path="res://scene/inside.tscn" id="8_r6x65"]
 
+[sub_resource type="SystemFont" id="SystemFont_r6x65"]
+font_names = PackedStringArray("Fantasy")
+
 [sub_resource type="Theme" id="Theme_bspfs"]
 Button/font_sizes/font_size = 42
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ifsnx"]
+texture = ExtResource("4_odj2w")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [sub_resource type="InputEventAction" id="InputEventAction_gs8dr"]
 action = &"ui_accept"
 
 [sub_resource type="Shortcut" id="Shortcut_w3jsn"]
 events = [SubResource("InputEventAction_gs8dr")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ib3i"]
+content_margin_left = 48.0
+content_margin_top = 48.0
+content_margin_right = 48.0
+content_margin_bottom = 48.0
+bg_color = Color(0, 0, 0, 0.67058825)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odj2w"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qrb1"]
+bg_color = Color(0.39, 0.39, 0.39, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(25, 0.455, 13.61)
@@ -56,22 +87,77 @@ in_title = true
 
 [node name="TitleScreen" type="CanvasLayer" parent="." unique_id=587445091]
 
+[node name="Title2" type="Label" parent="TitleScreen" unique_id=2090350136]
+offset_left = 125.0
+offset_top = 86.0
+offset_right = 825.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0.24599996, 0, 0.41, 1)
+theme_override_fonts/font = SubResource("SystemFont_r6x65")
+theme_override_font_sizes/font_size = 129
+text = "UnMasked"
+
+[node name="MaskIndicator" type="Sprite2D" parent="TitleScreen" unique_id=591238573]
+modulate = Color(0.2734919, 0.103694856, 0.35839027, 1)
+position = Vector2(315, 141)
+scale = Vector2(0.8102409, 0.810241)
+texture = ExtResource("3_ifsnx")
+
 [node name="Title" type="Label" parent="TitleScreen" unique_id=1051452746]
 offset_left = 124.0
 offset_top = 115.0
 offset_right = 824.0
 offset_bottom = 291.0
+theme_override_fonts/font = SubResource("SystemFont_r6x65")
 theme_override_font_sizes/font_size = 129
-text = "GGJ project"
+text = "UnMasked"
 
-[node name="Button" type="Button" parent="TitleScreen" unique_id=990141638]
-offset_left = 155.0
-offset_top = 359.0
-offset_right = 262.0
-offset_bottom = 425.0
+[node name="Start" type="Button" parent="TitleScreen" unique_id=990141638]
+offset_left = 98.0
+offset_top = 291.0
+offset_right = 472.0
+offset_bottom = 428.0
 theme = SubResource("Theme_bspfs")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ifsnx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ifsnx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ifsnx")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ifsnx")
 shortcut = SubResource("Shortcut_w3jsn")
-text = "Start"
+
+[node name="CreditContainer" type="PanelContainer" parent="TitleScreen" unique_id=11581379]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ib3i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TitleScreen/CreditContainer" unique_id=99725571]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "Iris
+Axel
+Nefeli
+Panagiotis
+Christos
+Rafael
+Stamatina"
+
+[node name="Credits" type="Button" parent="TitleScreen" unique_id=284502535]
+offset_left = 19.0
+offset_top = 643.0
+offset_right = 164.0
+offset_bottom = 706.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_odj2w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_odj2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_odj2w")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5qrb1")
+toggle_mode = true
+text = "Credits"
 
 [node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052579403, -0.8583544, -3.7940674)
@@ -122,12 +208,13 @@ transform = Transform3D(0.99953574, -0.021444758, 0.021644363, 0.021321645, 0.99
 curve = SubResource("Curve3D_dfs0n")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.02068776, -0.9996338, -9.3131103e-10, 0.9997746, 0.020690573, 0.99984914, 0.0003441708, -0.016630309, -8.685983, -0.31927156, 0.97473425)
+transform = Transform3D(-0.01663389, 0.020687744, -0.99963295, -9.3131103e-10, 0.99977374, 0.020690557, 0.99984914, 0.00034417052, -0.016630296, -8.685983, -0.31927156, 0.97473425)
 
 [node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)
 JUMP_VELOCITY = 8
 sprite = "Cat"
+flying = true
 patrol = true
 path_follow = NodePath("../Path3D/PathFollow3D")
 
@@ -144,4 +231,5 @@ transform = Transform3D(0.029334823, 0, -0.99956965, 0, 1, 0, 0.99956965, 0, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.514988, 3.632036, -1.6559796)
 scene = ExtResource("8_r6x65")
 
-[connection signal="pressed" from="TitleScreen/Button" to="." method="title_dismiss"]
+[connection signal="pressed" from="TitleScreen/Start" to="." method="title_dismiss"]
+[connection signal="toggled" from="TitleScreen/Credits" to="." method="_on_credits_toggled"]

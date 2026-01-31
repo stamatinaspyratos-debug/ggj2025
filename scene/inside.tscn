@@ -203,7 +203,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -5.815693, -0.29460
 curve = SubResource("Curve3D_doifd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1557084503]
-transform = Transform3D(0.9991657, 0.0017681107, 0.04076953, 0, 0.99904656, -0.04332818, -0.04080787, 0.043291543, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
+transform = Transform3D(0.9991657, 0.0017681095, 0.04076953, 0, 0.9990459, -0.04332818, -0.04080787, 0.043291513, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=1625026444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -11.753315, -0.29460573)

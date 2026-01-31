@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="GGJ2026"
+config/name="UnMasked"
+config/description="Global Game Jam Project"
 run/main_scene="uid://0imqwns5jagj"
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60

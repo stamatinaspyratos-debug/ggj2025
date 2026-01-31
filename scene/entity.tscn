@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0hvhunsovnt5"]
 
 [ext_resource type="Script" uid="uid://cubus2hnn6ped" path="res://code/entity.gd" id="1_fvtld"]
+[ext_resource type="Texture2D" uid="uid://dktwk7bj57phm" path="res://assets/prod.png" id="2_22bi2"]
 [ext_resource type="Texture2D" uid="uid://bti6yjg2notj4" path="res://assets/creature.png" id="2_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://k7a5itxficwy" path="res://assets/Walking.png" id="3_oh5ij"]
 [ext_resource type="Texture2D" uid="uid://bpvqpnmirsbm" path="res://assets/mask0.png" id="3_s4jxa"]
@@ -116,6 +117,14 @@ animations = [{
 "loop": true,
 "name": &"Human",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_22bi2")
+}],
+"loop": true,
+"name": &"Protag",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_34jf3"]
@@ -183,7 +192,7 @@ can_jump = true
 sprite = "Human"
 
 [node name="SpriteBase" type="AnimatedSprite3D" parent="." unique_id=286295862]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22886133, 0)
 pixel_size = 0.05
 billboard = 2
 shaded = true

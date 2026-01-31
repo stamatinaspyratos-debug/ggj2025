@@ -33,3 +33,7 @@ func add_player():
 	player.name = "Player"
 	player.masked = true
 	Game.Camera.init()
+
+
+func _on_credits_toggled(toggled_on: bool) -> void:
+	$TitleScreen/CreditContainer.visible = toggled_on

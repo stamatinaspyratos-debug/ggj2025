@@ -14,14 +14,17 @@ var masked:= false
 @export var can_jump:= false
 @export var sprite:= "Cat"
 @export var has_flashlight:= false
+@export var flying:= false
 
 var sprite_offset: Dictionary = {
 	"Cat": Vector3(0,0,0),
 	"Human": Vector3(0,0.4,0),
+	"Protag": Vector3(0,2.68,0),
 }
 var mask_offset: Dictionary = {
 	"Cat": Vector3(0.28,0.13,0),
 	"Human": Vector3(0,0.6,0),
+	"Protag": Vector3(0,2.68,0),
 }
 @export var patrol:= false
 @export_enum("Idle", "Walk", "Stop") var state = "Idle"
@@ -76,7 +79,7 @@ func control_walk():
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 func control_jump():
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or flying):
 		velocity.y = JUMP_VELOCITY
 
 func animate():
@@ -100,6 +103,7 @@ func animate():
 
 func limit_position():
 	position.z = clamp(position.z, -1, 3)
+	if position.y < -20: Game.game_over_fall()
 
 func patrol_process():
 	if is_instance_valid(path_follow) and not state == "Stop":

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hwo0462vlfgd"
-path.s3tc="res://.godot/imported/BOXwTexturefinalo_pixel_art_large-3.png-0c47de2c2dbf57864557d6d37a40664c.s3tc.ctex"
+uid="uid://bpodho8761847"
+path.s3tc="res://.godot/imported/box4UV_BAKEbox.png-1910e96d69d35d5e3a73f816e2ac74f5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "fbc539ae9604b2f33f623c165f8eafa0"
+"md5": "4acb838970c15faefd968dd79a5a94be"
 }
 
 [deps]
 
-source_file="res://assets/BOXwTexturefinalo_pixel_art_large-3.png"
-dest_files=["res://.godot/imported/BOXwTexturefinalo_pixel_art_large-3.png-0c47de2c2dbf57864557d6d37a40664c.s3tc.ctex"]
+source_file="res://assets/box4UV_BAKEbox.png"
+dest_files=["res://.godot/imported/box4UV_BAKEbox.png-1910e96d69d35d5e3a73f816e2ac74f5.s3tc.ctex"]
 
 [params]
 
