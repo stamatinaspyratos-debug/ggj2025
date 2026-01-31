@@ -4,11 +4,11 @@ extends Camera3D
 @export var follow_smooth := 12.0
 
 # κοντά + side view
-@export var normal_offset := Vector3(0.0, 3, 2.4)
+@export var normal_offset := Vector3(0.0, 3, 8)
 # angle όταν hidden (από “άλλη” πλευρά: X αρνητικό)
-@export var hide_offset := Vector3(-4, 3, 2.0)
+@export var hide_offset := Vector3(-5, 8, 8)
 
-@export var look_at_offset := Vector3(0.0, 1.2, -1)
+@export var look_at_offset := Vector3(0, 1.2, 0)
 
 var target: Node3D
 var active: bool = false
@@ -36,5 +36,4 @@ func _process(delta: float) -> void:
 	var target_pos := target.global_position + offset
 	global_position = global_position.lerp(target_pos, 1.0 - exp(-follow_smooth * delta))
 	look_at(target.global_position + look_at_offset, Vector3.UP)
-	position.z = 8
 	#position.y += 0.2

@@ -52,7 +52,9 @@ func _physics_process(delta: float) -> void:
 				control_jump()
 	elif patrol: patrol_process()
 	
-	if not masked and prompt.visible and Input.is_action_just_pressed("ui_accept"):
+	if state == "Stop": direction = Vector3.ZERO
+	
+	if not masked and prompt.visible and Input.is_action_just_pressed("change_mask"):
 		masked = true
 	
 	if direction:
@@ -103,6 +105,10 @@ func patrol_process():
 	if is_instance_valid(path_follow) and not state == "Stop":
 		direction = to_local(path_follow.global_position)
 		path_follow.progress += 0.01 * SPEED
+		if direction.y > 1 and can_jump:
+			velocity.y = JUMP_VELOCITY
+		if direction.length() > 10:
+			position = path_follow.position
 
 func _on_ambush_area_body_entered(body: Node3D) -> void:
 	if not masked and body == Game.Player:
@@ -115,9 +121,20 @@ func _on_ambush_area_body_exited(body: Node3D) -> void:
 
 func _on_detect_area_body_entered(body: Node3D) -> void:
 	if can_catch_player and not masked and body == Game.Player and not Game.hidden and not state == "Stop":
+		Game.Player.state = "Stop"
+		state = "Stop"
+		Game.Camera.active = false
+		var t = create_tween().set_ease(Tween.EASE_OUT)
+		t.tween_property(Game.Camera, "position:x", self.position.x, 0.3)
+		#await t.finished
+		#await get_tree().create_timer(0.2).timeout
 		Game.game_over()
+		await get_tree().create_timer(3).timeout
+		state = "Idle"
 
 func unmask():
+	Game.mask_cutin()
+	Game.hidden = false
 	masked = false
 	direction = Vector3.ZERO
 	state = "Stop"

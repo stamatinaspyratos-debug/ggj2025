@@ -133,10 +133,10 @@ animations = [{
 size = Vector3(0.54668045, 0.77371216, 0.1875534)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ct4mp"]
-size = Vector3(3.457563, 1, 5.5357265)
+size = Vector3(3.457563, 1.0700684, 5.5357265)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_do3l0"]
-size = Vector3(4.799286, 1.418457, 1.7984009)
+size = Vector3(3.3458385, 1.418457, 1.7950592)
 
 [sub_resource type="Animation" id="Animation_22bi2"]
 length = 0.001
@@ -177,6 +177,8 @@ _data = {
 
 [node name="Entity" type="CharacterBody3D" unique_id=1737357155]
 script = ExtResource("1_fvtld")
+JUMP_VELOCITY = 4
+can_jump = true
 sprite = "Human"
 
 [node name="SpriteBase" type="AnimatedSprite3D" parent="." unique_id=286295862]
@@ -184,7 +186,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 pixel_size = 0.05
 billboard = 2
 shaded = true
-alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2fvbb")
 animation = &"Cat"
@@ -207,14 +208,14 @@ shape = SubResource("BoxShape3D_fvtld")
 [node name="AmbushArea" type="Area3D" parent="." unique_id=1551020699]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AmbushArea" unique_id=1477769350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119984, 0.014882684, -0.07911658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119984, -0.020151496, -0.07911658)
 shape = SubResource("BoxShape3D_ct4mp")
 
 [node name="DetectArea" type="Area3D" parent="." unique_id=1428388634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4639621, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea" unique_id=1610235816]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9628725, 0.2241112, 0.017874599)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23614883, 0.2241112, 0.00462234)
 shape = SubResource("BoxShape3D_do3l0")
 debug_color = Color(0, 0.6, 0.21960784, 0.41960785)
 

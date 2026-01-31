@@ -3,4 +3,4 @@ extends Area3D
 
 func _on_body_entered(body: Node3D) -> void:
 	if body == Game.Player:
-		get_tree().change_scene_to_packed(scene)
+		get_tree().change_scene_to_packed.call_deferred(scene)
