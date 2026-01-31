@@ -208,7 +208,7 @@ transform = Transform3D(0.99953574, -0.021444758, 0.021644363, 0.021321645, 0.99
 curve = SubResource("Curve3D_dfs0n")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.020687744, -0.99963295, -9.3131103e-10, 0.99977374, 0.020690557, 0.99984914, 0.00034417052, -0.016630296, -8.685983, -0.31927156, 0.97473425)
+transform = Transform3D(-0.01663389, 0.020687738, -0.9996327, -9.3131103e-10, 0.9997735, 0.020690551, 0.99984914, 0.00034417043, -0.01663029, -8.685983, -0.31927156, 0.97473425)
 
 [node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)

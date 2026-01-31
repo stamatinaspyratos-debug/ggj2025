@@ -193,12 +193,12 @@ has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D2/PathFollow3D")
 
-[node name="Cat" parent="." unique_id=1694084465 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_ktbmp")]
+[node name="Rat" parent="." unique_id=1694084465 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_ktbmp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.85344, -0.83839846, -0.26276088)
-SPEED = 5.0
-JUMP_VELOCITY = 8
-keycard = 1
-sprite = "Cat"
+SPEED = 10.0
+JUMP_VELOCITY = 2
+sprite = "Rat"
+undetectable = true
 patrol = true
 path_follow = NodePath("../Path3D3/PathFollow3D2")
 
@@ -225,7 +225,7 @@ curve = SubResource("Curve3D_fbnkn")
 transform = Transform3D(0.4015893, 0, -0.9158002, 0, 0.99996555, 0, 0.9158, 0, 0.40158942, -2.049696, 4.0888786e-05, -1.6276028)
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path3D3" unique_id=1174892338]
-transform = Transform3D(-0.018633196, -0.0014315558, 0.9998214, -0.07660335, 0.99702615, -1.852035e-09, -0.9968747, -0.076588236, -0.018688276, -1.7915174, 4.0888786e-05, 1.1832296)
+transform = Transform3D(-0.018633196, -0.0014315557, 0.9998214, -0.07660335, 0.997026, -1.852035e-09, -0.9968747, -0.07658823, -0.018688276, -1.7915174, 4.0888786e-05, 1.1832296)
 progress = 13.114263
 
 [node name="KillVoid" parent="." unique_id=1140546885 instance=ExtResource("6_g6o6e")]

@@ -15,16 +15,19 @@ var masked:= false
 @export var sprite:= "Cat"
 @export var has_flashlight:= false
 @export var flying:= false
+@export var undetectable:= false
 
 var sprite_offset: Dictionary = {
 	"Cat": Vector3(0,0,0),
 	"Human": Vector3(0,0.4,0),
+	"Rat": Vector3(0,0,0),
 	"Protag": Vector3(0,2.68,0),
 }
 var mask_offset: Dictionary = {
 	"Cat": Vector3(0.28,0.13,0),
 	"Human": Vector3(0,0.6,0),
 	"Protag": Vector3(0,2.68,0),
+	"Rat": Vector3(0.3,-0.28,0.16)
 }
 @export var patrol:= false
 @export_enum("Idle", "Walk", "Stop") var state = "Idle"
@@ -124,7 +127,7 @@ func _on_ambush_area_body_exited(body: Node3D) -> void:
 		prompt.hide()
 
 func _on_detect_area_body_entered(body: Node3D) -> void:
-	if can_catch_player and not masked and body == Game.Player and not Game.hidden and not state == "Stop":
+	if can_catch_player and not masked and body == Game.Player and not Game.hidden and not state == "Stop" and not Game.Player.undetectable:
 		Game.Player.state = "Stop"
 		state = "Stop"
 		Game.Camera.active = false

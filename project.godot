@@ -15,7 +15,12 @@ config/description="Global Game Jam Project"
 run/main_scene="uid://0imqwns5jagj"
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
+boot_splash/bg_color=Color(0.068798296, 0.06879827, 0.068798244, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://nrm5c5i38cpa"
 config/icon="uid://n7g5q8xws3ws"
+boot_splash/description=""
+boot_splash/name="GGJ2026"
 
 [autoload]
 
