@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_w3jsn"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="7_r6x65"]
 [ext_resource type="PackedScene" uid="uid://ckl0samy38uj" path="res://scene/inside.tscn" id="8_r6x65"]
-[ext_resource type="PackedScene" uid="uid://bjldxri1djnvc" path="res://assets/BuildingWroof.glb" id="9_ifsnx"]
+[ext_resource type="PackedScene" uid="uid://xrjkajq1eqi6" path="res://assets/Backgrund_house1.glb" id="9_odj2w"]
+[ext_resource type="PackedScene" uid="uid://ch0yaeg6qmnfl" path="res://assets/Backgrund_house2.glb" id="10_0ib3i"]
 
 [sub_resource type="SystemFont" id="SystemFont_r6x65"]
 font_names = PackedStringArray("Fantasy")
@@ -164,12 +165,12 @@ use_collision = true
 mesh = SubResource("BoxMesh_ekwa0")
 
 [node name="Ground2" type="CSGMesh3D" parent="." unique_id=922257950]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13421404, 1.5106816, -1.3107657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.214699, 1.5106816, -1.3107657)
 use_collision = true
 mesh = SubResource("BoxMesh_asp05")
 
 [node name="Ground3" type="CSGMesh3D" parent="." unique_id=916154974]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.297283, 3.0645995, -1.0870013)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.823111, 3.0645995, -1.0870013)
 use_collision = true
 mesh = SubResource("BoxMesh_dfs0n")
 
@@ -182,10 +183,10 @@ shadow_enabled = true
 shadow_blur = 0.5
 
 [node name="CSGBox3D" parent="." unique_id=1725162128 instance=ExtResource("4_asp05")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24774, -0.1362623, -0.072695255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.492559, -0.1362623, -0.072695255)
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1364433887]
-transform = Transform3D(1, 0, 0, 0, 0.98480767, 0.17364816, 0, -0.17364816, 0.98480767, -4.65, 3.335, 8.31)
+transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.17364818, 0, -0.17364818, 0.9848078, -15.395317, 3.335, 8.31)
 projection = 1
 current = true
 size = 7.0
@@ -204,10 +205,10 @@ transform = Transform3D(0.99953574, -0.021444758, 0.021644363, 0.021321645, 0.99
 curve = SubResource("Curve3D_dfs0n")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.020687737, -0.9996326, -9.3131103e-10, 0.9997734, 0.02069055, 0.99984914, 0.0003441704, -0.016630288, -8.685983, -0.31927156, 0.97473425)
+transform = Transform3D(-0.01663389, 0.020687733, -0.9996324, -9.3131103e-10, 0.9997732, 0.020690545, 0.99984914, 0.00034417034, -0.016630286, -8.685983, -0.31927156, 0.97473425)
 
 [node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.325691, -0.030855298, -0.29460573)
 JUMP_VELOCITY = 8
 sprite = "Cat"
 flying = true
@@ -215,7 +216,7 @@ patrol = true
 path_follow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Guard" parent="." unique_id=547366311 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.130682, -0.36932385, -0.14123726)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7578154, -0.36932385, -0.14123726)
 has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D2/PathFollow3D")
@@ -224,8 +225,26 @@ path_follow = NodePath("../Path3D2/PathFollow3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.514988, 3.632036, -1.6559796)
 scene = ExtResource("8_r6x65")
 
-[node name="BuildingWroof" parent="." unique_id=2039807325 instance=ExtResource("9_ifsnx")]
-transform = Transform3D(0.009117371, 1.3766848e-09, 0.79994804, -1.2079664e-07, 0.8, 0, 0.79994804, 1.207888e-07, -0.009117371, 24.335958, -0.5304899, -2.4997063)
+[node name="Backgrund_house2" parent="." unique_id=744653739 instance=ExtResource("10_0ib3i")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9, 4.7, -3.9)
+
+[node name="Backgrund_house3" parent="Backgrund_house2" unique_id=1060238289 instance=ExtResource("9_odj2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1525574e-07, -1.0699997, 17.6)
+
+[node name="Backgrund_house4" parent="Backgrund_house2/Backgrund_house3" unique_id=405358224 instance=ExtResource("10_0ib3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 0.96799994, -4.000001)
+
+[node name="Backgrund_house5" parent="." unique_id=700440831 instance=ExtResource("9_odj2w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 23.671, 3, -3.9)
+
+[node name="Backgrund_house3" parent="Backgrund_house5" unique_id=1585278545 instance=ExtResource("9_odj2w")]
+transform = Transform3D(0.9994409, 0, -0.033434357, 0, 1, 0, 0.033434357, 0, 0.9994409, -0.21034598, 0.25139904, 10.225597)
+
+[node name="Backgrund_house4" parent="Backgrund_house5" unique_id=1520960502 instance=ExtResource("10_0ib3i")]
+transform = Transform3D(0.9994409, 0, -0.033434357, 0, 1, 0, 0.033434357, 0, 0.9994409, -0.076608896, 1.2193985, 6.2278366)
+
+[node name="Backgrund_house5" parent="Backgrund_house5" unique_id=143012360 instance=ExtResource("10_0ib3i")]
+transform = Transform3D(0.9994409, 0, -0.033434357, 0, 1, 0, 0.033434357, 0, 0.9994409, 0.378098, 1.3213987, -7.364563)
 
 [connection signal="pressed" from="TitleScreen/Start" to="." method="title_dismiss"]
 [connection signal="toggled" from="TitleScreen/Credits" to="." method="_on_credits_toggled"]

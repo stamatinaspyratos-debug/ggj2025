@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cva6o2s7nw71p"
+uid="uid://br1rko5veb4uv"
 path.s3tc="res://.godot/imported/BuildingWroof_Image_1.png-e03926deff008301c77867152ac34ff1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://assets/BuildingWroof_Image_1.png"
+roughness/src_normal="res://BuildingWroof_Image_1.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
