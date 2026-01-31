@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://0qgjqnajfj4k"]
+
+[ext_resource type="Script" uid="uid://ctglpdqr2fi1r" path="res://scene/text.gd" id="1_ove3p"]
+
+[sub_resource type="Gradient" id="Gradient_6quqe"]
+offsets = PackedFloat32Array(0, 0.9994369)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ove3p"]
+gradient = SubResource("Gradient_6quqe")
+fill_from = Vector2(1, 1)
+
+[node name="Text" type="CanvasLayer" unique_id=1401996512]
+script = ExtResource("1_ove3p")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1099642939]
+offset_top = 525.0
+offset_right = 1278.0
+offset_bottom = 783.0
+texture = SubResource("GradientTexture2D_ove3p")
+
+[node name="Label" type="Label" parent="." unique_id=1681127584]
+offset_left = 6.0
+offset_top = 573.0
+offset_right = 1282.0
+offset_bottom = 710.0
+theme_override_font_sizes/font_size = 48
+text = "This is some sample text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

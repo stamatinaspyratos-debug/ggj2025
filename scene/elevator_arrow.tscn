@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bfwpllcfea40y"]
+
+[ext_resource type="Texture2D" uid="uid://d3o0rx4ww6wr6" path="res://assets/elevator_1.png" id="1_eg8dd"]
+[ext_resource type="Texture2D" uid="uid://cf2ibkvqf3eps" path="res://assets/elevator_2.png" id="2_fly8c"]
+[ext_resource type="Texture2D" uid="uid://oabuosq3kh6n" path="res://assets/elevator_3.png" id="3_ujtjk"]
+[ext_resource type="Texture2D" uid="uid://caudexlulnvrb" path="res://assets/elevator_4.png" id="4_bdq3m"]
+[ext_resource type="Texture2D" uid="uid://bmpw6a23ucjnl" path="res://assets/elevator_5.png" id="5_vtvvu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ps7ao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eg8dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fly8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ujtjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bdq3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vtvvu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_fly8c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eg8dd"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.13333334, 1.0666667, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1.8333334, 2.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fly8c"]
+_data = {
+&"RESET": SubResource("Animation_fly8c"),
+&"new_animation": SubResource("Animation_eg8dd")
+}
+
+[node name="ElevatorArrow" type="CanvasLayer" unique_id=1465784029]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=828535769]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=623638545]
+position = Vector2(626.99994, 391)
+rotation = -3.1415927
+scale = Vector2(0.16846092, 0.16846092)
+sprite_frames = SubResource("SpriteFrames_ps7ao")
+autoplay = "default"
+frame_progress = 0.13931173
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=93431908]
+libraries/ = SubResource("AnimationLibrary_fly8c")
+autoplay = &"new_animation"
