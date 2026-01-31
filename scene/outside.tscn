@@ -74,7 +74,7 @@ shortcut = SubResource("Shortcut_w3jsn")
 text = "Start"
 
 [node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85835534, -3.8008528)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052579403, -0.8583544, -3.7940674)
 use_collision = true
 mesh = SubResource("BoxMesh_ekwa0")
 
@@ -103,7 +103,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.07
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24774, -0.1362623, -0.072695255)
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1364433887]
-transform = Transform3D(1, 0, 0, 0, 0.9916779, 0.1287437, 0, -0.1287437, 0.9916779, -4.65, 3.335, 8.31)
+transform = Transform3D(1, 0, 0, 0, 0.98480767, 0.17364816, 0, -0.17364816, 0.98480767, -4.65, 3.335, 8.31)
 projection = 1
 current = true
 size = 7.0
@@ -122,7 +122,7 @@ transform = Transform3D(0.99953574, -0.021444758, 0.021644363, 0.021321645, 0.99
 curve = SubResource("Curve3D_dfs0n")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.020687772, -0.99963427, -9.3131103e-10, 0.99977505, 0.020690583, 0.99984914, 0.00034417099, -0.016630316, -8.685983, -0.31927156, 0.97473425)
+transform = Transform3D(-0.01663389, 0.02068776, -0.9996338, -9.3131103e-10, 0.9997746, 0.020690573, 0.99984914, 0.0003441708, -0.016630309, -8.685983, -0.31927156, 0.97473425)
 
 [node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)
@@ -133,7 +133,7 @@ path_follow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Guard" parent="." unique_id=547366311 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.130682, -0.36932385, -0.14123726)
-can_catch_player = true
+has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D2/PathFollow3D")
 

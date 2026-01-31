@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://f5qvt27m1te0" path="res://scene/look_down.tscn" id="3_fbnkn"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="4_ymd00"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="5_3q2yi"]
+[ext_resource type="PackedScene" uid="uid://budhul7750421" path="res://scene/kill_void.tscn" id="6_g6o6e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(18.025, 0.38, 13.61)
@@ -21,40 +22,42 @@ size = Vector3(4.0389404, 4.775131, 1.2681274)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fbnkn"]
 size = Vector3(1.7742767, 4.3846283, 1.910553)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_g6o6e"]
-size = Vector3(1.2489891, 5.388115, 0.94127274)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ktbmp"]
-size = Vector3(2.4980297, 5.388115, 0.94127274)
-
 [sub_resource type="Environment" id="Environment_xuqua"]
 background_mode = 1
-background_color = Color(0.16650787, 0.15691227, 0.18359542, 1)
+background_color = Color(0.0724, 0.068, 0.08, 1)
 background_energy_multiplier = 2.0
 ambient_light_color = Color(0.88742435, 0.87268245, 0.8849515, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_tx5jb"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.36826324, -0.57679, 0.45908952, 0, 0, 0, 0, 0, 0, -3.2898998, 0.72174674, 1.685261, 0, 0, 0, 0, 0, 0, -1.9714823, -0.20843446, 0.47299957, 0, 0, 0, 0, 0, 0, -4.35767, 0.3138889, 0.878144, 0, 0, 0, 0, 0, 0, -4.265601, -0.34989655, 0.88128304),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.10943222, 0.47841454, 1.4144818, 0, 0, 0, 0, 0, 0, -1.9714823, -0.20843446, 0.47299957, 0, 0, 0, 0, 0, 0, -4.35767, 0.3138889, 0.878144, 0, 0, 0, 0, 0, 0, -4.265601, 0.22148937, 1.220944, 0, 0, 0, 0, 0, 0, -0.9794779, 0.14426148, 1.6149192, 0, 0, 0, 0, 0, 0, -0.69166946, -0.067509055, 2.8462613),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
-point_count = 5
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_g6o6e"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.6436634, -0.20843446, 1.1452637, 0, 0, 0, 0, 0, 0, -4.35767, 0.3138889, 0.878144, 0, 0, 0, 0, 0, 0, -4.265601, 0.22148937, 1.220944),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_fbnkn"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.906125, 0.40324298, -0.5858464, 0, 0, 0, 0, 0, 0, 0.8952923, 0.5581442, 1.5470772, 0, 0, 0, 0, 0, 0, -1.7512398, -0.38471442, 2.6594, 0, 0, 0, 0, 0, 0, 0.6853943, 0.5182425, 0.79697514, 0, 0, 0, 0, 0, 0, -0.35507965, -0.5187646, -0.86859846, 0, 0, 0, 0, 0, 0, 2.0845242, 0.08049476, -2.7701883, 0, 0, 0, 0, 0, 0, -0.4461956, -0.654585, -1.0369844, 0, 0, 0, 0, 0, 0, -0.9947624, -0.63305044, -0.70563936, 0, 0, 0, 0, 0, 0, -2.0863628, -0.5251704, 0.070121765, 0, 0, 0, 0, 0, 0, -0.48283577, -0.20685601, -0.883811, 0, 0, 0, 0, 0, 0, 1.0140905, 0.45643002, 0.7820864),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.049696, 4.0888786e-05, -1.6276028, 0, 0, 0, 0, 0, 0, 0.85593224, 4.0888786e-05, -1.6061165, 0, 0, 0, 0, 0, 0, 2.660778, 4.0888786e-05, -1.6276028, 0, 0, 0, 0, 0, 0, 0.76034546, 0.8462664, -0.16573119, 0, 0, 0, 0, 0, 0, 0.85780334, 4.0888786e-05, 1.1337099, 0, 0, 0, 0, 0, 0, -2.6182022, 4.0888786e-05, 1.1986818, 0, 0, 0, 0, 0, 0, 4.106407, 4.0888786e-05, 1.214925, 0, 0, 0, 0, 0, 0, -0.34417915, 4.0888786e-05, 0.93879414, 0, 0, 0, 0, 0, 0, -0.8477135, 0.8217436, -0.2631892, 0, 0, 0, 0, 0, 0, -0.14926338, 4.0888786e-05, -1.9199771),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 11
+point_count = 10
 
 [node name="Outside" type="Node3D" unique_id=33148205]
 script = ExtResource("1_g6o6e")
 player_scene = ExtResource("2_ktbmp")
 
 [node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6002722, -0.85835487, -3.861446)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6079817, -0.85496575, -3.865942)
 use_collision = true
 mesh = SubResource("BoxMesh_ekwa0")
 
@@ -75,12 +78,31 @@ mesh = SubResource("BoxMesh_tx5jb")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Ground" unique_id=457174743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89218426, 3.8550024, 1.857152)
+light_energy = 0.5
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Ground" unique_id=397821780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.864427, -0.54195017, 4.609888)
+light_energy = 2.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Ground" unique_id=55210021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.453698, -0.54195017, 4.609888)
+light_energy = 2.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Ground" unique_id=1434809000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.450905, -0.54195017, 4.609888)
+light_energy = 2.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Ground" unique_id=1002113121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.678116, 1.3694577, 2.5024242)
+light_energy = 2.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Ground" unique_id=1557566447]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.084302, 3.8550024, 1.857152)
+light_energy = 0.5
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Ground" unique_id=1609725667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6098814, 3.8550024, 1.857152)
+light_energy = 0.5
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Ground" unique_id=2031943005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.601674, -0.5986046, 6.0050383)
@@ -89,10 +111,6 @@ size = Vector3(9.6875, 1, 1.6209717)
 [node name="CSGBox3D2" type="CSGBox3D" parent="Ground" unique_id=1477029651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.291844, -0.48471302, 3.3264222)
 size = Vector3(7.0678406, 0.7722168, 1.8927917)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Ground" unique_id=555205138]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.396213, -0.48471302, 4.4716554)
-size = Vector3(1.8057556, 0.7722168, 3.2188416)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Ground" unique_id=966798362]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.429711, -0.033350646, 4.518315)
@@ -106,6 +124,10 @@ size = Vector3(1.8057556, 1.5042725, 1.2553053)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.018955, 0.17304134, 4.509404)
 size = Vector3(1.8057556, 4.524994, 1.2553053)
 
+[node name="CSGBox3D7" type="CSGBox3D" parent="Ground" unique_id=1213163871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.67892, -0.30906147, 4.372388)
+size = Vector3(3.6244316, 4.524994, 4.7498007)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=347321888]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.268436, -0.26103753, 3.1234)
 
@@ -116,14 +138,6 @@ shape = SubResource("BoxShape3D_tx5jb")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=935405011]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.963499, 1.6923141, 2.7809744)
 shape = SubResource("BoxShape3D_fbnkn")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=448192707]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3413067, 1.0341071, 1.6418343)
-shape = SubResource("BoxShape3D_g6o6e")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=45188147]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.995166, 1.0341071, 1.6418343)
-shape = SubResource("BoxShape3D_ktbmp")
 
 [node name="Lookdown" parent="Ground" unique_id=2017985930 instance=ExtResource("3_fbnkn")]
 transform = Transform3D(2.2403812, 0, 0, 0, 3.202115, 0, 0, 0, 0.39112064, 17.38477, 1.4757764, 4.284273)
@@ -141,18 +155,32 @@ environment = SubResource("Environment_xuqua")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1170403862]
 transform = Transform3D(0.8704466, 0.09441025, -0.48312464, 0.30995506, 0.6573392, 0.68690103, 0.38242725, -0.7476577, 0.54291576, 0.34567875, 15.468761, -0.68418026)
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="Box4" parent="." unique_id=1406562557 instance=ExtResource("5_3q2yi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.738307, 0.040756464, -0.7681434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2352228, 0.040756464, -0.7681434)
 
 [node name="Box5" parent="." unique_id=1168107910 instance=ExtResource("5_3q2yi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.738307, 0.040756464, 2.3785832)
+
+[node name="Box7" parent="." unique_id=2078101783 instance=ExtResource("5_3q2yi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.738307, 0.21379542, -1.4984815)
+
+[node name="Box8" parent="." unique_id=1280554449 instance=ExtResource("5_3q2yi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.738307, 1.3253763, -1.4984815)
+
+[node name="Box9" parent="." unique_id=1836409882 instance=ExtResource("5_3q2yi")]
+transform = Transform3D(0.8793994, 0, 0.4760847, 0, 1, 0, -0.4760847, 0, 0.8793994, 7.3188667, 0.057156324, -1.4984815)
+
+[node name="Box6" parent="." unique_id=1270379166 instance=ExtResource("5_3q2yi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.980998, -0.07549596, 0.8405154)
 
 [node name="Guard2" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_ktbmp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5827007, -0.24890327, 0.8411939)
 keycard = 1
 can_catch_player = true
+has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D/PathFollow3D")
 
@@ -160,15 +188,9 @@ path_follow = NodePath("../Path3D/PathFollow3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7502766, -0.24890327, -0.611089)
 keycard = 1
 can_catch_player = true
+has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D2/PathFollow3D")
-
-[node name="Guard4" parent="." unique_id=1890363663 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_ktbmp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.85344, -0.83839846, -0.26276088)
-keycard = 1
-can_catch_player = true
-patrol = true
-path_follow = NodePath("../Path3D3/PathFollow3D")
 
 [node name="Cat" parent="." unique_id=1694084465 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_ktbmp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.85344, -0.83839846, -0.26276088)
@@ -180,26 +202,29 @@ patrol = true
 path_follow = NodePath("../Path3D3/PathFollow3D2")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1147066547]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.204858, -0.6019696, -0.29460573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.204858, -0.6019696, -0.13662863)
 curve = SubResource("Curve3D_tx5jb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=961490983]
-transform = Transform3D(-0.31780884, 0.30244172, 0.8986206, 1.4901114e-08, 0.9477466, -0.31898308, -0.9481515, -0.10137476, -0.30120668, 0.36826324, -0.57679, 0.45908952)
+transform = Transform3D(0.4122066, -0.26237425, 0.87248355, -1.4901038e-08, 0.9576189, 0.2879813, -0.91108125, -0.11870775, 0.39474356, 0.10943222, 0.47841454, 1.4144818)
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=644521820]
 transform = Transform3D(-0.88278365, 0, 0.4697797, 0, 1, 0, -0.4697797, 0, -0.88278365, 7.944318, -0.6019696, -1.2703724)
-curve = SubResource("Curve3D_tx5jb")
+curve = SubResource("Curve3D_g6o6e")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=20366904]
-transform = Transform3D(-0.31780884, 0.30244172, 0.8986206, 1.4901114e-08, 0.9477466, -0.31898308, -0.9481515, -0.10137476, -0.30120668, 0.36826324, -0.57679, 0.45908952)
+transform = Transform3D(0.07173616, 0.1385534, 0.98774433, 7.4505095e-09, 0.9902868, -0.13891254, -0.99741393, 0.009965066, 0.0710407, -0.6436634, -0.20843446, 1.1452637)
 
 [node name="Path3D3" type="Path3D" parent="." unique_id=754949109]
-transform = Transform3D(-0.8847802, -0.0034919141, 0.46599528, -0.002932316, 0.99999386, 0.0019258453, -0.46599916, 0.0003374812, -0.88478506, 16.271101, -0.6019696, 1.0225081)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.271101, -0.6019696, 1.0225081)
 curve = SubResource("Curve3D_fbnkn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3" unique_id=688624692]
-transform = Transform3D(-0.7276225, 0.03619746, 0.6850172, 1.8626387e-09, 0.99857926, -0.05276918, -0.68597275, -0.03839524, -0.72660893, 2.906125, 0.40324298, -0.5858464)
+transform = Transform3D(-0.0073943, 0, -0.9999583, 0, 0.99996555, 0, 0.99995786, 0, -0.007394303, -2.049696, 4.0888786e-05, -1.6276028)
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path3D3" unique_id=1174892338]
-transform = Transform3D(0.51060194, -0.37379402, -0.7743064, 0.37560615, 0.9070269, -0.1901991, 0.7734331, -0.19371417, 0.60354584, 0.991713, -0.18794118, -1.9183785)
+transform = Transform3D(-0.0021536062, -0.0010939903, -0.9999932, -0.45290047, 0.89152884, 3.6232888e-09, 0.8915453, 0.45288944, -0.00241557, -1.7877307, 4.0888786e-05, 1.2006878)
 progress = 13.114263
+
+[node name="KillVoid" parent="." unique_id=1140546885 instance=ExtResource("6_g6o6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.487424, -2.9025161, 0)

@@ -13,6 +13,7 @@ var masked:= false
 @export var can_catch_player:= false
 @export var can_jump:= false
 @export var sprite:= "Cat"
+@export var has_flashlight:= false
 
 var sprite_offset: Dictionary = {
 	"Cat": Vector3(0,0,0),
@@ -29,6 +30,7 @@ var mask_offset: Dictionary = {
 func _ready() -> void:
 	Game.Player = self
 	$Prompt.hide()
+	$DetectArea/SpotLight3D.visible = has_flashlight
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -83,9 +85,9 @@ func animate():
 	sprite_mask.position = mask_offset.get(sprite)
 	if sprite_base.flip_h:
 		sprite_mask.position.x *= -1 
-		detect_area.position.x = -abs(detect_area.position.x)
+		detect_area.rotation_degrees.y = 180
 	else:
-		detect_area.position.x = abs(detect_area.position.x)
+		detect_area.rotation.y = 0
 	sprite_mask.position.z = 0.1 
 	sprite_base.position = sprite_offset.get(sprite)
 	match state:
