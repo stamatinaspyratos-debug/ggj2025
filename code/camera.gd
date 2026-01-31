@@ -36,4 +36,3 @@ func _process(delta: float) -> void:
 	var target_pos := target.global_position + offset
 	global_position = global_position.lerp(target_pos, 1.0 - exp(-follow_smooth * delta))
 	look_at(target.global_position + look_at_offset, Vector3.UP)
-	#position.y += 0.2

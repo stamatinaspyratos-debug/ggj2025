@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://f5qvt27m1te0"]
+
+[ext_resource type="Script" uid="uid://mkslg3vav76t" path="res://code/look_down.gd" id="1_1qmvj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_deh8p"]
+size = Vector3(3.363739, 1, 3.3064575)
+
+[node name="Lookdown" type="Area3D" unique_id=2017985930]
+script = ExtResource("1_1qmvj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=184317448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44548035, 0.3318329, -0.24539185)
+shape = SubResource("BoxShape3D_deh8p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var prompt:= $Prompt
 var direction: Vector3
 var masked:= false
+@export var keycard:= 0
 @export var can_catch_player:= false
 @export var can_jump:= false
 @export var sprite:= "Cat"
@@ -107,8 +108,8 @@ func patrol_process():
 		path_follow.progress += 0.01 * SPEED
 		if direction.y > 1 and can_jump:
 			velocity.y = JUMP_VELOCITY
-		if direction.length() > 10:
-			position = path_follow.position
+		if direction.length() > 8 and is_on_floor():
+			position = path_follow.position + Vector3(0, 1, 0)
 
 func _on_ambush_area_body_entered(body: Node3D) -> void:
 	if not masked and body == Game.Player:
@@ -124,10 +125,11 @@ func _on_detect_area_body_entered(body: Node3D) -> void:
 		Game.Player.state = "Stop"
 		state = "Stop"
 		Game.Camera.active = false
+		velocity.y = JUMP_VELOCITY
 		var t = create_tween().set_ease(Tween.EASE_OUT)
 		t.tween_property(Game.Camera, "position:x", self.position.x, 0.3)
-		#await t.finished
-		#await get_tree().create_timer(0.2).timeout
+		await t.finished
+		await get_tree().create_timer(0.5).timeout
 		Game.game_over()
 		await get_tree().create_timer(3).timeout
 		state = "Idle"
