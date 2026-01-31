@@ -15,7 +15,7 @@ var masked:= false
 
 var sprite_offset: Dictionary = {
 	"Cat": Vector3(0,0,0),
-	"Human": Vector3(0.3,0.4,0),
+	"Human": Vector3(0,0.4,0),
 }
 var mask_offset: Dictionary = {
 	"Cat": Vector3(0.28,0.13,0),

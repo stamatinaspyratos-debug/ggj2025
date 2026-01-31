@@ -6,10 +6,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_bx54w"]
 size = Vector3(1.1450195, 1.1674805, 1.1665039)
 
-[node name="CSGBox3D" type="StaticBody3D" unique_id=1406562557]
+[node name="HidingBox" type="StaticBody3D" unique_id=1406562557]
 
-[node name="HideSpot" parent="." unique_id=1746481073 instance=ExtResource("1_bx54w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9736831, -0.5714905, -0.5915216)
+[node name="HideSpot2" parent="." unique_id=2140753647 instance=ExtResource("1_bx54w")]
+transform = Transform3D(-0.9961947, 0, 0.08715564, 0, 1, 0, -0.08715564, 0, -0.9961947, -0.54424, -0.5714905, 0.5752357)
 collision_priority = 1.025
 
 [node name="BOXwTexturefinalo" parent="." unique_id=500424069 instance=ExtResource("2_v2san")]

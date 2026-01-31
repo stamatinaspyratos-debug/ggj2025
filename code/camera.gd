@@ -1,14 +1,14 @@
-extends Node3D
+extends Camera3D
 
 @export var player_path: NodePath
 @export var follow_smooth := 12.0
 
 # κοντά + side view
-@export var normal_offset := Vector3(0.0, 1.8, 2.4)
+@export var normal_offset := Vector3(0.0, 3, 2.4)
 # angle όταν hidden (από “άλλη” πλευρά: X αρνητικό)
-@export var hide_offset := Vector3(-1.2, 1.6, 2.0)
+@export var hide_offset := Vector3(-4, 3, 2.0)
 
-@export var look_at_offset := Vector3(0.0, 1.2, 0.0)
+@export var look_at_offset := Vector3(0.0, 1.2, -1)
 
 var target: Node3D
 var active: bool = false
@@ -25,6 +25,7 @@ func _on_control_target_changed(t: Node3D) -> void:
 	target = t
 
 func _process(delta: float) -> void:
+	near = 0
 	if target == null or not active:
 		return
 
@@ -35,3 +36,5 @@ func _process(delta: float) -> void:
 	var target_pos := target.global_position + offset
 	global_position = global_position.lerp(target_pos, 1.0 - exp(-follow_smooth * delta))
 	look_at(target.global_position + look_at_offset, Vector3.UP)
+	position.z = 8
+	#position.y += 0.2

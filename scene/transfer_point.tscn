@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bjr5rmlq1ccbj"]
+
+[ext_resource type="Script" uid="uid://c1s3n20yy5rn7" path="res://code/transfer_point.gd" id="1_gf08u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_asp05"]
+size = Vector3(1, 1, 1.6124268)
+
+[node name="TransferPoint" type="Area3D" unique_id=2027706980]
+script = ExtResource("1_gf08u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1691195772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30621338)
+shape = SubResource("BoxShape3D_asp05")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

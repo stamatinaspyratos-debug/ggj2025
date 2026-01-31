@@ -130,7 +130,7 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvtld"]
-size = Vector3(0.7328186, 0.77371216, 0.1875534)
+size = Vector3(0.54668045, 0.77371216, 0.1875534)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ct4mp"]
 size = Vector3(3.457563, 1, 5.5357265)
@@ -201,7 +201,7 @@ script = ExtResource("4_ct4mp")
 synced_properties = Array[String](["flip_h"])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2024580783]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039230347, -0.06452, -0.029369354)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024873734, -0.06452, -0.029369354)
 shape = SubResource("BoxShape3D_fvtld")
 
 [node name="AmbushArea" type="Area3D" parent="." unique_id=1551020699]

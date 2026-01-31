@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://ckl0samy38uj"]
+
+[ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_t43pv"]
+[ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_vkt7c"]
+[ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="4_okgyo"]
+[ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_xntrl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
+size = Vector3(13.145, 0.455, 13.61)
+
+[sub_resource type="BoxMesh" id="BoxMesh_deh8p"]
+size = Vector3(18.22, 0.455, 13.61)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xuqua"]
+size = Vector3(6.185, 3.84, 14.085)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f4ovx"]
+size = Vector3(10.17, 0.455, 13.61)
+
+[sub_resource type="BoxMesh" id="BoxMesh_doifd"]
+size = Vector3(10.17, 0.455, 7.59)
+
+[sub_resource type="Environment" id="Environment_xuqua"]
+background_mode = 1
+background_color = Color(0.16650787, 0.15691227, 0.18359542, 1)
+background_energy_multiplier = 2.0
+ambient_light_color = Color(0.88742435, 0.87268245, 0.8849515, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_doifd"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.29818892, 0.26191044, 2.7881877, 0, 0, 0, 0, 0, 0, 0.19689703, 0.3695593, 0.30809313, 0, 0, 0, 0, 0, 0, -0.40556812, 0.03388214, 0.96598405, 0, 0, 0, 0, 0, 0, -3.039692, 0.044424534, 0.22937584, 0, 0, 0, 0, 0, 0, -2.5127358, 0.14726162, 2.583837),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Outside" type="Node3D" unique_id=33148205]
+script = ExtResource("1_t43pv")
+player_scene = ExtResource("2_vkt7c")
+
+[node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.893527, -0.85835534, -3.8008528)
+use_collision = true
+mesh = SubResource("BoxMesh_ekwa0")
+
+[node name="Ground2" type="CSGMesh3D" parent="." unique_id=11448602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9772716, -4.6113124, -3.8008528)
+use_collision = true
+mesh = SubResource("BoxMesh_deh8p")
+
+[node name="Ground5" type="CSGMesh3D" parent="." unique_id=543722974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.221839, -2.8641214, -3.8008528)
+use_collision = true
+mesh = SubResource("BoxMesh_xuqua")
+
+[node name="Ground6" type="CSGMesh3D" parent="." unique_id=268943970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.12753, -2.8641214, -5.440284)
+use_collision = true
+mesh = SubResource("BoxMesh_xuqua")
+
+[node name="Ground7" type="CSGMesh3D" parent="." unique_id=642709608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.12753, -0.69782186, -4.14964)
+use_collision = true
+mesh = SubResource("BoxMesh_xuqua")
+
+[node name="Ground3" type="CSGMesh3D" parent="." unique_id=381596816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6609573, -0.87270236, -3.8008528)
+use_collision = true
+mesh = SubResource("BoxMesh_f4ovx")
+
+[node name="Ground4" type="CSGMesh3D" parent="." unique_id=1119211587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0838661, -0.87270236, -6.9396625)
+use_collision = true
+mesh = SubResource("BoxMesh_doifd")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=440110117]
+transform = Transform3D(1, 0, 0, 0, 0.99167794, 0.1287437, 0, -0.1287437, 0.99167794, -3.1247473, 4.530218, 7.8440447)
+projection = 1
+current = true
+size = 4.0
+near = 0.001
+script = ExtResource("5_xntrl")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=797066803]
+environment = SubResource("Environment_xuqua")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1170403862]
+transform = Transform3D(0.8704466, 0.09441025, -0.48312464, 0.30995506, 0.6573392, 0.68690103, 0.38242725, -0.7476577, 0.54291576, 0.34567875, 15.468761, -0.68418026)
+shadow_enabled = true
+shadow_blur = 0.5
+
+[node name="Box" parent="." unique_id=1406562557 instance=ExtResource("4_okgyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.347898, -3.755981, 2.0090837)
+
+[node name="Box2" parent="." unique_id=1677304338 instance=ExtResource("4_okgyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.196133, -3.755981, -0.5157385)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1780411465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7802962, -1.334728, 1.3969238)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1150710465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.329883, -1.334728, 1.3969238)
+
+[node name="Guard" parent="." unique_id=1737357155 node_paths=PackedStringArray("path") instance=ExtResource("2_vkt7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8940687, -4.172476, 1.7459569)
+can_catch_player = true
+patrol = true
+path = NodePath("../Path3D")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1886537244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -4.1944566, -0.29460573)
+curve = SubResource("Curve3D_doifd")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1557084503]
+transform = Transform3D(0.9991657, 0.001768119, 0.04076953, 0, 0.99905133, -0.04332818, -0.04080787, 0.043291748, 0.99822706, 0.29818892, 0.26191044, 2.7881877)

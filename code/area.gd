@@ -21,7 +21,7 @@ func title_dismiss():
 	t.tween_property(
 		Game.Camera, "position", Vector3(Game.Player.position.x, 2, 3), 1
 	)
-	t.tween_property(Game.Camera, "size", 5, 1)
+	t.tween_property(Game.Camera, "size", 4, 1)
 	await t.finished
 	Game.Player.state = "Idle"
 	Game.Camera.active = true
