@@ -24,13 +24,10 @@ var mask_offset: Dictionary = {
 }
 @export var patrol:= false
 @export_enum("Idle", "Walk", "Stop") var state = "Idle"
-@export var path: Path3D
-var path_follow: PathFollow3D
+@export var path_follow: PathFollow3D
 
 func _ready() -> void:
 	Game.Player = self
-	if path != null: 
-		path_follow = path.get_node("PathFollow3D")
 	$Prompt.hide()
 
 func _physics_process(delta: float) -> void:
@@ -55,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	
 	if state == "Stop": direction = Vector3.ZERO
 	
-	if not masked and prompt.visible and Input.is_action_just_pressed("change_mask"):
+	if not masked and prompt.visible and Input.is_action_just_pressed("change_mask") and not Game.Player.state == "Stop":
 		masked = true
 	
 	if direction:
@@ -131,8 +128,6 @@ func _on_detect_area_body_entered(body: Node3D) -> void:
 		await t.finished
 		await get_tree().create_timer(0.5).timeout
 		Game.game_over()
-		await get_tree().create_timer(3).timeout
-		state = "Idle"
 
 func unmask():
 	Game.mask_cutin()

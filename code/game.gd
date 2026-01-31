@@ -12,9 +12,7 @@ func game_over():
 		Game.Player.state = "Stop"
 		await get_tree().process_frame
 	scene.queue_free()
-	Player.position = Vector3.ZERO
-	Player.state = "Idle"
-	Camera.active = true
+	get_tree().change_scene_to_packed.call_deferred(load(Area.scene_file_path))
 
 func mask_cutin():
 	var scene = preload("res://scene/mask_cutin.tscn").instantiate()
@@ -31,3 +29,9 @@ func text(texts: Array[String]):
 	await scene.show_text(texts)
 	await get_tree().create_timer(0.3).timeout
 	Player.state = "Idle"
+
+func elevator_effect():
+	var scene = preload("res://scene/elevator_arrow.tscn").instantiate()
+	get_tree().root.add_child(scene)
+	await get_tree().create_timer(3).timeout
+	scene.queue_free()

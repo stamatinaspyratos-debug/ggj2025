@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_vkt7c"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="3_deh8p"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="4_okgyo"]
+[ext_resource type="PackedScene" uid="uid://di4jqwhrcqvb2" path="res://scene/inside2.tscn" id="4_vkt7c"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_xntrl"]
 [ext_resource type="PackedScene" uid="uid://f5qvt27m1te0" path="res://scene/look_down.tscn" id="6_t43pv"]
 
@@ -127,6 +128,7 @@ mesh = SubResource("BoxMesh_doifd")
 
 [node name="TransferPoint" parent="Ground" unique_id=2027706980 instance=ExtResource("3_deh8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.850922, -10.627959, 4.632693)
+scene = ExtResource("4_vkt7c")
 keycard = 1
 
 [node name="Camera" type="Camera3D" parent="." unique_id=440110117]
@@ -162,33 +164,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7802962, -1.334728, 1.3969
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1150710465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.329883, -1.334728, 1.3969238)
 
-[node name="Guard" parent="." unique_id=1737357155 node_paths=PackedStringArray("path") instance=ExtResource("2_vkt7c")]
+[node name="Guard" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_vkt7c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8940687, -5.674822, 1.7459569)
 can_catch_player = true
 patrol = true
-path = NodePath("../Path3D")
+path_follow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Guard2" parent="." unique_id=1906536917 node_paths=PackedStringArray("path") instance=ExtResource("2_vkt7c")]
+[node name="Guard2" parent="." unique_id=1906536917 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_vkt7c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8940687, -11.337746, 1.7459569)
 keycard = 1
 can_catch_player = true
 patrol = true
-path = NodePath("../Path3D2")
+path_follow = NodePath("../Path3D2/PathFollow3D")
 
-[node name="Cat" parent="." unique_id=1689719779 node_paths=PackedStringArray("path") instance=ExtResource("2_vkt7c")]
+[node name="Cat" parent="." unique_id=1689719779 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_vkt7c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.281796, -8.026564, 1.7459569)
 SPEED = 5.0
 JUMP_VELOCITY = 8
 sprite = "Cat"
 patrol = true
-path = NodePath("../Path3D3")
+path_follow = NodePath("../Path3D3/PathFollow3D")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1886537244]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -5.815693, -0.29460573)
 curve = SubResource("Curve3D_doifd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1557084503]
-transform = Transform3D(0.9991657, 0.0017681159, 0.04076953, 0, 0.99904954, -0.04332818, -0.04080787, 0.04329167, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
+transform = Transform3D(0.9991657, 0.0017681142, 0.04076953, 0, 0.99904853, -0.04332818, -0.04080787, 0.04329163, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=1625026444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -11.753315, -0.29460573)
@@ -205,4 +207,4 @@ curve = SubResource("Curve3D_t43pv")
 transform = Transform3D(-0.047214415, -0.05032558, -0.9976142, -1.8626414e-09, 0.9987187, -0.050382234, 0.99888265, -0.0023787487, -0.047154456, -3.4903946, 0.38050365, -0.62820625)
 
 [node name="Lookdown" parent="." unique_id=2017985930 instance=ExtResource("6_t43pv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561569, -8.943174, 2.0651379)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561569, -8.815878, 2.0651379)

@@ -8,7 +8,7 @@ extends Camera3D
 # angle όταν hidden (από “άλλη” πλευρά: X αρνητικό)
 @export var hide_offset := Vector3(-5, 8, 8)
 
-@export var look_at_offset := Vector3(0, 1.2, 0)
+@export var look_at_offset := Vector3(0.5, 1.2, 0)
 
 var target: Node3D
 var active: bool = false
