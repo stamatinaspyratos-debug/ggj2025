@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://0hvhunsovnt5"]
 
 [ext_resource type="Script" uid="uid://cubus2hnn6ped" path="res://code/entity.gd" id="1_fvtld"]
-[ext_resource type="Texture2D" uid="uid://dktwk7bj57phm" path="res://assets/prod.png" id="2_22bi2"]
 [ext_resource type="Texture2D" uid="uid://bti6yjg2notj4" path="res://assets/creature.png" id="2_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://k7a5itxficwy" path="res://assets/Walking.png" id="3_oh5ij"]
 [ext_resource type="Texture2D" uid="uid://bpvqpnmirsbm" path="res://assets/mask0.png" id="3_s4jxa"]
@@ -17,53 +16,29 @@ region = Rect2(0, 0, 24, 24)
 atlas = ExtResource("2_ct4mp")
 region = Rect2(24, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oh5ij"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocx2q"]
 atlas = ExtResource("3_oh5ij")
-region = Rect2(192, 0, 64, 35)
+region = Rect2(256, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2fvbb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms2ax"]
 atlas = ExtResource("3_oh5ij")
-region = Rect2(256, 0, 64, 35)
+region = Rect2(512, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ml7e8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm6y7"]
 atlas = ExtResource("3_oh5ij")
-region = Rect2(320, 0, 64, 35)
+region = Rect2(768, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_34jf3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dn68"]
 atlas = ExtResource("3_oh5ij")
-region = Rect2(384, 0, 64, 35)
+region = Rect2(1024, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u7b46"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysk8y"]
 atlas = ExtResource("3_oh5ij")
-region = Rect2(448, 0, 64, 35)
+region = Rect2(1280, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j4wxg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_22bi2"]
 atlas = ExtResource("3_oh5ij")
-region = Rect2(512, 0, 64, 35)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bup7g"]
-atlas = ExtResource("3_oh5ij")
-region = Rect2(576, 0, 64, 35)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ja17"]
-atlas = ExtResource("3_oh5ij")
-region = Rect2(640, 0, 64, 35)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v4iqv"]
-atlas = ExtResource("3_oh5ij")
-region = Rect2(704, 0, 64, 35)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_42h83"]
-atlas = ExtResource("3_oh5ij")
-region = Rect2(0, 0, 64, 35)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iuf2t"]
-atlas = ExtResource("3_oh5ij")
-region = Rect2(64, 0, 64, 35)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jrjdb"]
-atlas = ExtResource("3_oh5ij")
-region = Rect2(128, 0, 64, 35)
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m15l1"]
 atlas = ExtResource("5_ocx2q")
@@ -88,49 +63,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oh5ij")
+"texture": SubResource("AtlasTexture_ocx2q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2fvbb")
+"texture": SubResource("AtlasTexture_ms2ax")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ml7e8")
+"texture": SubResource("AtlasTexture_jm6y7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_34jf3")
+"texture": SubResource("AtlasTexture_4dn68")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u7b46")
+"texture": SubResource("AtlasTexture_ysk8y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j4wxg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bup7g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ja17")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v4iqv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_42h83")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iuf2t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jrjdb")
+"texture": SubResource("AtlasTexture_22bi2")
 }],
 "loop": true,
 "name": &"Human",
-"speed": 9.0
+"speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_22bi2")
-}],
+"frames": [],
 "loop": true,
 "name": &"Protag",
 "speed": 5.0
@@ -212,17 +166,19 @@ can_jump = true
 sprite = "Human"
 
 [node name="SpriteBase" type="AnimatedSprite3D" parent="." unique_id=286295862]
-pixel_size = 0.05
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044953287, 1.4346362, 0.05040151)
+pixel_size = 0.03
 billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2fvbb")
-animation = &"Rat"
-frame_progress = 0.68931186
+animation = &"Human"
+frame = 3
+frame_progress = 0.5945002
 
 [node name="SpriteMask" type="AnimatedSprite3D" parent="SpriteBase" unique_id=1901796756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30675992, -0.28167224, 0.15821838)
-pixel_size = 0.05
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03752573, -0.20000005, 0.15)
+pixel_size = 0.03
 billboard = 2
 texture_filter = 0
 render_priority = 1
