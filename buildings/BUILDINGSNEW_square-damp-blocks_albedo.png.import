@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbpaelhne6w7j"
 path.s3tc="res://.godot/imported/BUILDINGSNEW_square-damp-blocks_albedo.png-4f8b6e91c14ebe6106c63d95624353d3.s3tc.ctex"
+path.etc2="res://.godot/imported/BUILDINGSNEW_square-damp-blocks_albedo.png-4f8b6e91c14ebe6106c63d95624353d3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://buildings/BUILDINGSNEW_square-damp-blocks_albedo.png"
-dest_files=["res://.godot/imported/BUILDINGSNEW_square-damp-blocks_albedo.png-4f8b6e91c14ebe6106c63d95624353d3.s3tc.ctex"]
+dest_files=["res://.godot/imported/BUILDINGSNEW_square-damp-blocks_albedo.png-4f8b6e91c14ebe6106c63d95624353d3.s3tc.ctex", "res://.godot/imported/BUILDINGSNEW_square-damp-blocks_albedo.png-4f8b6e91c14ebe6106c63d95624353d3.etc2.ctex"]
 
 [params]
 

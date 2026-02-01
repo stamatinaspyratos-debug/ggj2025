@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci6xv7sf5q2un"
 path.s3tc="res://.godot/imported/SMALLhouseWtextures_roofHbake.png-583b1435a9c039dfa77fd47b1e3a7f7c.s3tc.ctex"
+path.etc2="res://.godot/imported/SMALLhouseWtextures_roofHbake.png-583b1435a9c039dfa77fd47b1e3a7f7c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/SMALLhouseWtextures_roofHbake.png"
-dest_files=["res://.godot/imported/SMALLhouseWtextures_roofHbake.png-583b1435a9c039dfa77fd47b1e3a7f7c.s3tc.ctex"]
+dest_files=["res://.godot/imported/SMALLhouseWtextures_roofHbake.png-583b1435a9c039dfa77fd47b1e3a7f7c.s3tc.ctex", "res://.godot/imported/SMALLhouseWtextures_roofHbake.png-583b1435a9c039dfa77fd47b1e3a7f7c.etc2.ctex"]
 
 [params]
 

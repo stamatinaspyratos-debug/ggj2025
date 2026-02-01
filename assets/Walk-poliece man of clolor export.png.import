@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cebx0ikl2lcjs"
 path.s3tc="res://.godot/imported/Walk-poliece man of clolor export.png-cdc7ab6473ba9ab005c162179fdd17a8.s3tc.ctex"
+path.etc2="res://.godot/imported/Walk-poliece man of clolor export.png-cdc7ab6473ba9ab005c162179fdd17a8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Walk-poliece man of clolor export.png"
-dest_files=["res://.godot/imported/Walk-poliece man of clolor export.png-cdc7ab6473ba9ab005c162179fdd17a8.s3tc.ctex"]
+dest_files=["res://.godot/imported/Walk-poliece man of clolor export.png-cdc7ab6473ba9ab005c162179fdd17a8.s3tc.ctex", "res://.godot/imported/Walk-poliece man of clolor export.png-cdc7ab6473ba9ab005c162179fdd17a8.etc2.ctex"]
 
 [params]
 

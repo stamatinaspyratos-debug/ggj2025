@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2eumab2cc2cs"
 path.s3tc="res://.godot/imported/Crouch-police.png-a0c4592339ca20052281fcff097c4300.s3tc.ctex"
+path.etc2="res://.godot/imported/Crouch-police.png-a0c4592339ca20052281fcff097c4300.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Crouch-police.png"
-dest_files=["res://.godot/imported/Crouch-police.png-a0c4592339ca20052281fcff097c4300.s3tc.ctex"]
+dest_files=["res://.godot/imported/Crouch-police.png-a0c4592339ca20052281fcff097c4300.s3tc.ctex", "res://.godot/imported/Crouch-police.png-a0c4592339ca20052281fcff097c4300.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bun2du5y7tth7"
 path.s3tc="res://.godot/imported/Crouch-export.png-d2629614602122740f6279837b85b9e3.s3tc.ctex"
+path.etc2="res://.godot/imported/Crouch-export.png-d2629614602122740f6279837b85b9e3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Crouch-export.png"
-dest_files=["res://.godot/imported/Crouch-export.png-d2629614602122740f6279837b85b9e3.s3tc.ctex"]
+dest_files=["res://.godot/imported/Crouch-export.png-d2629614602122740f6279837b85b9e3.s3tc.ctex", "res://.godot/imported/Crouch-export.png-d2629614602122740f6279837b85b9e3.etc2.ctex"]
 
 [params]
 

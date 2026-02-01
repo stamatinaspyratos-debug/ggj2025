@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3r0d2nwiw4u3"
 path.s3tc="res://.godot/imported/warehouseeeee_barellBAKE.png-1bfd84bc302185235d611a6883d37056.s3tc.ctex"
+path.etc2="res://.godot/imported/warehouseeeee_barellBAKE.png-1bfd84bc302185235d611a6883d37056.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://buildings/warehouseeeee_barellBAKE.png"
-dest_files=["res://.godot/imported/warehouseeeee_barellBAKE.png-1bfd84bc302185235d611a6883d37056.s3tc.ctex"]
+dest_files=["res://.godot/imported/warehouseeeee_barellBAKE.png-1bfd84bc302185235d611a6883d37056.s3tc.ctex", "res://.godot/imported/warehouseeeee_barellBAKE.png-1bfd84bc302185235d611a6883d37056.etc2.ctex"]
 
 [params]
 

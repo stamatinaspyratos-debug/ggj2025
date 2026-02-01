@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3bxrvrvp0c55"
 path.s3tc="res://.godot/imported/EXPORTWAREHOUSE_WAREbake.png-3f222ff14832198ce0a184bdc2b595c8.s3tc.ctex"
+path.etc2="res://.godot/imported/EXPORTWAREHOUSE_WAREbake.png-3f222ff14832198ce0a184bdc2b595c8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://buildings/EXPORTWAREHOUSE_WAREbake.png"
-dest_files=["res://.godot/imported/EXPORTWAREHOUSE_WAREbake.png-3f222ff14832198ce0a184bdc2b595c8.s3tc.ctex"]
+dest_files=["res://.godot/imported/EXPORTWAREHOUSE_WAREbake.png-3f222ff14832198ce0a184bdc2b595c8.s3tc.ctex", "res://.godot/imported/EXPORTWAREHOUSE_WAREbake.png-3f222ff14832198ce0a184bdc2b595c8.etc2.ctex"]
 
 [params]
 

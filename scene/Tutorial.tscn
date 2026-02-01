@@ -158,10 +158,11 @@ theme_override_font_sizes/normal_font_size = 48
 text = "Iris
 Axel
 Nefeli
-Panagiotis
+Kappos
 Christos
 Rafael
-Stamatina"
+Stamatina
+Nikos"
 
 [node name="Credits" type="Button" parent="TitleScreen" unique_id=284502535]
 offset_left = 19.0
@@ -223,7 +224,7 @@ transform = Transform3D(0.99953574, -0.021444758, 0.021644363, 0.021321645, 0.99
 curve = SubResource("Curve3D_dfs0n")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.020687703, -0.999631, -9.3131103e-10, 0.9997718, 0.020690516, 0.99984914, 0.00034416985, -0.016630262, -8.685983, -0.31927156, 0.97473425)
+transform = Transform3D(-0.01663389, 0.020687701, -0.99963087, -9.3131103e-10, 0.99977165, 0.020690514, 0.99984914, 0.00034416982, -0.01663026, -8.685983, -0.31927156, 0.97473425)
 
 [node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.325691, -0.030855298, -0.29460573)
