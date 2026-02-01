@@ -83,7 +83,7 @@ glow_strength = 1.69
 [sub_resource type="Curve3D" id="Curve3D_dfs0n"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.449341, -0.29714617, -0.023162723, 0, 0, 0, 0, 0, 0, -3.8972206, -0.4149362, 0.43028712, 0, 0, 0, 0, 0, 0, -3.7528753, -0.41399613, 1.238595, 0, 0, 0, 0, 0, 0, -4.214591, -0.48551217, 2.5488646, 0, 0, 0, 0, 0, 0, -8.608492, 0.33306828, 2.3896139),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.449341, -0.29714617, -0.023162723, 0, 0, 0, 0, 0, 0, -3.8972197, -0.41493627, 0.43028706, 0, 0, 0, 0, 0, 0, -3.7528753, -0.41399613, 1.238595, 0, 0, 0, 0, 0, 0, -4.214591, -0.48551217, 2.5488646, 0, 0, 0, 0, 0, 0, -8.608492, 0.33306828, 2.3896139),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -91,7 +91,7 @@ point_count = 5
 [sub_resource type="Curve3D" id="Curve3D_kv4hd"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.9867668, 1.9493247, -3.13791, 0, 0, 0, 0, 0, 0, -5.3760414, 2.023862, -3.1621342, 0, 0, 0, 0, 0, 0, -5.7058296, -0.12499511, 1.2049379, 0, 0, 0, 0, 0, 0, -0.90018463, -0.6640824, 1.6690054),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.9867668, -0.38905323, -3.13791, 0, 0, 0, 0, 0, 0, -5.3760414, -0.57112396, -3.1621342, 0, 0, 0, 0, 0, 0, -5.7058296, -1.0520934, 1.2049379, 0, 0, 0, 0, 0, 0, -0.90018463, -0.6640824, 1.6690054),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -214,8 +214,8 @@ script = ExtResource("5_w3jsn")
 transform = Transform3D(0.99974525, -0.02136442, 0.007282179, 0.021321647, 0.99975526, 0.0059031365, -0.0074065067, -0.0057463795, 0.999956, 14.416027, -0.030855298, -0.8243735)
 curve = SubResource("Curve3D_dfs0n")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.020687701, -0.99963087, -9.3131103e-10, 0.99977165, 0.020690514, 0.99984914, 0.00034416982, -0.01663026, -8.685983, -0.31927156, 0.97473425)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2 guard1" unique_id=2096745278]
+transform = Transform3D(-0.081400275, 0.021070054, -0.99645877, -1.8626454e-09, 0.99977654, 0.021140207, 0.9966815, 0.0017208206, -0.08138209, -9.449341, -0.29714617, -0.023162723)
 
 [node name="Bird" parent="." unique_id=1737357155 instance=ExtResource("2_arvm7")]
 transform = Transform3D(0.9999771, -0.0029237685, 0.0060964753, 0.0029214676, 0.99999565, 0.00038600675, -0.006097578, -0.00036817274, 0.99998134, 36.80688, 7.2750273, -2.246372)
@@ -227,6 +227,7 @@ patrol = true
 [node name="Guard" parent="." unique_id=547366311 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.027305, -0.36932385, -0.14123726)
 can_catch_player = true
+sprite = "GuardBlack"
 has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D2 guard1/PathFollow3D")
@@ -301,6 +302,7 @@ spot_angle = 65.09735
 [node name="Entity2" parent="." unique_id=1862804856 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.987236, 1.2107028, 2.0668578)
 can_catch_player = true
+sprite = "GuardWhite"
 has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D3 guard3/PathFollow3D")
@@ -313,7 +315,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.91775, 1.2107018, 3.021886
 curve = SubResource("Curve3D_kv4hd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3 guard3" unique_id=1913162352]
-transform = Transform3D(0.005518823, 0.016978662, 0.9998407, 9.313196e-10, 0.99985445, -0.016978946, -0.99998146, 9.370491e-05, 0.005518046, -0.9867668, 1.9493247, -3.13791)
+transform = Transform3D(0.0055189263, -0.041443814, 0.9991237, -1.8626337e-09, 0.9991381, 0.04144448, -0.9999785, -0.00022873214, 0.0055142087, -0.9867668, -0.38905323, -3.13791)
 
 [node name="platform2" parent="." unique_id=1770618742 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 26.748625, 3.4314075, 0.24839306)

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://oo3c8hiuwrrh"
 path.s3tc="res://.godot/imported/BAKEROAD.png-314093dc74f7ce9a71688060878ef313.s3tc.ctex"
+path.etc2="res://.godot/imported/BAKEROAD.png-314093dc74f7ce9a71688060878ef313.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://BAKEROAD.png"
-dest_files=["res://.godot/imported/BAKEROAD.png-314093dc74f7ce9a71688060878ef313.s3tc.ctex"]
+dest_files=["res://.godot/imported/BAKEROAD.png-314093dc74f7ce9a71688060878ef313.s3tc.ctex", "res://.godot/imported/BAKEROAD.png-314093dc74f7ce9a71688060878ef313.etc2.ctex"]
 
 [params]
 
