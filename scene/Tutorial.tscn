@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://qecrx86lj5w0" path="res://assets/start.png" id="4_odj2w"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_w3jsn"]
 [ext_resource type="Shader" uid="uid://cagj0qbo1deki" path="res://scene/sky.gdshader" id="6_5qrb1"]
+[ext_resource type="AudioStream" uid="uid://dkmy44nqtng04" path="res://audio/Main Menu.mp3" id="6_mqsvd"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="7_r6x65"]
 [ext_resource type="PackedScene" uid="uid://duwjc2soy73vq" path="res://scene/inside.tscn" id="8_r6x65"]
 [ext_resource type="AudioStream" uid="uid://chyeqjp2057js" path="res://audio/Just a guy.mp3" id="11_0ib3i"]
@@ -96,6 +97,14 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Curve3D" id="Curve3D_qy2n4"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -4.140731, 0, -2.1013148, 0, 0, 0, 0, 0, 0, 1.8799391, 0, -1.1920708, 0, 0, 0, 0, 0, 0, 2.168088, 0, 0.92925507, 0, 0, 0, 0, 0, 0, -2.1604757, 0, 1.358212, 0, 0, 0, 0, 0, 0, -5.318324, 0, 1.8592091, 0, 0, 0, 0, 0, 0, 2.1290922, 0, 3.6199834, 0, 0, 0, 0, 0, 0, 4.274724, 0, 2.4831471, 0, 0, 0, 0, 0, 0, -1.4585466, 0, 5.530791, 0, 0, 0, 0, 0, 0, -2.939561, 0, 8.449555, 0, 0, 0, 0, 0, 0, 2.5198984, 0, 9.190481, 0, 0, 0, 0, 0, 0, 2.870862, 0, 6.304768, 0, 0, 0, 0, 0, 0, 1.6611395, 0, 4.5168924, 0, 0, 0, 0, 0, 0, -2.0044909, 0, 4.7118726, 0, 0, 0, 0, 0, 0, -5.8252745, 0, 3.9260037, 0, 0, 0, 0, 0, 0, 1.0761986, 0, 2.1381335, 0, 0, 0, 0, 0, 0, -2.0434885, 0, 0.3833103),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 16
+
 [node name="Outside" type="Node3D" unique_id=33148205]
 script = ExtResource("1_bspfs")
 player_scene = ExtResource("2_arvm7")
@@ -176,6 +185,54 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_5qrb1")
 toggle_mode = true
 text = "Credits"
 
+[node name="Label" type="Label" parent="TitleScreen" unique_id=1137403989]
+offset_left = 888.0
+offset_top = 301.0
+offset_right = 1242.0
+offset_bottom = 442.0
+theme_override_colors/font_shadow_color = Color(0.09916669, 0, 0.17, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 32
+text = "Move: Arrows / WASD
+Jump: Space / Enter
+Change mask: Shift / M"
+
+[node name="Label2" type="Label" parent="TitleScreen" unique_id=1635948992]
+offset_left = 632.0
+offset_top = 633.0
+offset_right = 1369.0
+offset_bottom = 774.0
+theme_override_colors/font_shadow_color = Color(0.09916669, 0, 0.17, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 40
+text = "Do not let the guards catch you!"
+
+[node name="Label4" type="Label" parent="TitleScreen" unique_id=692519649]
+offset_left = 512.0
+offset_top = 506.0
+offset_right = 1249.0
+offset_bottom = 647.0
+theme_override_colors/font_shadow_color = Color(0.09916669, 0, 0.17, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 32
+text = "Use the mask on other creatures 
+to control them."
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="TitleScreen" unique_id=310117157]
+offset_left = 886.0
+offset_top = 242.0
+offset_right = 1393.0
+offset_bottom = 383.0
+theme_override_colors/font_shadow_color = Color(0.09916669, 0, 0.17, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 40
+text = "Controls"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TitleScreen" unique_id=323992718]
+stream = ExtResource("6_mqsvd")
+bus = &"Other"
+
 [node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.231596, -0.8583544, -0.974514)
 visible = false
@@ -191,7 +248,7 @@ mesh = SubResource("BoxMesh_asp05")
 environment = SubResource("Environment_ievfb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1904993359]
-transform = Transform3D(0.8704466, 0.09441025, -0.48312464, 0.30995506, 0.6573392, 0.68690103, 0.38242725, -0.7476577, 0.54291576, 0.34567875, 15.468761, -0.68418026)
+transform = Transform3D(0.8701996, 0.0944265, -0.4835662, 0.48814365, -0.03207582, 0.87217367, 0.06684554, -0.995015, -0.074006066, 0.34567875, 15.468761, -0.68418026)
 light_color = Color(1, 1, 0.8156863, 1)
 shadow_enabled = true
 shadow_blur = 0.5
@@ -203,10 +260,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.180868, -0.2725246, -0.914
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.369503, -0.1362623, -0.4570737)
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1364433887]
-transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.17364818, 0, -0.17364818, 0.9848078, -15.395317, 3.335, 8.31)
+transform = Transform3D(0.9980526, 0.013667411, -0.06086257, 0, 0.9757012, 0.21910526, 0.062378287, -0.21867858, 0.97380114, -13.69136, 5.455181, 8.31)
 projection = 1
 current = true
-size = 7.0
+size = 10.0
 near = 0.001
 script = ExtResource("5_w3jsn")
 
@@ -214,8 +271,8 @@ script = ExtResource("5_w3jsn")
 transform = Transform3D(0.99974525, -0.02136442, 0.007282179, 0.021321647, 0.99975526, 0.0059031365, -0.0074065067, -0.0057463795, 0.999956, 14.416027, -0.030855298, -0.8243735)
 curve = SubResource("Curve3D_dfs0n")
 
-[node name="Path3D2#PathFollow3D" type="PathFollow3D" parent="." unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.020687701, -0.99963087, -9.3131103e-10, 0.99977165, 0.020690514, 0.99984914, 0.00034416982, -0.01663026, -8.685983, -0.31927156, 0.97473425)
+[node name="Path3D2#PathFollow3D" type="PathFollow3D" parent="Path3D2 guard1" unique_id=1797781176]
+transform = Transform3D(-0.08139926, 0.021069752, -0.99644214, -1.8626221e-09, 0.99976224, 0.021139855, 0.99666905, 0.0017207961, -0.08138074, -9.449341, -0.29714617, -0.023162723)
 
 [node name="Bird" parent="." unique_id=1737357155 instance=ExtResource("2_arvm7")]
 transform = Transform3D(0.9999771, -0.0029237685, 0.0060964753, 0.0029214676, 0.99999565, 0.00038600675, -0.006097578, -0.00036817274, 0.99998134, 36.80688, 7.2750273, -2.246372)
@@ -224,12 +281,13 @@ sprite = "Bird"
 flying = true
 patrol = true
 
-[node name="Guard" parent="." unique_id=547366311 instance=ExtResource("2_arvm7")]
+[node name="Guard" parent="." unique_id=547366311 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.027305, -0.36932385, -0.14123726)
 can_catch_player = true
 sprite = "GuardBlack"
 has_flashlight = true
 patrol = true
+path_follow = NodePath("../Path3D2 guard1/Path3D2#PathFollow3D")
 
 [node name="Cat" parent="." unique_id=1735912869 instance=ExtResource("2_arvm7")]
 transform = Transform3D(0.9999263, -0.00556791, 0.010795113, 0.0055496166, 0.9999833, 0.0017245973, -0.0108045265, -0.0016645666, 0.99994034, 16.1762, 1.1540365, 1.5481535)
@@ -253,10 +311,10 @@ autoplay = true
 transform = Transform3D(-0.08715577, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, -0.08715577, -15.0833, -1.4547591, -5.6817026)
 
 [node name="EXTRAbuildings24" parent="Buildingsection1" unique_id=1531308031 instance=ExtResource("11_5qrb1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77032375, 0, -8.804836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77032375, -0.64677143, -8.804837)
 
 [node name="EXTRAbuildings25" parent="Buildingsection1" unique_id=1111700033 instance=ExtResource("11_5qrb1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.512629, 0, -17.289423)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.512629, -0.06441021, -17.289425)
 
 [node name="BUILDINGSNEW" parent="Buildingsection1" unique_id=250173078 instance=ExtResource("13_lr7vt")]
 transform = Transform3D(0.9998742, 0, -0.015864305, 0, 1, 0, 0.015864305, 0, 0.9998742, -1.0110984, 3.33786e-06, -22.171982)
@@ -306,6 +364,15 @@ has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D3 guard3/PathFollow3D")
 
+[node name="Mouse" parent="." unique_id=1217231240 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.498817, 0.13148105, 2.0668578)
+SPEED = 10.0
+JUMP_VELOCITY = 2
+sprite = "Rat"
+undetectable = true
+patrol = true
+path_follow = NodePath("../Path3D/PathFollow3D")
+
 [node name="platform" parent="." unique_id=230186788 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 22.64175, 1.7459221, -0.08191681)
 
@@ -314,7 +381,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.91775, 1.2107018, 3.021886
 curve = SubResource("Curve3D_kv4hd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3 guard3" unique_id=1913162352]
-transform = Transform3D(0.0055189263, -0.041443814, 0.9991237, -1.8626337e-09, 0.9991381, 0.04144448, -0.9999785, -0.00022873214, 0.0055142087, -0.9867668, -0.38905323, -3.13791)
+transform = Transform3D(0.0055189254, -0.041443806, 0.9991235, -1.8626334e-09, 0.99913794, 0.041444473, -0.9999783, -0.0002287321, 0.0055142078, -0.9867668, -0.38905323, -3.13791)
 
 [node name="platform2" parent="." unique_id=1770618742 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 26.748625, 3.4314075, 0.24839306)
@@ -323,16 +390,23 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 26.748625, 3.4314075, 0
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 38.38333, 3.3896651, 0.20186973)
 
 [node name="road1" parent="." unique_id=1339109230 instance=ExtResource("16_qy2n4")]
-transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 3.9603844, 53.088493, 1.4118505)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 3.9603844, 53.15, 3)
 
 [node name="road2" parent="." unique_id=130748860 instance=ExtResource("16_qy2n4")]
-transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 54.645557, 53.088493, 1.4118505)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 54.645557, 53.15, 3)
 
 [node name="platform4" parent="." unique_id=1249951180 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.154703, -0.57099175, 6.1857905)
 
 [node name="platform5" parent="." unique_id=2110929180 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 32.480568, 2.6014237, 0.24839306)
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1054730779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.155368, 0, 0)
+curve = SubResource("Curve3D_qy2n4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=32304757]
+transform = Transform3D(-0.14932671, 0, -0.9887852, 0, 1, 0, 0.9887852, 0, -0.14932671, -4.140731, 0, -2.1013148)
 
 [connection signal="pressed" from="TitleScreen/Start" to="." method="title_dismiss"]
 [connection signal="toggled" from="TitleScreen/Credits" to="." method="_on_credits_toggled"]

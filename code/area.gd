@@ -10,6 +10,8 @@ func _ready() -> void:
 	add_player()
 	if in_title:
 		$TitleScreen.show()
+		AudioServer.set_bus_volume_linear(1, 0)
+		$TitleScreen/AudioStreamPlayer.play()
 	else: 
 		if has_node("TitleScreen"): $TitleScreen.hide()
 		Game.Player.state = "Idle"
@@ -17,9 +19,11 @@ func _ready() -> void:
 
 func title_dismiss():
 	$TitleScreen.hide()
+	AudioServer.set_bus_volume_linear(1, 1)
+	$TitleScreen/AudioStreamPlayer.stop()
 	var t = create_tween().set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	t.tween_property(
-		Game.Camera, "position", Vector3(Game.Player.position.x, 2, 3), 1
+		Game.Camera, "position", Vector3(0, 2.822, 8), 1
 	)
 	t.tween_property(Game.Camera, "size", 4.5, 1)
 	await t.finished
