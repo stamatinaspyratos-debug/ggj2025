@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dheyedrfkslnm" path="res://buildings/EXTRAbuildings23.glb" id="11_5qrb1"]
 [ext_resource type="PackedScene" uid="uid://dvi5lyg1odtv3" path="res://buildings/BUILDINGSNEW.glb" id="13_lr7vt"]
 [ext_resource type="PackedScene" uid="uid://ddv1w3nu76us4" path="res://buildings/warehouse1_02.glb" id="14_gjjvq"]
+[ext_resource type="PackedScene" uid="uid://csjx83dcsgbl6" path="res://assets/platform.glb" id="15_kv4hd"]
+[ext_resource type="PackedScene" uid="uid://dfccuxq5rtp6h" path="res://assets/road1.glb" id="16_qy2n4"]
 
 [sub_resource type="Theme" id="Theme_bspfs"]
 Button/font_sizes/font_size = 42
@@ -56,9 +58,6 @@ size = Vector3(80.46, 0.455, 13.61)
 [sub_resource type="BoxMesh" id="BoxMesh_asp05"]
 size = Vector3(5.57, 0.125, 3.075)
 
-[sub_resource type="BoxMesh" id="BoxMesh_dfs0n"]
-size = Vector3(1.82, 0.21, 2.745)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4b8ht"]
 shader = ExtResource("6_5qrb1")
 shader_parameter/zenith_color = Color(0.02, 0.03, 0.07, 1)
@@ -81,21 +80,21 @@ ambient_light_color = Color(1, 1, 0.5529412, 1)
 ambient_light_energy = 0.3
 glow_strength = 1.69
 
-[sub_resource type="Curve3D" id="Curve3D_w3jsn"]
+[sub_resource type="Curve3D" id="Curve3D_dfs0n"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.053306103, -0.24640405, -0.19535351, 0, 0, 0, 0, 0, 0, 1.9731333, -0.013759255, -0.6309686, 0, 0, 0, 0, 0, 0, 2.7055867, -0.4601859, 0.25430202, 0, 0, 0, 0, 0, 0, -1.816719, -0.47970682, -0.12335658, 0, 0, 0, 0, 0, 0, -0.881865, -0.3658706, -1.7204123),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.449341, -0.29714617, -0.023162723, 0, 0, 0, 0, 0, 0, -3.8972206, -0.4149362, 0.43028712, 0, 0, 0, 0, 0, 0, -3.7528753, -0.41399613, 1.238595, 0, 0, 0, 0, 0, 0, -4.214591, -0.48551217, 2.5488646, 0, 0, 0, 0, 0, 0, -8.608492, 0.33306828, 2.3896139),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
-[sub_resource type="Curve3D" id="Curve3D_dfs0n"]
+[sub_resource type="Curve3D" id="Curve3D_kv4hd"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8.685983, -0.31927156, 0.97473425, 0, 0, 0, 0, 0, 0, -4.2577744, -0.4109273, 1.0484036, 0, 0, 0, 0, 0, 0, -3.8201017, -0.40034753, -0.8383615, 0, 0, 0, 0, 0, 0, 1.2213469, -0.60044265, 2.381006, 0, 0, 0, 0, 0, 0, -10.804917, 0.37987196, 2.3964322),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.9867668, 1.9493247, -3.13791, 0, 0, 0, 0, 0, 0, -5.3760414, 2.023862, -3.1621342, 0, 0, 0, 0, 0, 0, -5.7058296, -0.12499511, 1.2049379, 0, 0, 0, 0, 0, 0, -0.90018463, -0.6640824, 1.6690054),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 5
+point_count = 4
 
 [node name="Outside" type="Node3D" unique_id=33148205]
 script = ExtResource("1_bspfs")
@@ -178,18 +177,14 @@ text = "Credits"
 
 [node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.231596, -0.8583544, -0.974514)
+visible = false
 use_collision = true
 mesh = SubResource("BoxMesh_ekwa0")
 
 [node name="Ground2" type="CSGMesh3D" parent="." unique_id=922257950]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.214699, 1.5106816, -1.3107657)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 46.9407, 0.8892453, 4.3394294)
 use_collision = true
 mesh = SubResource("BoxMesh_asp05")
-
-[node name="Ground3" type="CSGMesh3D" parent="." unique_id=916154974]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.823111, 3.0645995, -1.0870013)
-use_collision = true
-mesh = SubResource("BoxMesh_dfs0n")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1495249303]
 environment = SubResource("Environment_ievfb")
@@ -200,8 +195,11 @@ light_color = Color(1, 1, 0.8156863, 1)
 shadow_enabled = true
 shadow_blur = 0.5
 
+[node name="CSGBox3D2" parent="." unique_id=1406562557 instance=ExtResource("4_asp05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.180868, -0.2725246, -0.9141474)
+
 [node name="CSGBox3D" parent="." unique_id=1725162128 instance=ExtResource("4_asp05")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.492559, -0.1362623, -0.072695255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.369503, -0.1362623, -0.4570737)
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1364433887]
 transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.17364818, 0, -0.17364818, 0.9848078, -15.395317, 3.335, 8.31)
@@ -211,36 +209,35 @@ size = 7.0
 near = 0.001
 script = ExtResource("5_w3jsn")
 
-[node name="Path3D" type="Path3D" parent="." unique_id=253810792]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2263927, -0.030855298, -0.29460573)
-curve = SubResource("Curve3D_w3jsn")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=471239151]
-transform = Transform3D(0.22127837, -0.11445003, -0.9684713, -1.1175869e-08, 0.9930882, -0.11735942, 0.97521055, 0.025969088, 0.21974921, 0.053306103, -0.24640405, -0.19535351)
-
-[node name="Path3D2" type="Path3D" parent="." unique_id=1997705880]
-transform = Transform3D(0.99953574, -0.021444758, 0.021644363, 0.021321645, 0.99975526, 0.005903136, -0.021765651, -0.0054389173, 0.9997483, 10.222002, -0.030855298, -0.29460573)
+[node name="Path3D2 guard1" type="Path3D" parent="." unique_id=1997705880]
+transform = Transform3D(0.99974525, -0.02136442, 0.007282179, 0.021321647, 0.99975526, 0.0059031365, -0.0074065067, -0.0057463795, 0.999956, 14.416027, -0.030855298, -0.8243735)
 curve = SubResource("Curve3D_dfs0n")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.020687703, -0.999631, -9.3131103e-10, 0.9997718, 0.020690516, 0.99984914, 0.00034416985, -0.016630262, -8.685983, -0.31927156, 0.97473425)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2 guard1" unique_id=1797781176]
+transform = Transform3D(-0.08139918, 0.021069534, -0.9964321, -1.8626203e-09, 0.9997523, 0.021139631, 0.9966681, 0.001720778, -0.08137991, -9.449341, -0.29714617, -0.023162723)
 
-[node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.325691, -0.030855298, -0.29460573)
-JUMP_VELOCITY = 8
-sprite = "Cat"
+[node name="Bird" parent="." unique_id=1737357155 instance=ExtResource("2_arvm7")]
+transform = Transform3D(0.9999771, -0.0029237685, 0.0060964753, 0.0029214676, 0.99999565, 0.00038600675, -0.006097578, -0.00036817274, 0.99998134, 36.80688, 7.2750273, -2.246372)
+JUMP_VELOCITY = 5
+sprite = "Bird"
 flying = true
 patrol = true
-path_follow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Guard" parent="." unique_id=547366311 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7578154, -0.36932385, -0.14123726)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.027305, -0.36932385, -0.14123726)
+can_catch_player = true
 has_flashlight = true
 patrol = true
-path_follow = NodePath("../Path3D2/PathFollow3D")
+path_follow = NodePath("../Path3D2 guard1/PathFollow3D")
+
+[node name="Cat" parent="." unique_id=1735912869 instance=ExtResource("2_arvm7")]
+transform = Transform3D(0.9999263, -0.00556791, 0.010795113, 0.0055496166, 0.9999833, 0.0017245973, -0.0108045265, -0.0016645666, 0.99994034, 16.1762, 1.1540365, 1.5481535)
+SPEED = 4.0
+JUMP_VELOCITY = 8
+sprite = "Cat"
 
 [node name="TransferPoint" parent="." unique_id=2027706980 instance=ExtResource("7_r6x65")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.855925, 3.546998, -1.3558469)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.305405, 0.555604, -0.6743636)
 scene = ExtResource("8_r6x65")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=691313512]
@@ -251,34 +248,34 @@ bus = &"Music"
 [node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=1121623658]
 autoplay = true
 
-[node name="Buildingsection1" parent="." unique_id=1391158112 instance=ExtResource("11_5qrb1")]
+[node name="Buildingsection1" parent="." unique_id=674430452 instance=ExtResource("11_5qrb1")]
 transform = Transform3D(-0.08715577, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, -0.08715577, -15.0833, -1.4547591, -5.6817026)
 
-[node name="EXTRAbuildings24" parent="Buildingsection1" unique_id=152881257 instance=ExtResource("11_5qrb1")]
+[node name="EXTRAbuildings24" parent="Buildingsection1" unique_id=1531308031 instance=ExtResource("11_5qrb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77032375, 0, -8.804836)
 
-[node name="EXTRAbuildings25" parent="Buildingsection1" unique_id=590537665 instance=ExtResource("11_5qrb1")]
+[node name="EXTRAbuildings25" parent="Buildingsection1" unique_id=1111700033 instance=ExtResource("11_5qrb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.512629, 0, -17.289423)
 
-[node name="BUILDINGSNEW" parent="Buildingsection1" unique_id=1785677424 instance=ExtResource("13_lr7vt")]
+[node name="BUILDINGSNEW" parent="Buildingsection1" unique_id=250173078 instance=ExtResource("13_lr7vt")]
 transform = Transform3D(0.9998742, 0, -0.015864305, 0, 1, 0, 0.015864305, 0, 0.9998742, -1.0110984, 3.33786e-06, -22.171982)
 
-[node name="Buildingsection2" parent="." unique_id=867553403 instance=ExtResource("11_5qrb1")]
+[node name="Buildingsection2" parent="." unique_id=1028343758 instance=ExtResource("11_5qrb1")]
 transform = Transform3D(-0.08715577, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, -0.08715577, 15.820959, -1.4547591, -5.6817026)
 
-[node name="EXTRAbuildings24" parent="Buildingsection2" unique_id=2025519303 instance=ExtResource("11_5qrb1")]
+[node name="EXTRAbuildings24" parent="Buildingsection2" unique_id=199174815 instance=ExtResource("11_5qrb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77032375, 0, -8.804836)
 
-[node name="EXTRAbuildings25" parent="Buildingsection2" unique_id=1154742594 instance=ExtResource("11_5qrb1")]
+[node name="EXTRAbuildings25" parent="Buildingsection2" unique_id=1367953859 instance=ExtResource("11_5qrb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.512629, 0, -17.289423)
 
-[node name="BUILDINGSNEW" parent="Buildingsection2" unique_id=849311511 instance=ExtResource("13_lr7vt")]
+[node name="BUILDINGSNEW" parent="Buildingsection2" unique_id=1546750773 instance=ExtResource("13_lr7vt")]
 transform = Transform3D(0.9998742, 0, -0.015864305, 0, 1, 0, 0.015864305, 0, 0.9998742, -1.0110984, 3.33786e-06, -22.171982)
 
-[node name="EXTRAbuildings25" parent="." unique_id=962121813 instance=ExtResource("11_5qrb1")]
+[node name="EXTRAbuildings25" parent="." unique_id=1278321755 instance=ExtResource("11_5qrb1")]
 transform = Transform3D(-0.9848078, 0, 0.17364822, 0, 1, 0, -0.17364822, 0, -0.9848078, -20.889467, -2.9095182, -2.9229908)
 
-[node name="BUILDINGSNEW" parent="EXTRAbuildings25" unique_id=1441062445 instance=ExtResource("13_lr7vt")]
+[node name="BUILDINGSNEW" parent="EXTRAbuildings25" unique_id=1180917554 instance=ExtResource("13_lr7vt")]
 transform = Transform3D(0.9998741, 0, -0.015864298, 0, 1, 0, 0.015864298, 0, 0.9998741, 0.5015316, 3.33786e-06, -4.8825593)
 
 [node name="warehouse1_02" parent="." unique_id=1434289915 instance=ExtResource("14_gjjvq")]
@@ -299,6 +296,38 @@ light_indirect_energy = 1.151
 light_volumetric_fog_energy = 0.0
 spot_range = 4.6107225
 spot_angle = 65.09735
+
+[node name="Entity2" parent="." unique_id=1862804856 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.987236, 1.2107028, 2.0668578)
+can_catch_player = true
+has_flashlight = true
+patrol = true
+path_follow = NodePath("../Path3D3 guard3/PathFollow3D")
+
+[node name="platform" parent="." unique_id=230186788 instance=ExtResource("15_kv4hd")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 22.64175, 1.7459221, -0.08191681)
+
+[node name="Path3D3 guard3" type="Path3D" parent="." unique_id=1616747200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.91775, 1.2107018, 3.0218868)
+curve = SubResource("Curve3D_kv4hd")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3 guard3" unique_id=1913162352]
+transform = Transform3D(0.005518823, 0.016978662, 0.9998407, 9.313196e-10, 0.99985445, -0.016978946, -0.99998146, 9.370491e-05, 0.005518046, -0.9867668, 1.9493247, -3.13791)
+
+[node name="platform2" parent="." unique_id=1770618742 instance=ExtResource("15_kv4hd")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 26.748625, 3.4314075, 0.24839306)
+
+[node name="platform3" parent="." unique_id=858167642 instance=ExtResource("15_kv4hd")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 38.38333, 3.3896651, 0.20186973)
+
+[node name="road1" parent="." unique_id=1339109230 instance=ExtResource("16_qy2n4")]
+transform = Transform3D(-1.3113417e-08, 0, -1, 0, 1, 0, 0.3, 0, -4.371139e-08, 22.74, 107, 1.942)
+
+[node name="platform4" parent="." unique_id=1249951180 instance=ExtResource("15_kv4hd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.154703, -0.57099175, 6.1857905)
+
+[node name="platform5" parent="." unique_id=2110929180 instance=ExtResource("15_kv4hd")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 32.480568, 2.6014237, 0.24839306)
 
 [connection signal="pressed" from="TitleScreen/Start" to="." method="title_dismiss"]
 [connection signal="toggled" from="TitleScreen/Credits" to="." method="_on_credits_toggled"]
