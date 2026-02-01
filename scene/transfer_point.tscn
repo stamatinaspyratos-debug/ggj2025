@@ -1,9 +1,34 @@
 [gd_scene format=3 uid="uid://bjr5rmlq1ccbj"]
 
 [ext_resource type="Script" uid="uid://c1s3n20yy5rn7" path="res://code/transfer_point.gd" id="1_gf08u"]
+[ext_resource type="Texture2D" uid="uid://cx6gqw0q00jh1" path="res://assets/keycard-1.png" id="2_3kavr"]
+[ext_resource type="Texture2D" uid="uid://bbduusaxn5e0s" path="res://assets/keycard-2.png" id="3_hthn6"]
+[ext_resource type="AudioStream" uid="uid://d11a564xjvlpn" path="res://audio/Card swipe.mp3" id="4_tdkms"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_asp05"]
 size = Vector3(1, 1, 1.6124268)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gf08u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3kavr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hthn6")
+}],
+"loop": true,
+"name": &"Confirm",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3kavr")
+}],
+"loop": true,
+"name": &"Show",
+"speed": 5.0
+}]
 
 [node name="TransferPoint" type="Area3D" unique_id=2027706980]
 script = ExtResource("1_gf08u")
@@ -11,5 +36,18 @@ script = ExtResource("1_gf08u")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1691195772]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30621338)
 shape = SubResource("BoxShape3D_asp05")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1578777001]
+
+[node name="Keycard" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=268440867]
+position = Vector2(614, 235)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_gf08u")
+animation = &"Show"
+autoplay = "Show"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1440763706]
+stream = ExtResource("4_tdkms")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

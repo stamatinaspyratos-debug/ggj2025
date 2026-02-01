@@ -2,15 +2,25 @@ extends Area3D
 @export var scene: PackedScene
 @export var keycard = 0
 
+func _ready() -> void:
+	$CanvasLayer.hide()
+
 func _on_body_entered(body: Node3D) -> void:
 	if body == Game.Player:
 		if keycard == 0:
 			transfer()
 		elif Game.Player.keycard == keycard:
+			$CanvasLayer.show()
+			$CanvasLayer/Keycard.play("Confirm")
+			$AudioStreamPlayer.play()
 			await Game.text(["This elevator needs a keycard.", "You have the correct keycard and can use it."])
+			$CanvasLayer.hide()
 			transfer()
 		else:
+			$CanvasLayer.show()
+			$CanvasLayer/Keycard.play("Show")
 			await Game.text(["This elevator needs a keycard.", "You don't have the correct keycard."])
+			$CanvasLayer.hide()
 
 func transfer():
 	Game.elevator_effect()

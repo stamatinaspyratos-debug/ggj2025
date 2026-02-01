@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="4_ymd00"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="5_3q2yi"]
 [ext_resource type="AudioStream" uid="uid://bnkag7ta3oa2i" path="res://audio/Animal music.mp3" id="7_ktbmp"]
+[ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="7_xrmhx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(18.025, 0.38, 13.61)
@@ -170,6 +171,10 @@ size = Vector3(0.5800376, 4.4324455, 5.535417)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.219727, -0.64867944, 3.0676131)
 size = Vector3(2.3317058, 2.4848137, 2.956063)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Ground/CSGBox3D10" unique_id=2053661160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0470179, 1.7545354)
+light_color = Color(1, 0.8002365, 0.7923469, 1)
+
 [node name="Lookdown" parent="Ground" unique_id=2017985930 instance=ExtResource("3_fbnkn")]
 transform = Transform3D(2.2403812, 0, 0, 0, 3.202115, 0, 0, 0, 0.39112064, 17.38477, 1.4757764, 4.284273)
 
@@ -269,7 +274,7 @@ curve = SubResource("Curve3D_fbnkn")
 transform = Transform3D(0.4015893, 0, -0.9158002, 0, 0.99996555, 0, 0.9158, 0, 0.40158942, -2.049696, 4.0888786e-05, -1.6276028)
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path3D3" unique_id=1174892338]
-transform = Transform3D(-0.018633196, -0.0014315549, 0.9998214, -0.07660335, 0.9970255, -1.852035e-09, -0.9968747, -0.07658818, -0.018688276, -1.7915174, 4.0888786e-05, 1.1832296)
+transform = Transform3D(-0.018633196, -0.0014315548, 0.9998214, -0.07660335, 0.99702543, -1.852035e-09, -0.9968747, -0.076588176, -0.018688276, -1.7915174, 4.0888786e-05, 1.1832296)
 progress = 13.114263
 
 [node name="Path3D4" type="Path3D" parent="." unique_id=783600201]
@@ -287,3 +292,7 @@ progress = 7.3318133
 stream = ExtResource("7_ktbmp")
 autoplay = true
 bus = &"Music"
+
+[node name="TransferPoint" parent="." unique_id=2027706980 instance=ExtResource("7_xrmhx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.777946, -1.9858446, 0.97423744)
+keycard = 1
