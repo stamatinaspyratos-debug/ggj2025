@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_t43pv"]
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_vkt7c"]
+[ext_resource type="Texture2D" uid="uid://cuxs6dg5b85rs" path="res://assets/SMALLhouseWtextures_pixel_art_large-12.png" id="3_70413"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="3_deh8p"]
 [ext_resource type="Texture2D" uid="uid://cn7vmvlm8ryf1" path="res://assets/BuildingWroof_pixel_art_large-7.png" id="3_okgyo"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="4_okgyo"]
 [ext_resource type="PackedScene" uid="uid://di4jqwhrcqvb2" path="res://scene/inside2.tscn" id="4_vkt7c"]
+[ext_resource type="Texture2D" uid="uid://1cxpey227tce" path="res://assets/WAREHOUSEINVERTED_pixel_art_large-7.png" id="5_t0fhf"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_xntrl"]
 [ext_resource type="PackedScene" uid="uid://f5qvt27m1te0" path="res://scene/look_down.tscn" id="6_t43pv"]
 [ext_resource type="AudioStream" uid="uid://dl4t46gqt6n6" path="res://audio/Security Guard.mp3" id="9_okgyo"]
@@ -16,7 +18,7 @@
 size = Vector3(13.145, 0.455, 13.61)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcm6u"]
-albedo_texture = ExtResource("3_okgyo")
+albedo_texture = ExtResource("3_70413")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
@@ -30,6 +32,11 @@ uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_o1hlp"]
 size = Vector3(18.22, 0.455, 5.285)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmipf"]
+albedo_texture = ExtResource("5_t0fhf")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_vkt7c"]
 size = Vector3(3.215, 0.215, 13.61)
@@ -51,6 +58,11 @@ size = Vector3(3.265, 6.11, 5.595)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f4ovx"]
 size = Vector3(11.675, 0.455, 13.61)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wyvho"]
+albedo_texture = ExtResource("5_t0fhf")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_doifd"]
 size = Vector3(10.17, 0.455, 7.59)
@@ -105,7 +117,7 @@ material = SubResource("StandardMaterial3D_okgyo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.991889, -11.045278, 5.0360646)
 use_collision = true
 mesh = SubResource("BoxMesh_o1hlp")
-material = SubResource("StandardMaterial3D_pcm6u")
+material = SubResource("StandardMaterial3D_tmipf")
 
 [node name="Ground10" type="CSGMesh3D" parent="Ground" unique_id=1381476087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.799854, -8.222245, -0.09443283)
@@ -159,13 +171,13 @@ material = SubResource("StandardMaterial3D_pcm6u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.849592, -0.014347017, 0)
 use_collision = true
 mesh = SubResource("BoxMesh_f4ovx")
-material = SubResource("StandardMaterial3D_pcm6u")
+material = SubResource("StandardMaterial3D_wyvho")
 
 [node name="Ground4" type="CSGMesh3D" parent="Ground" unique_id=1119211587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.977393, -0.014347017, -3.1388097)
 use_collision = true
 mesh = SubResource("BoxMesh_doifd")
-material = SubResource("StandardMaterial3D_pcm6u")
+material = SubResource("StandardMaterial3D_wyvho")
 
 [node name="TransferPoint" parent="Ground" unique_id=2027706980 instance=ExtResource("3_deh8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.850922, -10.627959, 4.632693)
@@ -242,7 +254,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -5.815693, -0.29460
 curve = SubResource("Curve3D_doifd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1557084503]
-transform = Transform3D(0.9991657, 0.0017681052, 0.04076953, 0, 0.99904346, -0.04332818, -0.04080787, 0.04329141, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
+transform = Transform3D(0.9991657, 0.001768105, 0.04076953, 0, 0.99904335, -0.04332818, -0.04080787, 0.0432914, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=1625026444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -11.753315, -0.29460573)

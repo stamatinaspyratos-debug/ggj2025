@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_w3jsn"]
 [ext_resource type="Shader" uid="uid://cagj0qbo1deki" path="res://scene/sky.gdshader" id="6_5qrb1"]
 [ext_resource type="AudioStream" uid="uid://dkmy44nqtng04" path="res://audio/Main Menu.mp3" id="6_mqsvd"]
+[ext_resource type="Texture2D" uid="uid://i5tvp78upkju" path="res://assets/SMALLhouseWtextures_pixel_art_large-8.png" id="7_l18dw"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="7_r6x65"]
 [ext_resource type="PackedScene" uid="uid://duwjc2soy73vq" path="res://scene/inside.tscn" id="8_r6x65"]
 [ext_resource type="AudioStream" uid="uid://chyeqjp2057js" path="res://audio/Just a guy.mp3" id="11_0ib3i"]
@@ -55,6 +56,9 @@ corner_radius_bottom_left = 24
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(80.46, 0.455, 13.61)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ojou"]
+albedo_texture = ExtResource("7_l18dw")
 
 [sub_resource type="BoxMesh" id="BoxMesh_asp05"]
 size = Vector3(5.57, 0.125, 3.075)
@@ -241,6 +245,7 @@ mesh = SubResource("BoxMesh_ekwa0")
 
 [node name="Ground2" type="CSGMesh3D" parent="." unique_id=922257950]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 46.9407, 0.8892453, 4.3394294)
+material_override = SubResource("StandardMaterial3D_8ojou")
 use_collision = true
 mesh = SubResource("BoxMesh_asp05")
 
@@ -381,7 +386,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.91775, 1.2107018, 3.021886
 curve = SubResource("Curve3D_kv4hd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3 guard3" unique_id=1913162352]
-transform = Transform3D(0.0055189254, -0.041443806, 0.9991235, -1.8626334e-09, 0.99913794, 0.041444473, -0.9999783, -0.0002287321, 0.0055142078, -0.9867668, -0.38905323, -3.13791)
+transform = Transform3D(0.005518925, -0.041443806, 0.99912345, -1.8626333e-09, 0.9991379, 0.041444473, -0.99997824, -0.00022873208, 0.0055142073, -0.9867668, -0.38905323, -3.13791)
 
 [node name="platform2" parent="." unique_id=1770618742 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 26.748625, 3.4314075, 0.24839306)
