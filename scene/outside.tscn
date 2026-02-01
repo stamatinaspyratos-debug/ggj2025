@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://qecrx86lj5w0" path="res://assets/start.png" id="4_odj2w"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_w3jsn"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="7_r6x65"]
+[ext_resource type="PackedScene" path="res://scene/inside.tscn" id="8_r6x65"]
 [ext_resource type="PackedScene" uid="uid://xrjkajq1eqi6" path="res://assets/Backgrund_house1.glb" id="9_odj2w"]
 [ext_resource type="PackedScene" uid="uid://ch0yaeg6qmnfl" path="res://assets/Backgrund_house2.glb" id="10_0ib3i"]
 [ext_resource type="AudioStream" uid="uid://cg2nkkodgarj" path="res://audio/Try1.ogg" id="10_odj2w"]
@@ -79,9 +80,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
-
-[sub_resource type="Resource" id="Resource_ifsnx"]
-metadata/__load_path__ = "res://scene/inside.tscn"
 
 [node name="Outside" type="Node3D" unique_id=33148205]
 script = ExtResource("1_bspfs")
@@ -208,7 +206,7 @@ transform = Transform3D(0.99953574, -0.021444758, 0.021644363, 0.021321645, 0.99
 curve = SubResource("Curve3D_dfs0n")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.020687731, -0.9996323, -9.3131103e-10, 0.9997731, 0.020690544, 0.99984914, 0.0003441703, -0.016630284, -8.685983, -0.31927156, 0.97473425)
+transform = Transform3D(-0.01663389, 0.02068773, -0.99963224, -9.3131103e-10, 0.999773, 0.020690542, 0.99984914, 0.0003441703, -0.016630283, -8.685983, -0.31927156, 0.97473425)
 
 [node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.325691, -0.030855298, -0.29460573)
@@ -226,7 +224,7 @@ path_follow = NodePath("../Path3D2/PathFollow3D")
 
 [node name="TransferPoint" parent="." unique_id=2027706980 instance=ExtResource("7_r6x65")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.855925, 3.546998, -1.3558469)
-scene = SubResource("Resource_ifsnx")
+scene = ExtResource("8_r6x65")
 
 [node name="Backgrund_house2" parent="." unique_id=744653739 instance=ExtResource("10_0ib3i")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9, 4.7, -3.9)
