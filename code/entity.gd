@@ -72,6 +72,8 @@ func _physics_process(delta: float) -> void:
 			Game.Camera.target = self
 			prompt.hide()
 			direction = Vector3.ZERO
+			if sprite == "Cat":
+				$Meow.play()
 		if state != "Stop":
 			control_walk()
 			if can_jump:
