@@ -153,42 +153,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ifsnx")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ifsnx")
 shortcut = SubResource("Shortcut_w3jsn")
 
-[node name="CreditContainer" type="PanelContainer" parent="TitleScreen" unique_id=11581379]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_0ib3i")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TitleScreen/CreditContainer" unique_id=99725571]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 48
-text = "Iris
-Axel
-Nefeli
-Kappos
-Christos
-Rafael
-Stamatina
-Nikos"
-
-[node name="Credits" type="Button" parent="TitleScreen" unique_id=284502535]
-offset_left = 19.0
-offset_top = 643.0
-offset_right = 164.0
-offset_bottom = 706.0
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_odj2w")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_odj2w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_odj2w")
-theme_override_styles/focus = SubResource("StyleBoxFlat_5qrb1")
-toggle_mode = true
-text = "Credits"
-
 [node name="Label" type="Label" parent="TitleScreen" unique_id=1137403989]
 offset_left = 888.0
 offset_top = 301.0
@@ -232,6 +196,42 @@ theme_override_colors/font_shadow_color = Color(0.09916669, 0, 0.17, 1)
 theme_override_constants/shadow_outline_size = 12
 theme_override_font_sizes/font_size = 40
 text = "Controls"
+
+[node name="CreditContainer" type="PanelContainer" parent="TitleScreen" unique_id=11581379]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ib3i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TitleScreen/CreditContainer" unique_id=99725571]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "Iris Hormoviti - Lead Programmer / Pixel Art
+Alex Labrigiorgos - Pixel Art
+Nefeli Kasiou - UI / Art / Music
+Panagiotis Kappos - Programming / Level Design
+Christos Rellis - Project Managment / Programming
+Rafael Papa - Art
+Stamatina Spyratou - 3D Models
+Nikos Liappis - Music Sound Effects"
+
+[node name="Credits" type="Button" parent="TitleScreen" unique_id=284502535]
+offset_left = 19.0
+offset_top = 643.0
+offset_right = 164.0
+offset_bottom = 706.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_odj2w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_odj2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_odj2w")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5qrb1")
+toggle_mode = true
+text = "Credits"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TitleScreen" unique_id=323992718]
 stream = ExtResource("6_mqsvd")
@@ -386,7 +386,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.91775, 1.2107018, 3.021886
 curve = SubResource("Curve3D_kv4hd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3 guard3" unique_id=1913162352]
-transform = Transform3D(0.005518925, -0.041443806, 0.99912345, -1.8626333e-09, 0.9991379, 0.041444473, -0.99997824, -0.00022873208, 0.0055142073, -0.9867668, -0.38905323, -3.13791)
+transform = Transform3D(0.0055189244, -0.0414438, 0.99912333, -1.862633e-09, 0.99913776, 0.041444466, -0.9999781, -0.00022873205, 0.005514207, -0.9867668, -0.38905323, -3.13791)
 
 [node name="platform2" parent="." unique_id=1770618742 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 26.748625, 3.4314075, 0.24839306)
