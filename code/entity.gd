@@ -19,15 +19,21 @@ var masked:= false
 
 var sprite_offset: Dictionary = {
 	"Cat": Vector3(0,0,0),
-	"Human": Vector3(0,0.4,0),
+	"Human": Vector3(0,1.44,0),
 	"Rat": Vector3(0,0,0),
 	"Protag": Vector3(0,2.68,0),
 }
 var mask_offset: Dictionary = {
 	"Cat": Vector3(0.28,0.13,0),
-	"Human": Vector3(0,0.6,0),
+	"Human": Vector3(-0.1,-0.2,0),
 	"Protag": Vector3(0,2.68,0),
 	"Rat": Vector3(0.3,-0.28,0.16)
+}
+var sprite_size: Dictionary = {
+	"Cat": 0.05,
+	"Human": 0.03,
+	"Protag": 0.03,
+	"Rat": 0.05
 }
 @export var patrol:= false
 @export_enum("Idle", "Walk", "Stop") var state = "Idle"
@@ -95,6 +101,7 @@ func animate():
 	else:
 		detect_area.rotation.y = 0
 	sprite_mask.position.z = 0.1 
+	sprite_base.pixel_size = sprite_size.get(sprite)
 	sprite_base.position = sprite_offset.get(sprite)
 	match state:
 		"Walk":
@@ -120,7 +127,7 @@ func patrol_process():
 func _on_ambush_area_body_entered(body: Node3D) -> void:
 	if not masked and body == Game.Player:
 		prompt.show()
-		prompt.position = mask_offset.get(sprite) + Vector3(0,1,0)
+		prompt.position = sprite_offset.get(sprite) + mask_offset.get(sprite) + Vector3(0,0.6,0)
 
 func _on_ambush_area_body_exited(body: Node3D) -> void:
 	if body == Game.Player:

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dd6k1qiuxxopf" path="res://assets/jester.png" id="4_xdgq8"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="4_y3mvi"]
 [ext_resource type="Script" uid="uid://ckpg3cmqi7cgt" path="res://code/ending.gd" id="5_osy0p"]
+[ext_resource type="Texture2D" uid="uid://d3tn255ij6r6u" path="res://assets/thank you so much for to playing my game.png" id="6_6x2ct"]
 
 [sub_resource type="Environment" id="Environment_xuqua"]
 background_mode = 1
@@ -14,6 +15,190 @@ ambient_light_color = Color(0.88742435, 0.87268245, 0.8849515, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xdgq8"]
 size = Vector3(0.6402588, 2.7026367, 4.5630493)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_osy0p"]
+load_path = "res://.godot/imported/good_ending_scene_1.png-4767bfeca4250b072bc4b9a3b8017bea.ctex"
+
+[sub_resource type="Animation" id="Animation_54bel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ending/CanvasLayer/Comic:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ending/CanvasLayer/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ending/CanvasLayer/Comic/1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ending/CanvasLayer/Comic/2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ending/CanvasLayer/Comic/3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ending/CanvasLayer/Comic:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Ending/CanvasLayer/Thank you so much for to playing my game:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6x2ct"]
+resource_name = "ending"
+length = 17.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ending/CanvasLayer/Comic:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ending/CanvasLayer/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ending/CanvasLayer/Comic/1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 3.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ending/CanvasLayer/Comic/2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.9666667, 5.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ending/CanvasLayer/Comic/3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(7.1666665, 8.033334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ending/CanvasLayer/Comic:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10.866667, 13.066667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Ending/CanvasLayer/Thank you so much for to playing my game:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(14.7, 16.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_54bel"]
+_data = {
+&"RESET": SubResource("Animation_54bel"),
+&"ending": SubResource("Animation_6x2ct")
+}
 
 [node name="Outside" type="Node3D" unique_id=33148205]
 script = ExtResource("1_6x2ct")
@@ -40,14 +225,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87249756, -0.7698319, -2.24
 use_collision = true
 size = Vector3(13.528687, 1, 10.1683655)
 
-[node name="Jester" type="Sprite3D" parent="." unique_id=1135645804]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5464153, 0.771554, -1.302524)
-pixel_size = 0.03
-billboard = 2
-alpha_cut = 1
-texture_filter = 2
-texture = ExtResource("4_xdgq8")
-
 [node name="Ending" type="Area3D" parent="." unique_id=1481469688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6475701, 0, 0)
 script = ExtResource("5_osy0p")
@@ -55,5 +232,70 @@ script = ExtResource("5_osy0p")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ending" unique_id=370471526]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5196013, 0.85131836, 0.4998474)
 shape = SubResource("BoxShape3D_xdgq8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Ending" unique_id=346828755]
+
+[node name="ColorRect" type="ColorRect" parent="Ending/CanvasLayer" unique_id=1005827580]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Comic" type="TextureRect" parent="Ending/CanvasLayer" unique_id=978430308]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_osy0p")
+expand_mode = 1
+
+[node name="1" type="ColorRect" parent="Ending/CanvasLayer/Comic" unique_id=95562759]
+layout_mode = 0
+offset_right = 498.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="2" type="ColorRect" parent="Ending/CanvasLayer/Comic" unique_id=971508222]
+layout_mode = 0
+offset_left = 484.0
+offset_top = -1.0
+offset_right = 985.0
+offset_bottom = 740.54895
+rotation = -0.010554052
+color = Color(0, 0, 0, 1)
+
+[node name="3" type="ColorRect" parent="Ending/CanvasLayer/Comic" unique_id=1827661336]
+layout_mode = 0
+offset_left = 882.2482
+offset_top = -0.9643477
+offset_right = 1283.9982
+offset_bottom = 729.09503
+rotation = -0.020348199
+color = Color(0, 0, 0, 1)
+
+[node name="Thank you so much for to playing my game" type="TextureRect" parent="Ending/CanvasLayer" unique_id=2028757454]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_6x2ct")
+expand_mode = 1
+
+[node name="Jester" type="Sprite3D" parent="Ending" unique_id=1135645804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8988452, 0.771554, -1.302524)
+pixel_size = 0.03
+billboard = 2
+alpha_cut = 1
+texture_filter = 2
+texture = ExtResource("4_xdgq8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ending" unique_id=1961515596]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_54bel")
 
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]
