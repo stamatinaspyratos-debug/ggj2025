@@ -140,7 +140,7 @@ func animate():
 
 func limit_position():
 	position.z = clamp(position.z, -1, 3)
-	if position.y < -20: Game.game_over_fall()
+	if position.y < -20 and masked and not state == "Stop": Game.game_over_fall()
 
 func patrol_process():
 	if is_instance_valid(path_follow) and not state == "Stop":

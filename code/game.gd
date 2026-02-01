@@ -22,11 +22,12 @@ func game_over_fall():
 	var audio = AudioStreamPlayer.new()
 	audio.stream = preload("res://audio/Fail.mp3")
 	add_child(audio)
+	Game.Player.state = "Stop"
 	await get_tree().create_timer(0.3).timeout
 	if is_instance_valid(Player):
 		Player.queue_free()
 	audio.play()
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1).timeout
 	audio.queue_free()
 	get_tree().change_scene_to_packed.call_deferred(load(Area.scene_file_path))
 	AudioServer.set_bus_volume_linear(1, 1)
