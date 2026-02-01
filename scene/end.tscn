@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d3tn255ij6r6u" path="res://assets/thank you so much for to playing my game.png" id="6_6x2ct"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="7_54bel"]
 [ext_resource type="PackedScene" uid="uid://c3nf58u7h713a" path="res://assets/car.glb" id="9_0iwge"]
+[ext_resource type="AudioStream" uid="uid://r7qnv4fbqn7h" path="res://audio/End sequence.mp3" id="9_7bip8"]
 [ext_resource type="PackedScene" uid="uid://dnuia7e4nrr1p" path="res://assets/barrel.glb" id="10_3jeuj"]
 [ext_resource type="PackedScene" uid="uid://b6fekphlv4x4n" path="res://assets/MINIWAREHOUSE.glb" id="12_ewhw4"]
 [ext_resource type="AudioStream" uid="uid://ba3qvbumtcyld" path="res://audio/Severancio(final) 2.mp3" id="13_ewhw4"]
@@ -214,6 +215,21 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Ending/AudioStreamPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_7bip8")
+}],
+"times": PackedFloat32Array(2.0333333)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_54bel"]
 _data = {
@@ -375,6 +391,9 @@ texture = ExtResource("4_xdgq8")
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_54bel")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ending" unique_id=269868657]
+bus = &"Other"
+
 [node name="HidingBox" parent="." unique_id=1406562557 instance=ExtResource("7_54bel")]
 transform = Transform3D(0.9999905, -0.0028371667, 0.0032897799, 0.0028334856, 0.99999535, 0.0011215367, -0.0032929506, -0.0011121923, 0.999994, 3.070145, -0.46240628, 2.0095553)
 
@@ -411,7 +430,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5834863, 0)
 curve = SubResource("Curve3D_54bel")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=562878116]
-transform = Transform3D(0.9993579, 0, 0.035691597, 0, 1, 0, -0.035691597, 0, 0.9993579, 7.455332, 0, 2.0701973)
+transform = Transform3D(0.9993578, 0, 0.035691593, 0, 1, 0, -0.035691593, 0, 0.9993578, 7.455332, 0, 2.0701973)
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path3D" unique_id=1583210110]
 transform = Transform3D(0.15711504, 0, 0.9875791, 0, 1, 0, -0.9875791, 0, 0.15711504, 11.92207, 0, 0.9842733)

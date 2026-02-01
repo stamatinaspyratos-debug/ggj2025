@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://r7qnv4fbqn7h"
+path="res://.godot/imported/End sequence.mp3-0f60e3e445f095f913c87ff1be38b5d4.mp3str"
+
+[deps]
+
+source_file="res://audio/End sequence.mp3"
+dest_files=["res://.godot/imported/End sequence.mp3-0f60e3e445f095f913c87ff1be38b5d4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
