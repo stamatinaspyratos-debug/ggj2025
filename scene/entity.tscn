@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://0oyo1x6op6de" path="res://assets/rat.png" id="5_ocx2q"]
 [ext_resource type="Texture2D" uid="uid://nrm5c5i38cpa" path="res://assets/mask_indicator.png" id="6_do3l0"]
 [ext_resource type="Texture2D" uid="uid://bfdykui4nl3gp" path="res://assets/keycard.png" id="8_ocx2q"]
+[ext_resource type="AudioStream" uid="uid://cvgpeyxbj0qs4" path="res://audio/Jump (human).mp3" id="13_4dn68"]
+[ext_resource type="AudioStream" uid="uid://b13kk850wqdif" path="res://audio/flap.mp3" id="14_ysk8y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7ysp"]
 atlas = ExtResource("2_jm6y7")
@@ -444,6 +446,15 @@ texture = ExtResource("8_ocx2q")
 libraries/ = SubResource("AnimationLibrary_22bi2")
 autoplay = &"mask_indicator"
 playback_auto_capture_transition_type = 4
+
+[node name="JumpCat" type="AudioStreamPlayer3D" parent="." unique_id=2055779298]
+stream = ExtResource("13_4dn68")
+
+[node name="JumpHuman" type="AudioStreamPlayer3D" parent="." unique_id=2009607174]
+stream = ExtResource("13_4dn68")
+
+[node name="JumpBird" type="AudioStreamPlayer3D" parent="." unique_id=1313725570]
+stream = ExtResource("14_ysk8y")
 
 [connection signal="body_entered" from="AmbushArea" to="." method="_on_ambush_area_body_entered"]
 [connection signal="body_exited" from="AmbushArea" to="." method="_on_ambush_area_body_exited"]

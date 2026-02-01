@@ -103,7 +103,15 @@ func control_walk():
 
 func control_jump():
 	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or flying):
-		velocity.y = JUMP_VELOCITY
+		jump()
+
+func jump():
+	velocity.y = JUMP_VELOCITY
+	match sprite:
+		"Cat": $JumpCat.play()
+		"Bird": $JumpBird.play()
+		"Rat": pass
+		_: $JumpHuman.play()
 
 func animate():
 	sprite_mask.visible = masked
@@ -134,7 +142,7 @@ func patrol_process():
 		direction = to_local(path_follow.global_position)
 		path_follow.progress += 0.01 * SPEED
 		if direction.y > 1 and can_jump:
-			velocity.y = JUMP_VELOCITY
+			jump()
 		if direction.length() > 8 and is_on_floor():
 			position = path_follow.position + Vector3(0, 1, 0)
 
