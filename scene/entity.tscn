@@ -2,12 +2,36 @@
 
 [ext_resource type="Script" uid="uid://cubus2hnn6ped" path="res://code/entity.gd" id="1_fvtld"]
 [ext_resource type="Texture2D" uid="uid://bti6yjg2notj4" path="res://assets/creature.png" id="2_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://b1g5o06jp2117" path="res://assets/bird.png" id="2_jm6y7"]
+[ext_resource type="Texture2D" uid="uid://d1hk7cmysg2we" path="res://assets/Walk-policeman-no hat export.png" id="3_m15l1"]
 [ext_resource type="Texture2D" uid="uid://k7a5itxficwy" path="res://assets/Walking.png" id="3_oh5ij"]
 [ext_resource type="Texture2D" uid="uid://bpvqpnmirsbm" path="res://assets/mask0.png" id="3_s4jxa"]
+[ext_resource type="Texture2D" uid="uid://cebx0ikl2lcjs" path="res://assets/Walk-poliece man of clolor export.png" id="3_ybk2y"]
 [ext_resource type="Script" uid="uid://ck62gdmn3jbps" path="res://code/copy_parent.gd" id="4_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://b53v3vxx2vg6b" path="res://assets/Walk-policeman.png" id="4_ms2ax"]
 [ext_resource type="Texture2D" uid="uid://0oyo1x6op6de" path="res://assets/rat.png" id="5_ocx2q"]
 [ext_resource type="Texture2D" uid="uid://nrm5c5i38cpa" path="res://assets/mask_indicator.png" id="6_do3l0"]
 [ext_resource type="Texture2D" uid="uid://bfdykui4nl3gp" path="res://assets/keycard.png" id="8_ocx2q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7ysp"]
+atlas = ExtResource("2_jm6y7")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m38gn"]
+atlas = ExtResource("2_jm6y7")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jk3b"]
+atlas = ExtResource("2_jm6y7")
+region = Rect2(30, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6x0q"]
+atlas = ExtResource("2_jm6y7")
+region = Rect2(45, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndkmp"]
+atlas = ExtResource("2_jm6y7")
+region = Rect2(60, 0, 15, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hp4bs"]
 atlas = ExtResource("2_ct4mp")
@@ -16,6 +40,94 @@ region = Rect2(0, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2vtq"]
 atlas = ExtResource("2_ct4mp")
 region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdb25"]
+atlas = ExtResource("3_ybk2y")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1oma"]
+atlas = ExtResource("3_ybk2y")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40n8o"]
+atlas = ExtResource("3_ybk2y")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4foou"]
+atlas = ExtResource("3_ybk2y")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft0me"]
+atlas = ExtResource("3_ybk2y")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuyv6"]
+atlas = ExtResource("3_ybk2y")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8j3p"]
+atlas = ExtResource("3_ybk2y")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74mfl"]
+atlas = ExtResource("3_ybk2y")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyy06"]
+atlas = ExtResource("4_ms2ax")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12b34"]
+atlas = ExtResource("4_ms2ax")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t7mp"]
+atlas = ExtResource("4_ms2ax")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvwrj"]
+atlas = ExtResource("4_ms2ax")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pg56"]
+atlas = ExtResource("4_ms2ax")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhkps"]
+atlas = ExtResource("4_ms2ax")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tni1x"]
+atlas = ExtResource("4_ms2ax")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hes86"]
+atlas = ExtResource("4_ms2ax")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjdrq"]
+atlas = ExtResource("3_m15l1")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75ag0"]
+atlas = ExtResource("3_m15l1")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejsgb"]
+atlas = ExtResource("3_m15l1")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfctq"]
+atlas = ExtResource("3_m15l1")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y66o"]
+atlas = ExtResource("3_m15l1")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2tyf"]
+atlas = ExtResource("3_m15l1")
+region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ocx2q"]
 atlas = ExtResource("3_oh5ij")
@@ -53,6 +165,26 @@ region = Rect2(24, 0, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_i7ysp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m38gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jk3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6x0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndkmp")
+}],
+"loop": true,
+"name": &"Bird",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_hp4bs")
 }, {
 "duration": 1.0,
@@ -60,6 +192,87 @@ animations = [{
 }],
 "loop": true,
 "name": &"Cat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdb25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1oma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40n8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4foou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft0me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuyv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8j3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74mfl")
+}],
+"loop": true,
+"name": &"GuardBlack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyy06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12b34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t7mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvwrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pg56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhkps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tni1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hes86")
+}],
+"loop": true,
+"name": &"GuardChief",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjdrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75ag0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejsgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfctq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y66o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2tyf")
+}],
+"loop": true,
+"name": &"GuardWhite",
 "speed": 5.0
 }, {
 "frames": [{
@@ -167,18 +380,16 @@ can_jump = true
 sprite = "Human"
 
 [node name="SpriteBase" type="AnimatedSprite3D" parent="." unique_id=286295862]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044953287, 1.4346362, 0.05040151)
-pixel_size = 0.03
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22203326, 0.05)
+pixel_size = 0.05
 billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2fvbb")
-animation = &"Human"
-frame = 3
-frame_progress = 0.5945002
+animation = &"Bird"
 
 [node name="SpriteMask" type="AnimatedSprite3D" parent="SpriteBase" unique_id=1901796756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03752573, -0.20000005, 0.15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11404672, -0.081726074, 0.15)
 pixel_size = 0.03
 billboard = 2
 texture_filter = 0

@@ -19,21 +19,33 @@ var masked:= false
 
 var sprite_offset: Dictionary = {
 	"Cat": Vector3(0,0,0),
+	"Bird": Vector3(0,-0.23,0),
 	"Human": Vector3(0,1.44,0),
 	"Rat": Vector3(0,0,0),
 	"Protag": Vector3(0,2.68,0),
+	"GuardWhite": Vector3(0,1.44,0),
+	"GuardBlack": Vector3(0,1.44,0),
+	"GuardChief": Vector3(0,1.44,0),
 }
 var mask_offset: Dictionary = {
 	"Cat": Vector3(0.28,0.13,0),
 	"Human": Vector3(-0.1,-0.2,0),
 	"Protag": Vector3(0,2.68,0),
-	"Rat": Vector3(0.3,-0.28,0)
+	"Rat": Vector3(0.3,-0.28,0),
+	"Bird": Vector3(0,0.24,0),
+	"GuardWhite": Vector3(-0.17,-0.12,0),
+	"GuardBlack": Vector3(-0.11,-0,0),
+	"GuardChief": Vector3(-0.25,-0.24,0),
 }
 var sprite_size: Dictionary = {
 	"Cat": 0.05,
 	"Human": 0.03,
 	"Protag": 0.03,
-	"Rat": 0.03
+	"Rat": 0.05,
+	"GuardWhite": 0.03,
+	"GuardBlack": 0.03,
+	"GuardChief": 0.03,
+	"Bird": 0.05,
 }
 @export var patrol:= false
 @export_enum("Idle", "Walk", "Stop") var state = "Idle"

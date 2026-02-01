@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dnuia7e4nrr1p" path="res://assets/barrel.glb" id="10_3jeuj"]
 [ext_resource type="PackedScene" uid="uid://b6fekphlv4x4n" path="res://assets/MINIWAREHOUSE.glb" id="12_ewhw4"]
 [ext_resource type="AudioStream" uid="uid://ba3qvbumtcyld" path="res://audio/Severancio(final) 2.mp3" id="13_ewhw4"]
+[ext_resource type="PackedScene" uid="uid://budhul7750421" path="res://scene/kill_void.tscn" id="14_f1ohi"]
 
 [sub_resource type="Environment" id="Environment_xuqua"]
 background_mode = 1
@@ -285,16 +286,16 @@ transform = Transform3D(0.99999684, -0.0022291215, 0.0011564118, 0.0022290042, 0
 size = Vector3(0.5782318, 9.382553, 5.612486)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=460480689]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.014908, -3.5474198, -2.2457733)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.44438, -3.5474198, -2.2457733)
 material_override = SubResource("StandardMaterial3D_ewhw4")
 use_collision = true
-size = Vector3(13.528687, 6.555176, 10.1683655)
+size = Vector3(15.23407, 6.555176, 10.1683655)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=2050886210]
-transform = Transform3D(1, 0, 0, 0, 0.8119613, -0.58371127, 0, 0.58371127, 0.8119613, 53.014908, 2.5344288, -14.975275)
+transform = Transform3D(1, 0, 0, 0, 0.8119613, -0.58371127, 0, 0.58371127, 0.8119613, 57.443344, 2.5344288, -14.975275)
 material_override = SubResource("StandardMaterial3D_ewhw4")
 use_collision = true
-size = Vector3(13.528687, 6.555176, 20.74141)
+size = Vector3(15.231995, 6.555176, 20.74141)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1967626079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.080933, 9.186302, -2.2457733)
@@ -306,7 +307,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.921642, 0, 0)
 script = ExtResource("5_osy0p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ending" unique_id=370471526]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3487396, 0.85131836, 0.4998474)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7707176, 0.85131836, 0.4998474)
 shape = SubResource("BoxShape3D_xdgq8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Ending" unique_id=346828755]
@@ -363,7 +364,7 @@ texture = ExtResource("6_6x2ct")
 expand_mode = 1
 
 [node name="Jester" type="Sprite3D" parent="Ending" unique_id=1135645804]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.767185, 0.771554, -1.302524)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.343967, 0.771554, -1.302524)
 pixel_size = 0.03
 billboard = 2
 alpha_cut = 1
@@ -389,6 +390,7 @@ transform = Transform3D(0.9999544, 0.009016867, -0.0031751983, -0.009015918, 0.9
 [node name="Guard" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_54bel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.919973, -0.40050018, 1.1182313)
 can_catch_player = true
+sprite = "GuardWhite"
 has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D/PathFollow3D")
@@ -396,6 +398,7 @@ path_follow = NodePath("../Path3D/PathFollow3D")
 [node name="Guard2" parent="." unique_id=579655996 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_54bel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.244617, -0.40050018, 0.8080435)
 can_catch_player = true
+sprite = "GuardBlack"
 has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D/PathFollow3D2")
@@ -408,7 +411,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5834863, 0)
 curve = SubResource("Curve3D_54bel")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=562878116]
-transform = Transform3D(0.99935865, 0, 0.035691623, 0, 1, 0, -0.035691623, 0, 0.99935865, 7.455332, 0, 2.0701973)
+transform = Transform3D(0.999358, 0, 0.0356916, 0, 1, 0, -0.0356916, 0, 0.999358, 7.455332, 0, 2.0701973)
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path3D" unique_id=1583210110]
 transform = Transform3D(0.15711504, 0, 0.9875791, 0, 1, 0, -0.9875791, 0, 0.15711504, 11.92207, 0, 0.9842733)
@@ -461,6 +464,9 @@ undetectable = true
 patrol = true
 path_follow = NodePath("../Path3D2/PathFollow3D2")
 
+[node name="Cat2" parent="." unique_id=71868691 instance=ExtResource("2_54bel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.80576, 0.42030394, 1.0204744)
+
 [node name="Path3D3" type="Path3D" parent="." unique_id=1876425073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.741951, 2.4811206, -0.26276088)
 curve = SubResource("Curve3D_y3mvi")
@@ -471,7 +477,7 @@ transform = Transform3D(-0.5383561, -0.37829345, 0.75303835, -1.490116e-08, 0.89
 [node name="Bird" parent="." unique_id=156248944 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_54bel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.741951, 2.4811206, -0.26276088)
 JUMP_VELOCITY = 6
-sprite = "Cat"
+sprite = "Bird"
 flying = true
 undetectable = true
 patrol = true
@@ -522,13 +528,16 @@ spot_range = 11.496378
 spot_angle = 26.794842
 
 [node name="car2" parent="." unique_id=1142976081 instance=ExtResource("9_0iwge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.304203, -0.12817279, 2.3517098)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.880985, -0.12817279, 2.3517098)
 
 [node name="car3" parent="." unique_id=1549612864 instance=ExtResource("9_0iwge")]
-transform = Transform3D(0.31120726, 0, -0.9503421, 0, 1, 0, 0.9503421, 0, 0.31120726, 54.716248, -0.12817279, 3.766111)
+transform = Transform3D(0.31120726, 0, -0.9503421, 0, 1, 0, 0.9503421, 0, 0.31120726, 58.29303, -0.12817279, 3.766111)
 
 [node name="barrel" parent="." unique_id=577386464 instance=ExtResource("10_3jeuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.42688, 0.076197356, 6.7100616)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.003662, 0.076197356, 6.7100616)
+
+[node name="barrel2" parent="." unique_id=1387300620 instance=ExtResource("10_3jeuj")]
+transform = Transform3D(0.3202658, 0, -0.94732773, -0.4893405, 0.8562581, -0.16543275, 0.81115705, 0.5165483, 0.27423018, 48.710114, -3.237645, -0.15740418)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=235202477]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.05523, 5.7938066, -0.37787628)
@@ -547,19 +556,35 @@ use_collision = true
 size = Vector3(2.0761108, 1.8001366, 3.1612244)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="CSGBox3D6" unique_id=66734800]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.581558, -6.296573, 0.7576065)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.48188, -10.029146, 0.7576065)
 use_collision = true
-size = Vector3(3.8240929, 3.630537, 4.6764374)
+size = Vector3(5.6727886, 7.0232763, 4.6764374)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGBox3D6" unique_id=44388539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.406227, -1.5453935, -3.5339775)
+use_collision = true
+size = Vector3(3.8240929, 4.8173857, 13.259605)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGBox3D6" unique_id=1657983595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.81546, -5.181283, -2.5754294)
+use_collision = true
+size = Vector3(0.29885668, 4.8173857, 11.342509)
 
 [node name="MINIWAREHOUSE" parent="." unique_id=969490477 instance=ExtResource("12_ewhw4")]
 transform = Transform3D(-0.014311157, 0, 0.99989766, 0, 1, 0, -0.99989766, 0, -0.014311157, -9.226454, 0.9624033, -4.6033926)
 
 [node name="MINIWAREHOUSE2" parent="." unique_id=1770473148 instance=ExtResource("12_ewhw4")]
-transform = Transform3D(-0.99989766, 0, -0.014311202, 0, 1, 0, 0.014311202, 0, -0.99989766, 37.95803, 0.9624033, 5.238651)
+transform = Transform3D(-0.99989766, 0, -0.014311202, 0, 1, 0, 0.014311202, 0, -0.99989766, 37.95803, 0.9624033, 4.2349963)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=514777936]
 stream = ExtResource("13_ewhw4")
 autoplay = true
 bus = &"Music"
+
+[node name="KillVoid" parent="." unique_id=1140546885 instance=ExtResource("14_f1ohi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.37247, -5.5271125, -0.64678764)
+
+[node name="KillVoid2" parent="." unique_id=2092542351 instance=ExtResource("14_f1ohi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.521908, -5.8796577, -0.64678764)
 
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]

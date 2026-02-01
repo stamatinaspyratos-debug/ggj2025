@@ -18,8 +18,18 @@ func game_over():
 
 func game_over_fall():
 	Camera.active = false
+	AudioServer.set_bus_volume_linear(1, 0)
+	var audio = AudioStreamPlayer.new()
+	audio.stream = preload("res://audio/Fail.mp3")
+	add_child(audio)
+	await get_tree().create_timer(0.3).timeout
+	if is_instance_valid(Player):
+		Player.queue_free()
+	audio.play()
 	await get_tree().create_timer(1.5).timeout
+	audio.queue_free()
 	get_tree().change_scene_to_packed.call_deferred(load(Area.scene_file_path))
+	AudioServer.set_bus_volume_linear(1, 1)
 
 func mask_cutin():
 	var scene = preload("res://scene/mask_cutin.tscn").instantiate()
