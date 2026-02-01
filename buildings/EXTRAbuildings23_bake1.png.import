@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6rvqvvkyl0vy"
-path.s3tc="res://.godot/imported/box2_pixel_art_large-3.png-8b1b10092262f6abf3360890bf4f2a6b.s3tc.ctex"
+uid="uid://detsadrpafm61"
+path.s3tc="res://.godot/imported/EXTRAbuildings23_bake1.png-5fa810b07ce153d4a222ce22fdccb5d3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "fbc539ae9604b2f33f623c165f8eafa0"
+"md5": "563342d5f56950ecc43b6d5d7f7dd95c"
 }
 
 [deps]
 
-source_file="res://code/box2_pixel_art_large-3.png"
-dest_files=["res://.godot/imported/box2_pixel_art_large-3.png-8b1b10092262f6abf3360890bf4f2a6b.s3tc.ctex"]
+source_file="res://buildings/EXTRAbuildings23_bake1.png"
+dest_files=["res://.godot/imported/EXTRAbuildings23_bake1.png-5fa810b07ce153d4a222ce22fdccb5d3.s3tc.ctex"]
 
 [params]
 

@@ -189,6 +189,26 @@ texture = ExtResource("1_0vake")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="Label" type="Label" parent="4" unique_id=2054326807]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 271.0
+offset_right = 576.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Press Space to try again"
+
+[node name="Label2" type="Label" parent="4" unique_id=2021543738]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 268.0
+offset_right = 572.0
+offset_bottom = 313.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Press Space to try again"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1192420218]
 libraries/ = SubResource("AnimationLibrary_0vake")
 autoplay = &"enter"

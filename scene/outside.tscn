@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_bspfs"]
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_arvm7"]
+[ext_resource type="FontFile" uid="uid://c1jgbtxrxl8an" path="res://assets/GrenzeGotisch-VariableFont_wght.ttf" id="3_5qrb1"]
 [ext_resource type="Texture2D" uid="uid://nrm5c5i38cpa" path="res://assets/mask_indicator.png" id="3_ifsnx"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="4_asp05"]
 [ext_resource type="Texture2D" uid="uid://qecrx86lj5w0" path="res://assets/start.png" id="4_odj2w"]
@@ -11,9 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://xrjkajq1eqi6" path="res://assets/Backgrund_house1.glb" id="9_odj2w"]
 [ext_resource type="PackedScene" uid="uid://ch0yaeg6qmnfl" path="res://assets/Backgrund_house2.glb" id="10_0ib3i"]
 [ext_resource type="AudioStream" uid="uid://chyeqjp2057js" path="res://audio/Just a guy.mp3" id="11_0ib3i"]
-
-[sub_resource type="SystemFont" id="SystemFont_r6x65"]
-font_names = PackedStringArray("Fantasy")
 
 [sub_resource type="Theme" id="Theme_bspfs"]
 Button/font_sizes/font_size = 42
@@ -90,17 +88,17 @@ in_title = true
 
 [node name="Title2" type="Label" parent="TitleScreen" unique_id=2090350136]
 offset_left = 125.0
-offset_top = 86.0
+offset_top = 94.0
 offset_right = 825.0
-offset_bottom = 262.0
-theme_override_colors/font_color = Color(0.24599996, 0, 0.41, 1)
-theme_override_fonts/font = SubResource("SystemFont_r6x65")
+offset_bottom = 293.0
+theme_override_colors/font_color = Color(0.17823851, 0.00032760197, 0.30530903, 1)
+theme_override_fonts/font = ExtResource("3_5qrb1")
 theme_override_font_sizes/font_size = 129
 text = "UnMasked"
 
 [node name="MaskIndicator" type="Sprite2D" parent="TitleScreen" unique_id=591238573]
 modulate = Color(0.2734919, 0.103694856, 0.35839027, 1)
-position = Vector2(315, 141)
+position = Vector2(311, 148)
 scale = Vector2(0.8102409, 0.810241)
 texture = ExtResource("3_ifsnx")
 
@@ -109,7 +107,7 @@ offset_left = 124.0
 offset_top = 115.0
 offset_right = 824.0
 offset_bottom = 291.0
-theme_override_fonts/font = SubResource("SystemFont_r6x65")
+theme_override_fonts/font = ExtResource("3_5qrb1")
 theme_override_font_sizes/font_size = 129
 text = "UnMasked"
 
@@ -206,7 +204,7 @@ transform = Transform3D(0.99953574, -0.021444758, 0.021644363, 0.021321645, 0.99
 curve = SubResource("Curve3D_dfs0n")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
-transform = Transform3D(-0.01663389, 0.02068772, -0.99963176, -9.3131103e-10, 0.99977255, 0.020690532, 0.99984914, 0.0003441701, -0.016630275, -8.685983, -0.31927156, 0.97473425)
+transform = Transform3D(-0.01663389, 0.020687712, -0.9996314, -9.3131103e-10, 0.9997722, 0.020690525, 0.99984914, 0.00034417, -0.01663027, -8.685983, -0.31927156, 0.97473425)
 
 [node name="Entity" parent="." unique_id=1737357155 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.325691, -0.030855298, -0.29460573)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ba3qvbumtcyld"
+path="res://.godot/imported/Severancio(final) 2.mp3-0424b3c5ceacac293ae9dc3830005474.mp3str"
+
+[deps]
+
+source_file="res://audio/Severancio(final) 2.mp3"
+dest_files=["res://.godot/imported/Severancio(final) 2.mp3-0424b3c5ceacac293ae9dc3830005474.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
