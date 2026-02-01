@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://f5qvt27m1te0" path="res://scene/look_down.tscn" id="3_fbnkn"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="4_ymd00"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="5_3q2yi"]
-[ext_resource type="PackedScene" uid="uid://budhul7750421" path="res://scene/kill_void.tscn" id="6_g6o6e"]
+[ext_resource type="AudioStream" uid="uid://bnkag7ta3oa2i" path="res://audio/Animal music.mp3" id="7_ktbmp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(18.025, 0.38, 13.61)
@@ -15,12 +15,6 @@ size = Vector3(13.145, 5.4, 13.61)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tx5jb"]
 size = Vector3(2.695, 5.4, 13.61)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tx5jb"]
-size = Vector3(4.0389404, 4.775131, 1.2681274)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fbnkn"]
-size = Vector3(1.7742767, 4.3846283, 1.910553)
 
 [sub_resource type="Environment" id="Environment_xuqua"]
 background_mode = 1
@@ -51,6 +45,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 10
+
+[sub_resource type="Curve3D" id="Curve3D_ktbmp"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8.728748, 4.0888786e-05, -2.1776266, 0, 0, 0, 0, 0, 0, 12.557114, 4.0888786e-05, -2.1776266, 0, 0, 0, 0, 0, 0, 12.557114, 4.0888786e-05, 1.3249185, 0, 0, 0, 0, 0, 0, 8.810204, 4.0888786e-05, 1.4063718),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="Outside" type="Node3D" unique_id=33148205]
 script = ExtResource("1_g6o6e")
@@ -125,19 +127,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.018955, 0.17304134, 4.5094
 size = Vector3(1.8057556, 4.524994, 1.2553053)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Ground" unique_id=1213163871]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.67892, -0.30906147, 4.372388)
-size = Vector3(3.6244316, 4.524994, 4.7498007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.231857, -1.823195, 4.375251)
+size = Vector3(6.7303066, 1.496727, 5.8319206)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=347321888]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.268436, -0.26103753, 3.1234)
+[node name="CSGBox3D8" type="CSGBox3D" parent="Ground" unique_id=1702745867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.575127, -1.8792429, 5.0302725)
+size = Vector3(6.7303066, 1.496727, 1.5986996)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=787006303]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5194702, 1.8875656, 0.13406372)
-shape = SubResource("BoxShape3D_tx5jb")
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground/CSGBox3D8" unique_id=213818783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15750122, 1.5177226, -0.46191406)
+size = Vector3(6.557678, 0.45996094, 0.076171875)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=935405011]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.963499, 1.6923141, 2.7809744)
-shape = SubResource("BoxShape3D_fbnkn")
+[node name="CSGBox3D3" type="CSGBox3D" parent="Ground/CSGBox3D8" unique_id=496279247]
+transform = Transform3D(0.087155804, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, 0.087155804, -3.2009907, 1.5177226, -1.9392145)
+size = Vector3(2.9455032, 0.45996094, 0.076171875)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Ground/CSGBox3D8" unique_id=246074904]
+transform = Transform3D(0.087155804, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, 0.087155804, -3.0059624, 1.5177226, 1.561913)
+size = Vector3(1.6611567, 0.45996094, 0.076171875)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Ground/CSGBox3D8" unique_id=920718093]
+transform = Transform3D(0.087155804, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, 0.087155804, 3.415001, 1.5177226, 1.4969697)
+size = Vector3(1.5307736, 0.45996094, 0.076171875)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Ground/CSGBox3D8" unique_id=1698786499]
+transform = Transform3D(0.087155804, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, 0.087155804, 3.2773247, 1.5177226, -1.975079)
+size = Vector3(2.9963439, 0.45996094, 0.076171875)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Ground/CSGBox3D8" unique_id=718409668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18432617, 1.5177226, 0.7698705)
+size = Vector3(6.611328, 0.45996094, 0.076171875)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Ground" unique_id=1793467575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.359337, -1.8792429, 4.3572903)
+size = Vector3(4.649333, 1.496727, 5.535417)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Ground" unique_id=1068081060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.69798, -0.41138357, 4.3572903)
+size = Vector3(0.5800376, 4.4324455, 5.535417)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Ground" unique_id=1596371837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.219727, -0.64867944, 3.0676131)
+size = Vector3(2.3317058, 2.4848137, 2.956063)
 
 [node name="Lookdown" parent="Ground" unique_id=2017985930 instance=ExtResource("3_fbnkn")]
 transform = Transform3D(2.2403812, 0, 0, 0, 3.202115, 0, 0, 0, 0.39112064, 17.38477, 1.4757764, 4.284273)
@@ -186,12 +217,25 @@ path_follow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Guard3" parent="." unique_id=922922595 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_ktbmp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.508928, -0.24890327, -0.611089)
-JUMP_VELOCITY = 8
-keycard = 1
 can_catch_player = true
 has_flashlight = true
 patrol = true
 path_follow = NodePath("../Path3D2/PathFollow3D")
+
+[node name="Guard4" parent="." unique_id=30378034 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_ktbmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.021603, -0.24890327, -0.09838414)
+can_catch_player = true
+has_flashlight = true
+patrol = true
+path_follow = NodePath("../Path3D4/PathFollow3D")
+
+[node name="Guard5" parent="." unique_id=1363273518 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_ktbmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.021603, -0.24890327, 2.0052505)
+keycard = 1
+can_catch_player = true
+has_flashlight = true
+patrol = true
+path_follow = NodePath("../Path3D4/PathFollow3D2")
 
 [node name="Rat" parent="." unique_id=1694084465 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_ktbmp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.85344, -0.83839846, -0.26276088)
@@ -225,8 +269,21 @@ curve = SubResource("Curve3D_fbnkn")
 transform = Transform3D(0.4015893, 0, -0.9158002, 0, 0.99996555, 0, 0.9158, 0, 0.40158942, -2.049696, 4.0888786e-05, -1.6276028)
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path3D3" unique_id=1174892338]
-transform = Transform3D(-0.018633196, -0.0014315555, 0.9998214, -0.07660335, 0.9970259, -1.852035e-09, -0.9968747, -0.07658821, -0.018688276, -1.7915174, 4.0888786e-05, 1.1832296)
+transform = Transform3D(-0.018633196, -0.0014315549, 0.9998214, -0.07660335, 0.9970255, -1.852035e-09, -0.9968747, -0.07658818, -0.018688276, -1.7915174, 4.0888786e-05, 1.1832296)
 progress = 13.114263
 
-[node name="KillVoid" parent="." unique_id=1140546885 instance=ExtResource("6_g6o6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.487424, -2.9025161, 0)
+[node name="Path3D4" type="Path3D" parent="." unique_id=783600201]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 16.271101, -1.7527522, 1.0225081)
+curve = SubResource("Curve3D_ktbmp")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D4" unique_id=346890343]
+transform = Transform3D(-4.3710592e-08, 0, -0.99998206, 0, 0.99996555, 0, 0.99998176, 0, -4.3710603e-08, 8.728748, 4.0888786e-05, -2.1776266)
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Path3D4" unique_id=1161521355]
+transform = Transform3D(-0.9999495, 0, 0.008682496, 0, 0.9999639, 0, -0.0086824205, 0, -0.9999582, 12.556658, 4.0888786e-05, 1.3253455)
+progress = 7.3318133
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1470537530]
+stream = ExtResource("7_ktbmp")
+autoplay = true
+bus = &"Music"

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://4gag1k0qgodw"]
 
 [ext_resource type="Script" uid="uid://bogfw7tiorcev" path="res://code/hide_spot.gd" id="1_m238d"]
+[ext_resource type="AudioStream" uid="uid://bbtn2m6hriyk1" path="res://audio/Hide.mp3" id="2_otwa3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_61kb7"]
 size = Vector3(1.155632, 0.54455566, 0.61816406)
@@ -15,6 +16,10 @@ debug_color = Color(0.8352941, 0.043137256, 0.8, 1)
 
 [node name="HidePos" type="Marker3D" parent="." unique_id=254759133]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044169366, 0.2996583, 0.6045929)
+
+[node name="HideSound" type="AudioStreamPlayer" parent="." unique_id=252197067]
+stream = ExtResource("2_otwa3")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

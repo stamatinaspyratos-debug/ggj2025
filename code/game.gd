@@ -6,17 +6,18 @@ var Area: AreaNode
 var hidden:= false
 
 func game_over():
+	AudioServer.set_bus_volume_linear(1, 0)
 	var scene = preload("res://scene/gameover.tscn").instantiate()
 	get_tree().root.add_child(scene)
 	while not Input.is_action_pressed("ui_accept"):
 		Game.Player.state = "Stop"
 		await get_tree().process_frame
+	AudioServer.set_bus_volume_linear(1, 1)
 	scene.queue_free()
 	get_tree().change_scene_to_packed.call_deferred(load(Area.scene_file_path))
 
 func game_over_fall():
 	Camera.active = false
-	elevator_effect()
 	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_packed.call_deferred(load(Area.scene_file_path))
 

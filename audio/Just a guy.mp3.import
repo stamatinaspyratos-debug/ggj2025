@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chyeqjp2057js"
+path="res://.godot/imported/Just a guy.mp3-d9f841821902807cc1cdc1370a57c29a.mp3str"
+
+[deps]
+
+source_file="res://audio/Just a guy.mp3"
+dest_files=["res://.godot/imported/Just a guy.mp3-d9f841821902807cc1cdc1370a57c29a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

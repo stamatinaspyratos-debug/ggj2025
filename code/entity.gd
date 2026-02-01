@@ -27,13 +27,13 @@ var mask_offset: Dictionary = {
 	"Cat": Vector3(0.28,0.13,0),
 	"Human": Vector3(-0.1,-0.2,0),
 	"Protag": Vector3(0,2.68,0),
-	"Rat": Vector3(0.3,-0.28,0.16)
+	"Rat": Vector3(0.3,-0.28,0)
 }
 var sprite_size: Dictionary = {
 	"Cat": 0.05,
 	"Human": 0.03,
 	"Protag": 0.03,
-	"Rat": 0.05
+	"Rat": 0.03
 }
 @export var patrol:= false
 @export_enum("Idle", "Walk", "Stop") var state = "Idle"
@@ -43,6 +43,8 @@ func _ready() -> void:
 	Game.Player = self
 	$Prompt.hide()
 	$DetectArea/SpotLight3D.visible = has_flashlight
+	if keycard > 0: $Keycard.show()
+	else: $Keycard.hide()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -142,8 +144,6 @@ func _on_detect_area_body_entered(body: Node3D) -> void:
 		var t = create_tween().set_ease(Tween.EASE_OUT).set_parallel().set_trans(Tween.TRANS_CUBIC)
 		t.tween_property(Game.Camera, "position:x", self.position.x, 0.3)
 		t.tween_property(Game.Camera, "position:y", self.position.y+2.5, 0.3)
-		await t.finished
-		await get_tree().create_timer(0.5).timeout
 		Game.game_over()
 
 func unmask():

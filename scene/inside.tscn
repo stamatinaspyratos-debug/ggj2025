@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://ckl0samy38uj"]
+[gd_scene format=3 uid="uid://duwjc2soy73vq"]
 
 [ext_resource type="Script" uid="uid://dju5584rlvcyp" path="res://code/area.gd" id="1_t43pv"]
 [ext_resource type="PackedScene" uid="uid://0hvhunsovnt5" path="res://scene/entity.tscn" id="2_vkt7c"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="3_deh8p"]
-[ext_resource type="Texture2D" uid="uid://ce8o26dkbmj1b" path="res://assets/BuildingWroof_pixel_art_large-7.png" id="3_okgyo"]
+[ext_resource type="Texture2D" uid="uid://cn7vmvlm8ryf1" path="res://assets/BuildingWroof_pixel_art_large-7.png" id="3_okgyo"]
 [ext_resource type="PackedScene" uid="uid://t7m6r8a3aq1l" path="res://scene/hide_box.tscn" id="4_okgyo"]
 [ext_resource type="PackedScene" uid="uid://di4jqwhrcqvb2" path="res://scene/inside2.tscn" id="4_vkt7c"]
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_xntrl"]
 [ext_resource type="PackedScene" uid="uid://f5qvt27m1te0" path="res://scene/look_down.tscn" id="6_t43pv"]
-[ext_resource type="PackedScene" uid="uid://bjldxri1djnvc" path="res://assets/BuildingWroof.glb" id="7_mbh3d"]
+[ext_resource type="AudioStream" uid="uid://dl4t46gqt6n6" path="res://audio/Security Guard.mp3" id="9_okgyo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(13.145, 0.455, 13.61)
@@ -231,7 +231,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -5.815693, -0.29460
 curve = SubResource("Curve3D_doifd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1557084503]
-transform = Transform3D(0.9991657, 0.0017681085, 0.04076953, 0, 0.9990453, -0.04332818, -0.04080787, 0.043291487, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
+transform = Transform3D(0.9991657, 0.0017681075, 0.04076953, 0, 0.99904484, -0.04332818, -0.04080787, 0.04329147, 0.99822706, 0.29818892, 0.26191044, 2.7881877)
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=1625026444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.955229, -11.753315, -0.29460573)
@@ -239,9 +239,6 @@ curve = SubResource("Curve3D_deh8p")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=938748368]
 transform = Transform3D(0.77178067, 0.23108204, -0.5924095, -2.2351692e-08, 0.9316194, 0.36340448, 0.6358851, -0.2804667, 0.7190138, -0.55742645, 0.6977091, 1.675322)
-
-[node name="BuildingWroof" parent="Path3D2" unique_id=2039807325 instance=ExtResource("7_mbh3d")]
-transform = Transform3D(-0.0074873567, 0, -0.99997205, 0, 1, 0, 0.99997205, 0, -0.0074873567, 14.850937, 5.35098, -6.8389482)
 
 [node name="Path3D3" type="Path3D" parent="." unique_id=1885087776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.36824, -8.935984, 2.7952423)
@@ -252,3 +249,8 @@ transform = Transform3D(-0.047214415, -0.05032558, -0.9976142, -1.8626414e-09, 0
 
 [node name="Lookdown" parent="." unique_id=2017985930 instance=ExtResource("6_t43pv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561569, -8.815878, 2.0651379)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=632026744]
+stream = ExtResource("9_okgyo")
+autoplay = true
+bus = &"Music"

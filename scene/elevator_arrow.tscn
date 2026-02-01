@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://oabuosq3kh6n" path="res://assets/elevator_3.png" id="3_ujtjk"]
 [ext_resource type="Texture2D" uid="uid://caudexlulnvrb" path="res://assets/elevator_4.png" id="4_bdq3m"]
 [ext_resource type="Texture2D" uid="uid://bmpw6a23ucjnl" path="res://assets/elevator_5.png" id="5_vtvvu"]
+[ext_resource type="AudioStream" uid="uid://cbbdhbg42wdeo" path="res://audio/Elevator.mp3" id="6_fly8c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ps7ao"]
 animations = [{
@@ -111,3 +112,8 @@ frame_progress = 0.13931173
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=93431908]
 libraries/ = SubResource("AnimationLibrary_fly8c")
 autoplay = &"new_animation"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=434002297]
+stream = ExtResource("6_fly8c")
+autoplay = true
+bus = &"SFX"
