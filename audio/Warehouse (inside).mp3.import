@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3vf7w4yrh5dl"
+path="res://.godot/imported/Warehouse (inside).mp3-2383ad711da8951b2fb1adafa1aae856.mp3str"
+
+[deps]
+
+source_file="res://audio/Warehouse (inside).mp3"
+dest_files=["res://.godot/imported/Warehouse (inside).mp3-2383ad711da8951b2fb1adafa1aae856.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

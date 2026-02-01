@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwke37vauvkgj"
+path="res://.godot/imported/Mask Change.mp3-a50da3aa46f03c07f4d2c286a867d9a4.mp3str"
+
+[deps]
+
+source_file="res://audio/Mask Change.mp3"
+dest_files=["res://.godot/imported/Mask Change.mp3-a50da3aa46f03c07f4d2c286a867d9a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
