@@ -214,8 +214,8 @@ script = ExtResource("5_w3jsn")
 transform = Transform3D(0.99974525, -0.02136442, 0.007282179, 0.021321647, 0.99975526, 0.0059031365, -0.0074065067, -0.0057463795, 0.999956, 14.416027, -0.030855298, -0.8243735)
 curve = SubResource("Curve3D_dfs0n")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2 guard1" unique_id=2096745278]
-transform = Transform3D(-0.081400275, 0.021070054, -0.99645877, -1.8626454e-09, 0.99977654, 0.021140207, 0.9966815, 0.0017208206, -0.08138209, -9.449341, -0.29714617, -0.023162723)
+[node name="Path3D2#PathFollow3D" type="PathFollow3D" parent="." unique_id=1797781176]
+transform = Transform3D(-0.01663389, 0.020687701, -0.99963087, -9.3131103e-10, 0.99977165, 0.020690514, 0.99984914, 0.00034416982, -0.01663026, -8.685983, -0.31927156, 0.97473425)
 
 [node name="Bird" parent="." unique_id=1737357155 instance=ExtResource("2_arvm7")]
 transform = Transform3D(0.9999771, -0.0029237685, 0.0060964753, 0.0029214676, 0.99999565, 0.00038600675, -0.006097578, -0.00036817274, 0.99998134, 36.80688, 7.2750273, -2.246372)
@@ -224,13 +224,12 @@ sprite = "Bird"
 flying = true
 patrol = true
 
-[node name="Guard" parent="." unique_id=547366311 node_paths=PackedStringArray("path_follow") instance=ExtResource("2_arvm7")]
+[node name="Guard" parent="." unique_id=547366311 instance=ExtResource("2_arvm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.027305, -0.36932385, -0.14123726)
 can_catch_player = true
 sprite = "GuardBlack"
 has_flashlight = true
 patrol = true
-path_follow = NodePath("../Path3D2 guard1/PathFollow3D")
 
 [node name="Cat" parent="." unique_id=1735912869 instance=ExtResource("2_arvm7")]
 transform = Transform3D(0.9999263, -0.00556791, 0.010795113, 0.0055496166, 0.9999833, 0.0017245973, -0.0108045265, -0.0016645666, 0.99994034, 16.1762, 1.1540365, 1.5481535)
@@ -324,7 +323,10 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 26.748625, 3.4314075, 0
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 38.38333, 3.3896651, 0.20186973)
 
 [node name="road1" parent="." unique_id=1339109230 instance=ExtResource("16_qy2n4")]
-transform = Transform3D(-1.3113417e-08, 0, -1, 0, 1, 0, 0.3, 0, -4.371139e-08, 22.74, 107, 1.942)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 3.9603844, 53.088493, 1.4118505)
+
+[node name="road2" parent="." unique_id=130748860 instance=ExtResource("16_qy2n4")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 54.645557, 53.088493, 1.4118505)
 
 [node name="platform4" parent="." unique_id=1249951180 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.154703, -0.57099175, 6.1857905)
