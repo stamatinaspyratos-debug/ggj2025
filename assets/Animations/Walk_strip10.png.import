@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://4uib4hatdp1i"
 path.s3tc="res://.godot/imported/Walk_strip10.png-99b566a16b248f078bd35877a1b6c477.s3tc.ctex"
+path.etc2="res://.godot/imported/Walk_strip10.png-99b566a16b248f078bd35877a1b6c477.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Animations/Walk_strip10.png"
-dest_files=["res://.godot/imported/Walk_strip10.png-99b566a16b248f078bd35877a1b6c477.s3tc.ctex"]
+dest_files=["res://.godot/imported/Walk_strip10.png-99b566a16b248f078bd35877a1b6c477.s3tc.ctex", "res://.godot/imported/Walk_strip10.png-99b566a16b248f078bd35877a1b6c477.etc2.ctex"]
 
 [params]
 

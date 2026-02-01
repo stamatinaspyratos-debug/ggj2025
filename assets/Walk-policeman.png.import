@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b53v3vxx2vg6b"
 path.s3tc="res://.godot/imported/Walk-policeman.png-6ee709991eb3ed93ba8f9c5f246c50b4.s3tc.ctex"
+path.etc2="res://.godot/imported/Walk-policeman.png-6ee709991eb3ed93ba8f9c5f246c50b4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Walk-policeman.png"
-dest_files=["res://.godot/imported/Walk-policeman.png-6ee709991eb3ed93ba8f9c5f246c50b4.s3tc.ctex"]
+dest_files=["res://.godot/imported/Walk-policeman.png-6ee709991eb3ed93ba8f9c5f246c50b4.s3tc.ctex", "res://.godot/imported/Walk-policeman.png-6ee709991eb3ed93ba8f9c5f246c50b4.etc2.ctex"]
 
 [params]
 

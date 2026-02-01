@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bchpvgycv35pw"
 path.s3tc="res://.godot/imported/MINIWAREHOUSE_4-steps-stairs-albedo.png-e401fa05681343043ba2a3809129802e.s3tc.ctex"
+path.etc2="res://.godot/imported/MINIWAREHOUSE_4-steps-stairs-albedo.png-e401fa05681343043ba2a3809129802e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://code/MINIWAREHOUSE_4-steps-stairs-albedo.png"
-dest_files=["res://.godot/imported/MINIWAREHOUSE_4-steps-stairs-albedo.png-e401fa05681343043ba2a3809129802e.s3tc.ctex"]
+dest_files=["res://.godot/imported/MINIWAREHOUSE_4-steps-stairs-albedo.png-e401fa05681343043ba2a3809129802e.s3tc.ctex", "res://.godot/imported/MINIWAREHOUSE_4-steps-stairs-albedo.png-e401fa05681343043ba2a3809129802e.etc2.ctex"]
 
 [params]
 

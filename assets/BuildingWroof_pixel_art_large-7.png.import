@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn7vmvlm8ryf1"
 path.s3tc="res://.godot/imported/BuildingWroof_pixel_art_large-7.png-da7fb2c75cf2c3c0d40e5f6da81f88bf.s3tc.ctex"
+path.etc2="res://.godot/imported/BuildingWroof_pixel_art_large-7.png-da7fb2c75cf2c3c0d40e5f6da81f88bf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/BuildingWroof_pixel_art_large-7.png"
-dest_files=["res://.godot/imported/BuildingWroof_pixel_art_large-7.png-da7fb2c75cf2c3c0d40e5f6da81f88bf.s3tc.ctex"]
+dest_files=["res://.godot/imported/BuildingWroof_pixel_art_large-7.png-da7fb2c75cf2c3c0d40e5f6da81f88bf.s3tc.ctex", "res://.godot/imported/BuildingWroof_pixel_art_large-7.png-da7fb2c75cf2c3c0d40e5f6da81f88bf.etc2.ctex"]
 
 [params]
 

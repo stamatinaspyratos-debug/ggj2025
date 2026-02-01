@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bnkag7ta3oa2i" path="res://audio/Animal music.mp3" id="7_ktbmp"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="7_xrmhx"]
 [ext_resource type="PackedScene" uid="uid://bdmdllxy5vvhg" path="res://scene/end.tscn" id="8_xrmhx"]
+[ext_resource type="PackedScene" uid="uid://budhul7750421" path="res://scene/kill_void.tscn" id="9_ymd00"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekwa0"]
 size = Vector3(18.025, 0.38, 13.61)
@@ -301,3 +302,6 @@ bus = &"Music"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.777946, -1.9858446, 0.97423744)
 scene = ExtResource("8_xrmhx")
 keycard = 1
+
+[node name="KillVoid" parent="." unique_id=1140546885 instance=ExtResource("9_ymd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.529699, -1.8025827, -1.1685672)

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8vd6v80jdkd2"
 path.s3tc="res://.godot/imported/Idle_strip6.png-858d39f0bbfb866224b34d18ec858548.s3tc.ctex"
+path.etc2="res://.godot/imported/Idle_strip6.png-858d39f0bbfb866224b34d18ec858548.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Animations/Idle_strip6.png"
-dest_files=["res://.godot/imported/Idle_strip6.png-858d39f0bbfb866224b34d18ec858548.s3tc.ctex"]
+dest_files=["res://.godot/imported/Idle_strip6.png-858d39f0bbfb866224b34d18ec858548.s3tc.ctex", "res://.godot/imported/Idle_strip6.png-858d39f0bbfb866224b34d18ec858548.etc2.ctex"]
 
 [params]
 

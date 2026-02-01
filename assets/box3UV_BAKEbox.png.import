@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvs2r88pqj1wm"
 path.s3tc="res://.godot/imported/box3UV_BAKEbox.png-9b42f7fb49722880a9ebb189d99fb27d.s3tc.ctex"
+path.etc2="res://.godot/imported/box3UV_BAKEbox.png-9b42f7fb49722880a9ebb189d99fb27d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/box3UV_BAKEbox.png"
-dest_files=["res://.godot/imported/box3UV_BAKEbox.png-9b42f7fb49722880a9ebb189d99fb27d.s3tc.ctex"]
+dest_files=["res://.godot/imported/box3UV_BAKEbox.png-9b42f7fb49722880a9ebb189d99fb27d.s3tc.ctex", "res://.godot/imported/box3UV_BAKEbox.png-9b42f7fb49722880a9ebb189d99fb27d.etc2.ctex"]
 
 [params]
 

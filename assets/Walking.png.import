@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://k7a5itxficwy"
 path.s3tc="res://.godot/imported/Walking.png-1be44bc5efd9cea002fe7009355c2c5b.s3tc.ctex"
+path.etc2="res://.godot/imported/Walking.png-1be44bc5efd9cea002fe7009355c2c5b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Walking.png"
-dest_files=["res://.godot/imported/Walking.png-1be44bc5efd9cea002fe7009355c2c5b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Walking.png-1be44bc5efd9cea002fe7009355c2c5b.s3tc.ctex", "res://.godot/imported/Walking.png-1be44bc5efd9cea002fe7009355c2c5b.etc2.ctex"]
 
 [params]
 

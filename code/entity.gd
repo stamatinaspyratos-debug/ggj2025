@@ -127,6 +127,9 @@ func animate():
 	sprite_mask.position.z = 0.1 
 	sprite_base.pixel_size = sprite_size.get(sprite)
 	sprite_base.position = sprite_offset.get(sprite)
+	if masked and Game.hidden and sprite_base.sprite_frames.has_animation(sprite+"_C"):
+		sprite_base.play(sprite+"_C")
+		return
 	match state:
 		"Walk":
 			sprite_base.play()
@@ -137,7 +140,7 @@ func animate():
 
 func limit_position():
 	position.z = clamp(position.z, -1, 3)
-	if position.y < -20: Game.game_over_fall()
+	if position.y < -20 and masked and not state == "Stop": Game.game_over_fall()
 
 func patrol_process():
 	if is_instance_valid(path_follow) and not state == "Stop":

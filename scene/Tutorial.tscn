@@ -157,10 +157,11 @@ theme_override_font_sizes/normal_font_size = 48
 text = "Iris
 Axel
 Nefeli
-Panagiotis
+Kappos
 Christos
 Rafael
-Stamatina"
+Stamatina
+Nikos"
 
 [node name="Credits" type="Button" parent="TitleScreen" unique_id=284502535]
 offset_left = 19.0
@@ -213,8 +214,8 @@ script = ExtResource("5_w3jsn")
 transform = Transform3D(0.99974525, -0.02136442, 0.007282179, 0.021321647, 0.99975526, 0.0059031365, -0.0074065067, -0.0057463795, 0.999956, 14.416027, -0.030855298, -0.8243735)
 curve = SubResource("Curve3D_dfs0n")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2 guard1" unique_id=1797781176]
-transform = Transform3D(-0.08139918, 0.021069534, -0.9964321, -1.8626203e-09, 0.9997523, 0.021139631, 0.9966681, 0.001720778, -0.08137991, -9.449341, -0.29714617, -0.023162723)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1797781176]
+transform = Transform3D(-0.01663389, 0.020687701, -0.99963087, -9.3131103e-10, 0.99977165, 0.020690514, 0.99984914, 0.00034416982, -0.01663026, -8.685983, -0.31927156, 0.97473425)
 
 [node name="Bird" parent="." unique_id=1737357155 instance=ExtResource("2_arvm7")]
 transform = Transform3D(0.9999771, -0.0029237685, 0.0060964753, 0.0029214676, 0.99999565, 0.00038600675, -0.006097578, -0.00036817274, 0.99998134, 36.80688, 7.2750273, -2.246372)

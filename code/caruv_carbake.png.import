@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b767lp8po1jot"
 path.s3tc="res://.godot/imported/caruv_carbake.png-07e82a8d60bb018d5cb57579e42446b8.s3tc.ctex"
+path.etc2="res://.godot/imported/caruv_carbake.png-07e82a8d60bb018d5cb57579e42446b8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://code/caruv_carbake.png"
-dest_files=["res://.godot/imported/caruv_carbake.png-07e82a8d60bb018d5cb57579e42446b8.s3tc.ctex"]
+dest_files=["res://.godot/imported/caruv_carbake.png-07e82a8d60bb018d5cb57579e42446b8.s3tc.ctex", "res://.godot/imported/caruv_carbake.png-07e82a8d60bb018d5cb57579e42446b8.etc2.ctex"]
 
 [params]
 

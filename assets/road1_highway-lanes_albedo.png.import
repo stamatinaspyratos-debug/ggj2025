@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1uj8sp5xboea"
 path.s3tc="res://.godot/imported/road1_highway-lanes_albedo.png-8bfb80c57f78dd3054b94e2dc13cec2c.s3tc.ctex"
+path.etc2="res://.godot/imported/road1_highway-lanes_albedo.png-8bfb80c57f78dd3054b94e2dc13cec2c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/road1_highway-lanes_albedo.png"
-dest_files=["res://.godot/imported/road1_highway-lanes_albedo.png-8bfb80c57f78dd3054b94e2dc13cec2c.s3tc.ctex"]
+dest_files=["res://.godot/imported/road1_highway-lanes_albedo.png-8bfb80c57f78dd3054b94e2dc13cec2c.s3tc.ctex", "res://.godot/imported/road1_highway-lanes_albedo.png-8bfb80c57f78dd3054b94e2dc13cec2c.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqi2a6xyi6xv7"
 path.s3tc="res://.godot/imported/WAREHOUSEINVERTED_WAREbake.png-f7c1d1bc9f98e5fa2734a56206385096.s3tc.ctex"
+path.etc2="res://.godot/imported/WAREHOUSEINVERTED_WAREbake.png-f7c1d1bc9f98e5fa2734a56206385096.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/WAREHOUSEINVERTED_WAREbake.png"
-dest_files=["res://.godot/imported/WAREHOUSEINVERTED_WAREbake.png-f7c1d1bc9f98e5fa2734a56206385096.s3tc.ctex"]
+dest_files=["res://.godot/imported/WAREHOUSEINVERTED_WAREbake.png-f7c1d1bc9f98e5fa2734a56206385096.s3tc.ctex", "res://.godot/imported/WAREHOUSEINVERTED_WAREbake.png-f7c1d1bc9f98e5fa2734a56206385096.etc2.ctex"]
 
 [params]
 
