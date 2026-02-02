@@ -11,7 +11,8 @@ func _ready() -> void:
 	if in_title:
 		$TitleScreen.show()
 		AudioServer.set_bus_volume_linear(1, 0)
-		$TitleScreen/AudioStreamPlayer.play()
+		$TitleScreen/MainMenu.play()
+		$TitleScreen/CreditContainer.hide()
 	else: 
 		if has_node("TitleScreen"): $TitleScreen.hide()
 		Game.Player.state = "Idle"
@@ -20,7 +21,9 @@ func _ready() -> void:
 func title_dismiss():
 	$TitleScreen.hide()
 	AudioServer.set_bus_volume_linear(1, 1)
-	$TitleScreen/AudioStreamPlayer.stop()
+	$TitleScreen/MainMenu.stop()
+	$TitleScreen/Theme.stop()
+	$Music.play(0)
 	var t = create_tween().set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	t.tween_property(
 		Game.Camera, "position", Vector3(0, 2.822, 8), 1
@@ -41,3 +44,9 @@ func add_player():
 
 func _on_credits_toggled(toggled_on: bool) -> void:
 	$TitleScreen/CreditContainer.visible = toggled_on
+	if toggled_on:
+		$TitleScreen/MainMenu.stop()
+		$TitleScreen/Theme.play()
+	else:
+		$TitleScreen/MainMenu.play()
+		$TitleScreen/Theme.stop()

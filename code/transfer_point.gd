@@ -23,6 +23,7 @@ func _on_body_entered(body: Node3D) -> void:
 			$CanvasLayer.hide()
 
 func transfer():
+	Game.Player.state = "Stop"
 	Game.elevator_effect()
 	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_packed.call_deferred(scene)

@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bvg3jfsgu3w6b" path="res://code/camera.gd" id="5_w3jsn"]
 [ext_resource type="Shader" uid="uid://cagj0qbo1deki" path="res://scene/sky.gdshader" id="6_5qrb1"]
 [ext_resource type="AudioStream" uid="uid://dkmy44nqtng04" path="res://audio/Main Menu.mp3" id="6_mqsvd"]
+[ext_resource type="AudioStream" uid="uid://cngsymei2gvec" path="res://audio/Theme.mp3" id="7_8ojou"]
 [ext_resource type="Texture2D" uid="uid://i5tvp78upkju" path="res://assets/SMALLhouseWtextures_pixel_art_large-8.png" id="7_l18dw"]
 [ext_resource type="PackedScene" uid="uid://bjr5rmlq1ccbj" path="res://scene/transfer_point.tscn" id="7_r6x65"]
 [ext_resource type="PackedScene" uid="uid://duwjc2soy73vq" path="res://scene/inside.tscn" id="8_r6x65"]
@@ -38,7 +39,7 @@ content_margin_left = 48.0
 content_margin_top = 48.0
 content_margin_right = 48.0
 content_margin_bottom = 48.0
-bg_color = Color(0, 0, 0, 0.67058825)
+bg_color = Color(0.08241554, 0.049495302, 0.10036712, 0.9019608)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odj2w"]
 bg_color = Color(0, 0, 0, 1)
@@ -198,7 +199,6 @@ theme_override_font_sizes/font_size = 40
 text = "Controls"
 
 [node name="CreditContainer" type="PanelContainer" parent="TitleScreen" unique_id=11581379]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -210,15 +210,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0ib3i")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TitleScreen/CreditContainer" unique_id=99725571]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 48
-text = "Iris Hormoviti - Lead Programmer / Pixel Art
-Alex Labrigiorgos - Pixel Art
-Nefeli Kasiou - UI / Art / Music
-Panagiotis Kappos - Programming / Level Design
-Christos Rellis - Project Managment / Programming
-Rafael Papa - Art
-Stamatina Spyratou - 3D Models
-Nikos Liappis - Music Sound Effects"
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[b]Chris Vrellis[/b] - Project Lead / Lead Designer
+[b]Iris Hormoviti[/b] - Lead Programmer /  Level Designer / 2D Pixel Artist 
+[b]Panagiotis Kappos[/b] - Level Designer / Programmer
+[b]Alex Lamprogiorgos[/b] - 2D Pixel Artist / Animator
+[b]Rafael Papa[/b] - UI Artist / Cinematic Artist
+[b]Nefeli Kasiou[/b] - UI Artist / Cinematic Artist
+[b]Stamatina Spyratou[/b] - 3D Models / Texture-Material Artist / Composer
+[b]Nikos Liappis[/b] -  Audio & Sound Designer / Composer"
 
 [node name="Credits" type="Button" parent="TitleScreen" unique_id=284502535]
 offset_left = 19.0
@@ -233,8 +235,12 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_5qrb1")
 toggle_mode = true
 text = "Credits"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TitleScreen" unique_id=323992718]
+[node name="MainMenu" type="AudioStreamPlayer" parent="TitleScreen" unique_id=323992718]
 stream = ExtResource("6_mqsvd")
+bus = &"Other"
+
+[node name="Theme" type="AudioStreamPlayer" parent="TitleScreen" unique_id=890834607]
+stream = ExtResource("7_8ojou")
 bus = &"Other"
 
 [node name="Ground" type="CSGMesh3D" parent="." unique_id=358375328]
@@ -386,7 +392,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.91775, 1.2107018, 3.021886
 curve = SubResource("Curve3D_kv4hd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3 guard3" unique_id=1913162352]
-transform = Transform3D(0.0055189235, -0.041443795, 0.9991232, -1.8626328e-09, 0.99913764, 0.04144446, -0.999978, -0.00022873202, 0.005514206, -0.9867668, -0.38905323, -3.13791)
+transform = Transform3D(0.005518922, -0.041443784, 0.999123, -1.8626324e-09, 0.9991374, 0.04144445, -0.99997777, -0.00022873198, 0.005514205, -0.9867668, -0.38905323, -3.13791)
 
 [node name="platform2" parent="." unique_id=1770618742 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 26.748625, 3.4314075, 0.24839306)

@@ -503,15 +503,19 @@ playback_auto_capture_transition_type = 4
 
 [node name="JumpCat" type="AudioStreamPlayer3D" parent="." unique_id=2055779298]
 stream = ExtResource("13_75ag0")
+unit_size = 5.0
 
 [node name="JumpHuman" type="AudioStreamPlayer3D" parent="." unique_id=2009607174]
 stream = ExtResource("13_4dn68")
+unit_size = 5.0
 
 [node name="JumpBird" type="AudioStreamPlayer3D" parent="." unique_id=1313725570]
 stream = ExtResource("14_ysk8y")
+unit_size = 5.0
 
 [node name="Meow" type="AudioStreamPlayer3D" parent="." unique_id=981702259]
 stream = ExtResource("15_pjdrq")
+unit_size = 5.0
 
 [connection signal="body_entered" from="AmbushArea" to="." method="_on_ambush_area_body_entered"]
 [connection signal="body_exited" from="AmbushArea" to="." method="_on_ambush_area_body_exited"]
