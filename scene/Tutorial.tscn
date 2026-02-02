@@ -386,7 +386,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.91775, 1.2107018, 3.021886
 curve = SubResource("Curve3D_kv4hd")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3 guard3" unique_id=1913162352]
-transform = Transform3D(0.0055189244, -0.0414438, 0.99912333, -1.862633e-09, 0.99913776, 0.041444466, -0.9999781, -0.00022873205, 0.005514207, -0.9867668, -0.38905323, -3.13791)
+transform = Transform3D(0.0055189235, -0.041443795, 0.9991232, -1.8626328e-09, 0.99913764, 0.04144446, -0.999978, -0.00022873202, 0.005514206, -0.9867668, -0.38905323, -3.13791)
 
 [node name="platform2" parent="." unique_id=1770618742 instance=ExtResource("15_kv4hd")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.4, 26.748625, 3.4314075, 0.24839306)
